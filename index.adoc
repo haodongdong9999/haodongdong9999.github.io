@@ -2,5 +2,6 @@
 xixi
 :icons: font
 
+* link:study/test.html[study]
 afj
 shfa
