@@ -1,7 +1,7 @@
-= 博客
-xixi
+= 东东博客
+一即一切   一切即一
 :icons: font
 
 * link:study/test.html[study]
-afj
-shfa
+* link:day_note/day.html[day_note]
+
