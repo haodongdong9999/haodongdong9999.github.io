@@ -1,7 +1,9 @@
 = 东东博客
-一即一切   一切即一
+
+一即一切 一切即一
+
 :icons: font
 
 * link:study/test.html[study]
 * link:day_note/day.html[day_note]
-
+* link:work_plan/work.html[work_plan]
