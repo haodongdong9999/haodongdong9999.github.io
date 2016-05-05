@@ -1,5 +1,18 @@
-= 生活记录
-记录点滴生活
-:icons: font
+= 每日学习
 
-*afj*
+学无止境
+
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 5-5
+
+. 学习mac下配置asciidoc
+.. Plugin 'dagwieers/asciidoc-vim'  autocmd BufRead,BufNewFile *.adoc set filetype=asciidoc
+- [*] 记录完成
+
+
