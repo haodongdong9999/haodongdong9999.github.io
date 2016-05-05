@@ -2,6 +2,17 @@
 
 认真
 
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
 :icons: font
+:sectnums:
+
+== 5-5工作记录
+
+. 完成环境配置
+. 查看ap堆栈
+- [*] 配置
 
 
