@@ -1,0 +1,32 @@
+= 学习笔记
+
+认真
+
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 5-6学习内容
+
+.今日学习计划
+***
+
+- [ ] 学习shell中for/while 用法
+
+***
+
+.学习内容
+...
+
+<1> shell中可以使用修改IFS环境变量来避免空格，制表符，换行符被当作分隔符
+* 方法：IFS=$'\n'
+* 一般这样用
+［ source shell ］
+IFS.OLD=$IFS
+IFS=$'\n'
+IFS=$IFS.OLD
+...
+
