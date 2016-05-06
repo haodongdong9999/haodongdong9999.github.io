@@ -15,18 +15,21 @@
 ***
 
 - [ ] 学习shell中for/while 用法
+- [ ] 学习nc用法
+
 
 ***
 
 .学习内容
-...
+....
 
-<1> shell中可以使用修改IFS环境变量来避免空格，制表符，换行符被当作分隔符
-* 方法：IFS=$'\n'
-* 一般这样用
-［ source shell ］
+<1> shell中可以使用修改IFS环境变量来避免空格，制表符，换行符被当作分隔符 +
+方法：IFS=$'\n'
 IFS.OLD=$IFS
 IFS=$'\n'
 IFS=$IFS.OLD
-...
+
+<2> server: nc -l -p 8880 > a.html  (server ip_addr:192.168.1.1)
+client: cat a.html | nc 192.168.1.1 8880
+....
 
