@@ -4,6 +4,6 @@
 
 :icons: font
 
-* link:study/test.html[study]
+* link:study/study.html[study]
 * link:day_note/day.html[day_note]
 * link:work_plan/work.html[work_plan]
