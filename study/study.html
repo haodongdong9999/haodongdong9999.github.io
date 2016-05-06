@@ -438,27 +438,31 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li>
 <p><i class="fa fa-square-o"></i> 学习shell中for/while 用法</p>
 </li>
+<li>
+<p><i class="fa fa-square-o"></i> 学习nc用法</p>
+</li>
 </ul>
 </div>
 <hr>
-<div class="paragraph">
+<div class="literalblock">
 <div class="title">学习内容</div>
-<p>&#8230;&#8203;</p>
+<div class="content">
+<pre>&lt;1&gt; shell中可以使用修改IFS环境变量来避免空格，制表符，换行符被当作分隔符 +
+方法：IFS=$'\n'
+IFS.OLD=$IFS
+IFS=$'\n'
+IFS=$IFS.OLD
+
+&lt;2&gt; server: nc -l -p 8880 &gt; a.html  (server ip_addr:192.168.1.1)
+client: cat a.html | nc 192.168.1.1 8880</pre>
 </div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>shell中可以使用修改IFS环境变量来避免空格，制表符，换行符被当作分隔符</td>
-</tr>
-</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-06 13:07:48 CST
+Last updated 2016-05-06 13:40:07 CST
 </div>
 </div>
 </body>
