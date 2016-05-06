@@ -12,8 +12,8 @@
 .今日学习计划
 ***
 
-- [ ] 学习shell中for/while 用法
-- [ ] 学习nc用法
+- [*] 学习shell中for/while 用法
+- [*] 学习nc用法
 
 
 ***
