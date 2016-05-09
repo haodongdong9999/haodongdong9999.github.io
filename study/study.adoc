@@ -10,13 +10,13 @@
 == 5-6学习内容
 
 .今日学习计划
-***
+****
 
 - [*] 学习shell中for/while 用法
 - [*] 学习nc用法
 
 
-***
+****
 
 .学习内容
 ....
@@ -31,3 +31,14 @@ IFS=$IFS.OLD
 client: cat a.html | nc 192.168.1.1 8880
 ....
 
+== 5-9学习内容
+
+* 配置mac的crontab服务
+
+****
+返回错误： crontab: “/usr/bin/vi” exited with status 1.
+这是据说因为vi编辑的不行，vim却可以
+执行 export EDITOR=vim 可以修正这个问题，或尝试 export EDITOR=nano.
+查看成功的任务： crontab -l
+
+****
