@@ -47,5 +47,39 @@ client: cat a.html | nc 192.168.1.1 8880
 === 计划
 
 - [*] shell学习之while用法学习
-- [ ] 总结
+- [*] 总结
+
+== 5-11学习内容
+
+. 学习一个流量脚本
+****
+[source,shell]
+#!/bin/bash
+
+intervalo=1
+
+info="/sys/class/net/"
+
+cd $info
+
+while [ 1 ]
+
+do
+    for interface in eth*
+
+        do
+
+          rx1=`cat $info$interface/statistics/rx_bytes`
+          tx1=`cat $info$interface/statistics/tx_bytes`
+          `sleep $((intervalo))` +
+          rx2=`cat $info$interface/statistics/rx_bytes`
+          tx2=`cat $info$interface/statistics/tx_bytes`
+          echo $interface +
+          echo ----
+          echo RX: $((($rx2-$rx1)/($intervalo*1024))) Kbps
+          echo TX: $((($tx2-$tx1)/($intervalo*1024))) Kbps
+          done
+done
+
+****
 
