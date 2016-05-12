@@ -438,6 +438,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_计划">3.1. 计划</a></li>
 </ul>
 </li>
+<li><a href="#_5_11学习内容">4. 5-11学习内容</a></li>
 </ul>
 </div>
 </div>
@@ -508,9 +509,66 @@ client: cat a.html | nc 192.168.1.1 8880</pre>
 <p><i class="fa fa-check-square-o"></i> shell学习之while用法学习</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> 总结</p>
+<p><i class="fa fa-check-square-o"></i> 总结</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_5_11学习内容">4. 5-11学习内容</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>学习一个流量脚本</p>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="shell">#!/bin/bash</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>intervalo=1</p>
+</div>
+<div class="paragraph">
+<p>info="/sys/class/net/"</p>
+</div>
+<div class="paragraph">
+<p>cd $info</p>
+</div>
+<div class="paragraph">
+<p>while [ 1 ]</p>
+</div>
+<div class="paragraph">
+<p>do
+    for interface in eth*</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>do</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>          rx1=`cat $info$interface/statistics/rx_bytes`
+          tx1=`cat $info$interface/statistics/tx_bytes`
+          `sleep $((intervalo))` +
+          rx2=`cat $info$interface/statistics/rx_bytes`
+          tx2=`cat $info$interface/statistics/tx_bytes`
+          echo $interface +
+          echo ----
+          echo RX: $((($rx2-$rx1)/($intervalo*1024))) Kbps
+          echo TX: $((($tx2-$tx1)/($intervalo*1024))) Kbps
+          done
+done</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -518,7 +576,7 @@ client: cat a.html | nc 192.168.1.1 8880</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-10 11:48:06 CST
+Last updated 2016-05-12 09:04:06 CST
 </div>
 </div>
 </body>
