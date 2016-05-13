@@ -668,7 +668,64 @@ printf("MAC: %s\n", mac);</pre>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">通过IP获取MAC</div>
-
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c">int main(int argc, char *argv[])
+{
+    struct sockaddr_in sin = { 0  };
+    struct arpreq myarp = { { 0  }  };
+    int sockfd;
+    unsigned char *ptr;</code></pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if(argc!=2) {
+    printf("usage: %s &lt;IP address&gt;\n",argv[0]);
+    exit(0);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}
+sin.sin_family = AF_INET;
+if(inet_aton(argv[1], &amp;sin.sin_addr)==0) {
+    printf("%s: IP address '%s' not valid\n",argv[0],argv[1]);
+    exit(0);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>memcpy(&amp;myarp.arp_pa, &amp;sin, sizeof(myarp.arp_pa));
+strcpy(myarp.arp_dev, "eth0");
+if ((sockfd = socket(AF_INET, SOCK_DGRAM, 0)) == -1) {
+    printf("%s: cannot open socket\n",argv[0]);
+    exit(0);
+}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if (ioctl(sockfd, SIOCGARP, &amp;myarp) == -1) {
+    printf("%s: no entry in arp_cache for '%s'\n",argv[0],argv[1]);
+    exit(0);
+}
+ptr = &amp;myarp.arp_ha.sa_data[0];
+printf("%s: MAC address for '%s' is : ",argv[0],argv[1]);
+printf("%x:%x:%x:%x:%x:%x\n",*ptr, *(ptr+1),*(ptr+2),*(ptr+3),*(ptr+4),*(ptr+5));</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>    return 1;
+}</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -676,7 +733,7 @@ printf("MAC: %s\n", mac);</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-13 17:29:51 CST
+Last updated 2016-05-13 17:32:16 CST
 </div>
 </div>
 </body>
