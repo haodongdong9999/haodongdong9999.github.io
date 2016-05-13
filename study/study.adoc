@@ -94,17 +94,8 @@ done
 ****
 
 . 通过设备获取MAC
-[source,c]
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <unistd.h>
-#include <sys/ioctl.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <net/if.h>
+[source,c]
 
 int main(int argc, char *argv[])
 {
@@ -117,7 +108,6 @@ int main(int argc, char *argv[])
         return 1;
 
     }
-
     sock = socket(AF_INET,SOCK_STREAM,0);
     if(sock < 0)
     {
@@ -125,7 +115,6 @@ int main(int argc, char *argv[])
         return 2;
 
     }
-
     strcpy(ifreq.ifr_name,argv[1]);
     if(ioctl(sock,SIOCGIFHWADDR,&ifreq) < 0)
     {
@@ -142,7 +131,6 @@ int main(int argc, char *argv[])
     printf("MAC: %s\n", mac);
 
     return 0;
-
 }
 
 ****
