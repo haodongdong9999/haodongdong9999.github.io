@@ -603,16 +603,10 @@ done</pre>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>#include &lt;stdlib.h&gt;
-#include &lt;stdio.h&gt;
-#include &lt;stdlib.h&gt;
-#include &lt;string.h&gt;
-#include &lt;unistd.h&gt;
-#include &lt;sys/ioctl.h&gt;
-#include &lt;sys/socket.h&gt;
-#include &lt;netinet/in.h&gt;
-#include &lt;net/if.h&gt;</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c"></code></pre>
+</div>
 </div>
 <div class="paragraph">
 <p>int main(int argc, char *argv[])
@@ -630,12 +624,8 @@ done</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>sock = socket(AF_INET,SOCK_STREAM,0);
+<pre>}
+sock = socket(AF_INET,SOCK_STREAM,0);
 if(sock &lt; 0)
 {
     perror("error sock");
@@ -644,12 +634,8 @@ if(sock &lt; 0)
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>}</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>strcpy(ifreq.ifr_name,argv[1]);
+<pre>}
+strcpy(ifreq.ifr_name,argv[1]);
 if(ioctl(sock,SIOCGIFHWADDR,&amp;ifreq) &lt; 0)
 {
     perror("error ioctl");
@@ -673,11 +659,9 @@ printf("MAC: %s\n", mac);</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>return 0;</pre>
+<pre>    return 0;
+}</pre>
 </div>
-</div>
-<div class="paragraph">
-<p>}</p>
 </div>
 </div>
 </div>
@@ -686,7 +670,7 @@ printf("MAC: %s\n", mac);</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-13 17:13:32 CST
+Last updated 2016-05-13 17:26:06 CST
 </div>
 </div>
 </body>
