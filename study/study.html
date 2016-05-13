@@ -440,6 +440,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_5_11学习内容">4. 5-11学习内容</a></li>
 <li><a href="#_5_12学习内容">5. 5-12学习内容</a></li>
+<li><a href="#_5_13学习内容">6. 5-13学习内容</a></li>
 </ul>
 </div>
 </div>
@@ -589,10 +590,103 @@ done</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_5_13学习内容">6. 5-13学习内容</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">学习计划</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>通过设备获取MAC</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;sys/ioctl.h&gt;
+#include &lt;sys/socket.h&gt;
+#include &lt;netinet/in.h&gt;
+#include &lt;net/if.h&gt;</p>
+</div>
+<div class="paragraph">
+<p>int main(int argc, char *argv[])
+{
+    struct ifreq ifreq;
+    int sock = 0;
+    char mac[32] = "";</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>if(argc &lt; 2){
+    printf("Usage: ./main eth0");
+    return 1;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>sock = socket(AF_INET,SOCK_STREAM,0);
+if(sock &lt; 0)
+{
+    perror("error sock");
+    return 2;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>strcpy(ifreq.ifr_name,argv[1]);
+if(ioctl(sock,SIOCGIFHWADDR,&amp;ifreq) &lt; 0)
+{
+    perror("error ioctl");
+    return 3;</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}
+ int i = 0;
+ for(i = 0; i &lt; 6; i++){
+     sprintf(mac+3*i, "%02X:", (unsigned char)ifreq.ifr_hwaddr.sa_data[i]);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>}
+mac[strlen(mac) - 1] = 0;
+printf("MAC: %s\n", mac);</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>return 0;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>}</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-13 09:05:07 CST
+Last updated 2016-05-13 17:13:32 CST
 </div>
 </div>
 </body>
