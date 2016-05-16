@@ -177,9 +177,14 @@ int main(int argc, char *argv[])
 
 ****
 
+== 5-16学习计划
 
+.今日学习
 
-
+****
+- [ ] shell学习
+- [ ] Linux内核学习
+****
 
 
 
