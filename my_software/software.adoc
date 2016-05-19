@@ -34,6 +34,7 @@ http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86
 
 . need by
 +
+****
 yum groupinstall -y "Desktop" "Desktop Platform" "Desktop Platform Development"　 "Fonts" 　"General Purpose Desktop"　 "Graphical Administration Tools"　 "Graphics Creation Tools" 　"Input Methods" 　"X Window System" 　"Chinese Support [zh]"　"Internet Browser"
-
+****
 
