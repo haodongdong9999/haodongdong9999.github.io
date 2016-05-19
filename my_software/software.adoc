@@ -12,22 +12,25 @@
 .synergy
 ****
 * MAC版本:
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg[MAC版本]
 
 * Windows版本：
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi
 
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi[WIN32位]
+
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi[WIN64位]
 
 * Centos版本：
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm
 
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm[32位]
+
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm[64位]
 
 * Ubuntu版本：
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb
 
-http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb[32位]
+
+* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb[64位]
 
 ****
 == CENTOS安装桌面
