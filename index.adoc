@@ -4,6 +4,7 @@
 
 :icons: font
 
-* link:study/study.html[study]
-* link:day_note/day.html[day_note]
-* link:work_plan/work.html[work_plan]
+* link:study/study.html[学习总结]
+* link:day_note/day.html[生活记录]
+* link:work_plan/work.html[工作总结]
+* link:my_software/software.html[软件资源]
