@@ -1,4 +1,4 @@
-= 软件资源
+= 软件资源和系统资源
 认真
 :toc:
 :toclevels: 4
@@ -37,4 +37,13 @@ http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86
 ****
 yum groupinstall -y "Desktop" "Desktop Platform" "Desktop Platform Development"　 "Fonts" 　"General Purpose Desktop"　 "Graphical Administration Tools"　 "Graphics Creation Tools" 　"Input Methods" 　"X Window System" 　"Chinese Support [zh]"　"Internet Browser"
 ****
+== centos自动编译环境构建
 
+. 编译html文件
+****
+PATH=/home/hdd/.rvm/gems/ruby-2.2.1/bin:/home/hdd/.rvm/gems/ruby-2.2.1@global/bin:/home/hdd/.rvm/rubies/ruby-2.2.1/bin:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/hdd/bin:/home/hdd/.rvm/bin
+GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
+
+*/1 * * * * /home/hdd/my_importent/my_git_update.sh
+
+****
