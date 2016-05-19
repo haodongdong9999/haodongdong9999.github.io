@@ -11,19 +11,22 @@
 
 .synergy
 ****
-MAC版本:
+* MAC版本:
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg
 
-Windows版本：
+* Windows版本：
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi
+
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi
 
-Centos版本：
+* Centos版本：
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm
+
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm
 
-Ubuntu版本：
+* Ubuntu版本：
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb
+
 http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb
 
 ****
