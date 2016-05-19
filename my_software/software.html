@@ -433,6 +433,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_鼠标键盘共享软件">1. 鼠标键盘共享软件</a></li>
 <li><a href="#_centos安装桌面">2. CENTOS安装桌面</a></li>
+<li><a href="#_centos自动编译环境构建">3. centos自动编译环境构建</a></li>
 </ul>
 </div>
 </div>
@@ -447,36 +448,52 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul>
 <li>
 <p>MAC版本:</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg">MAC版本</a></p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>Windows版本：</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi">WIN32位</a></p>
 </li>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi">WIN64位</a></p>
 </li>
-<li>
-<p>Centos版本：</p>
+</ul>
+</div>
 </li>
 <li>
-<p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm">32位</a></p>
+<p>Centos版本：</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm">Centos32位</a></p>
 </li>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm">64位</a></p>
 </li>
+</ul>
+</div>
+</li>
 <li>
 <p>Ubuntu版本：</p>
-</li>
+<div class="ulist">
+<ul>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb">32位</a></p>
 </li>
 <li>
 <p><a href="http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb">64位</a></p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -487,31 +504,27 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sect1">
 <h2 id="_centos安装桌面">2. CENTOS安装桌面</h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>need by</p>
 <div class="sidebarblock">
 <div class="content">
+<div class="title">need by</div>
 <div class="paragraph">
 <p>yum groupinstall -y "Desktop" "Desktop Platform" "Desktop Platform Development"　 "Fonts" 　"General Purpose Desktop"　 "Graphical Administration Tools"　 "Graphics Creation Tools" 　"Input Methods" 　"X Window System" 　"Chinese Support [zh]"　"Internet Browser"</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>== centos自动编译环境构建</p>
 </div>
-</li>
-<li>
-<p>编译html文件</p>
-</li>
-</ol>
 </div>
+<div class="sect1">
+<h2 id="_centos自动编译环境构建">3. centos自动编译环境构建</h2>
+<div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
+<div class="title">编译html文件</div>
 <div class="paragraph">
-<p>PATH=/home/hdd/.rvm/gems/ruby-2.2.1/bin:/home/hdd/.rvm/gems/ruby-2.2.1@global/bin:/home/hdd/.rvm/rubies/ruby-2.2.1/bin:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/hdd/bin:/home/hdd/.rvm/bin
-GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global</p>
+<p>PATH=/home/hdd/.rvm/gems/ruby-2.2.1/bin:/home/hdd/.rvm/gems/ruby-2.2.1@global/bin:/home/hdd/.rvm/rubies/ruby-2.2.1/bin:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/hdd/bin:/home/hdd/.rvm/bin</p>
+</div>
+<div class="paragraph">
+<p>GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global</p>
 </div>
 <div class="paragraph">
 <p>*/1 * * * * /home/hdd/my_importent/my_git_update.sh</p>
@@ -523,7 +536,7 @@ GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global</p
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-19 13:54:50 CST
+Last updated 2016-05-19 14:16:44 CST
 </div>
 </div>
 </body>

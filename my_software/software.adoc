@@ -12,39 +12,44 @@
 .synergy
 ****
 * MAC版本:
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg[MAC版本]
+
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-MacOSX1011-x86_64.dmg[MAC版本]
 
 * Windows版本：
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi[WIN32位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x86.msi[WIN32位]
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi[WIN64位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Windows-x64.msi[WIN64位]
 
 * Centos版本：
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm[32位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.rpm[Centos32位]
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm[64位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.rpm[64位]
 
 * Ubuntu版本：
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb[32位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-i686.deb[32位]
 
-* link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb[64位]
+** link:http://synergy-project.org/files/nightly/synergy-v1.8.1-stable-257ac01-Linux-x86_64.deb[64位]
 
 ****
 == CENTOS安装桌面
 
-. need by
-+
+.need by
+
 ****
 yum groupinstall -y "Desktop" "Desktop Platform" "Desktop Platform Development"　 "Fonts" 　"General Purpose Desktop"　 "Graphical Administration Tools"　 "Graphics Creation Tools" 　"Input Methods" 　"X Window System" 　"Chinese Support [zh]"　"Internet Browser"
+
 ****
+
 == centos自动编译环境构建
 
-. 编译html文件
+.编译html文件
+
 ****
 PATH=/home/hdd/.rvm/gems/ruby-2.2.1/bin:/home/hdd/.rvm/gems/ruby-2.2.1@global/bin:/home/hdd/.rvm/rubies/ruby-2.2.1/bin:/usr/lib/qt-3.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/hdd/bin:/home/hdd/.rvm/bin
+
 GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
 
 */1 * * * * /home/hdd/my_importent/my_git_update.sh
