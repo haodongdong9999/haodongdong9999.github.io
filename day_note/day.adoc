@@ -36,9 +36,9 @@
 
 ,===
 
- 任务列表：完成状态
- 每日学习：{checkedbox} That's done!
- 做好文档：进行中
+ 任务列表,完成状态
+ 每日学习,{checkedbox} That's done!
+ 做好文档,进行中
 
 ,===
 
