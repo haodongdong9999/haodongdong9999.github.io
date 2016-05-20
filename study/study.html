@@ -789,22 +789,21 @@ chkconfig  smb on<br>
 [root@Gitlab-CI-Build0 ~]# cat /etc/selinux/config <br></p>
 </div>
 <div class="paragraph">
-<p># This file controls the state of SELinux on the system.
-# SELINUX= can take one of these three values:
-#     enforcing - SELinux security policy is enforced.
-#     permissive - SELinux prints warnings instead of enforcing.
-#     disabled - No SELinux policy is loaded.
-SELINUX=disabled
-[root@Gitlab-CI-Build0 ~]# chkconfig --del iptables
-[root@Gitlab-CI-Build0 ~]# cat /etc/samba/smb.conf</p>
-</div>
-<div class="paragraph">
-<p>comment = Home Directories
-browseable = yes
-writable = yes
-valid users = %S
-smbpasswd –a xxx
-chkconfig  smb on</p>
+<p># This file controls the state of SELinux on the system.<br>
+# SELINUX= can take one of these three values:<br>
+#     enforcing - SELinux security policy is enforced.<br>
+#     permissive - SELinux prints warnings instead of enforcing.<br>
+#     disabled - No SELinux policy is loaded.<br>
+SELINUX=disabled<br>
+[root@Gitlab-CI-Build0 ~]# chkconfig --del iptables<br>
+[root@Gitlab-CI-Build0 ~]# cat /etc/samba/smb.conf<br>
+[homes]<br>
+comment = Home Directories<br>
+browseable = yes <br>
+writable = yes<br>
+valid users = %S<br>
+smbpasswd –a xxx<br>
+chkconfig  smb on<br></p>
 </div>
 </div>
 </div>
@@ -813,7 +812,7 @@ chkconfig  smb on</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-20 17:05:52 CST
+Last updated 2016-05-20 17:11:36 CST
 </div>
 </div>
 </body>

@@ -213,21 +213,21 @@ chkconfig  smb on +
 与 ubuntu 不同，Centos的安全级别默认高一些，需要关闭 SELINUX、iptables +
 [root@Gitlab-CI-Build0 ~]# cat /etc/selinux/config  +
 
-# This file controls the state of SELinux on the system.
-# SELINUX= can take one of these three values:
-#     enforcing - SELinux security policy is enforced.
-#     permissive - SELinux prints warnings instead of enforcing.
-#     disabled - No SELinux policy is loaded.
-SELINUX=disabled
-[root@Gitlab-CI-Build0 ~]# chkconfig --del iptables
-[root@Gitlab-CI-Build0 ~]# cat /etc/samba/smb.conf
-[homes]
-comment = Home Directories
-browseable = yes 
-writable = yes
-valid users = %S
-smbpasswd –a xxx
-chkconfig  smb on
+# This file controls the state of SELinux on the system. +
+# SELINUX= can take one of these three values: +
+#     enforcing - SELinux security policy is enforced. +
+#     permissive - SELinux prints warnings instead of enforcing. +
+#     disabled - No SELinux policy is loaded. +
+SELINUX=disabled +
+[root@Gitlab-CI-Build0 ~]# chkconfig --del iptables +
+[root@Gitlab-CI-Build0 ~]# cat /etc/samba/smb.conf +
+[homes] +
+comment = Home Directories +
+browseable = yes  +
+writable = yes +
+valid users = %S +
+smbpasswd –a xxx +
+chkconfig  smb on +
 ****
 
 
