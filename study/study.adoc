@@ -227,7 +227,8 @@ browseable = yes  +
 writable = yes +
 valid users = %S +
 smbpasswd –a xxx +
-chkconfig  'smb' on +
+chkconfig  *_smb_* on 
+
 ****
 
 
