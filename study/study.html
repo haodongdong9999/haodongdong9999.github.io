@@ -443,6 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_13学习内容">6. 5-13学习内容</a></li>
 <li><a href="#_5_16学习计划">7. 5-16学习计划</a></li>
 <li><a href="#_5_20_centos_配置smb">8. 5-20 Centos 配置smb</a></li>
+<li><a href="#_5_23_shell之用户输入">9. 5-23 shell之用户输入</a></li>
 </ul>
 </div>
 </div>
@@ -809,10 +810,36 @@ chkconfig  <strong><em>smb</em></strong> on</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_5_23_shell之用户输入">9. 5-23 shell之用户输入</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>可以输入$1,$2直到$9,超过九个可以用${10}</p>
+</li>
+<li>
+<p>$0可以打印出程序名字，但是会包含路径，去掉路径比较好的一个办法就是<br>
+用变量 <em>*basename*</em>  比如：</p>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="shell">name='basename $0'
+echo $name</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-20 17:19:54 CST
+Last updated 2016-05-23 11:24:06 CST
 </div>
 </div>
 </body>
