@@ -818,16 +818,26 @@ chkconfig  <strong><em>smb</em></strong> on</p>
 <div class="ulist">
 <ul>
 <li>
+<p>shell 变量处理</p>
+<div class="ulist">
+<ul>
+<li>
 <p>可以输入$1,$2直到$9,超过九个可以用${10}</p>
 </li>
 <li>
 <p>$0可以打印出程序名字，但是会包含路径，去掉路径比较好的一个办法就是<br>
-用变量 <em>*basename*</em>  比如：</p>
+用变量 <em><mark>basename</mark></em>  比如：</p>
 <div class="listingblock">
 <div class="content">
 <pre class="pygments highlight"><code data-lang="shell">name='basename $0'
 echo $name</code></pre>
 </div>
+</div>
+</li>
+<li>
+<p>shell中的变量#$*<mark>表示将所有的输入参数当作一个字符串,而</mark>$@#是将变量按照空格识别</p>
+</li>
+</ul>
 </div>
 </li>
 </ul>
@@ -839,7 +849,7 @@ echo $name</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-23 11:24:06 CST
+Last updated 2016-05-23 13:20:12 CST
 </div>
 </div>
 </body>
