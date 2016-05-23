@@ -17,3 +17,5 @@ TIP: 动物园之行当天天气实在是非行热，穿的毛衣什么的简直
 入园可以租用免费的婴儿推车，可惜，我家年年根本不喜欢任何束缚她自己的东西,
 更别提推车了，所以全程我老婆抱着，那个辛苦啊
 
+[[img-travel]]
+image::/Users/hdd/Downloads/tr_1.jpg[caption="1",title:"动物园",width="300",height="200"]
