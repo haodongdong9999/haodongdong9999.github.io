@@ -200,7 +200,8 @@ IMPORTANT: 普通ap的测试条件，胖版本是否存在该问题，需要确�
 * pc上抓包，仅仅有arp请求报文 +
 . 抓包情况如下 +
 
-image::image/ta58-ping.png[caption="1",title="300",height="200"]
+image:image/ta58-ping.png[pcap,600,600,role="center"]
+
 
 IMPORTANT: 该问题请求研发一部同事也给予帮助意见，应该是驱动有问题
 
