@@ -1,0 +1,43 @@
+language: ruby
+rvm:
+  - "2.2.1"
+
+env:
+  matrix:
+    - EMACS=emacs-snapshot
+  global:
+    - SOME_TOKEN=some_value
+
+
+install:
+  - gem install asciidoctor
+  - gem install asciidoctor-diagram
+  - if [ "$EMACS" = 'emacs-snapshot' ]; then
+        sudo add-apt-repository -y ppa:ubuntu-elisp/ppa &&
+        sudo apt-get -qq update &&
+        sudo apt-get -qq -f install &&
+        sudo apt-get -qq install emacs-snapshot &&
+        sudo apt-get -qq install emacs-snapshot-el;
+    fi
+
+script:
+  - make
+
+notifications:
+  email: haodongdong@gbcom.com.cn
+
+after_success:
+  - make --version
+  - ls -al
+  - find .|grep html\~|xargs rm
+  - git checkout master
+  - git status
+  - git remote rm origin
+  - git remote add origin 
+  - git config --global user.email "fabius8@126.com"
+  - git config --global user.name "fabius8-travis-ci"
+  - git add -A
+  - git status
+  - git commit -m "update by travis-ci"
+  - git status
+  - git push origin master -q
