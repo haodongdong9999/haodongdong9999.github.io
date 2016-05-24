@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 1.5.4">
+<meta name="generator" content="Asciidoctor 1.5.3">
 <meta name="author" content="认真">
 <title>工作内容</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
@@ -417,7 +417,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 .hide-for-print{display:none!important}
 .show-for-print{display:inherit!important}}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <style>
 /* Pygments styles disabled. Pygments is not available. */
 </style>
@@ -920,14 +920,24 @@ ta58驱动问题，测试下来，应该也是不好复现的，没有专门的�
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>ta58网口不通问题</p>
+<p>ta58网口不通问题复现条件</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>复现条件:</p>
+<p>百兆交换机连接ta58与pc<br></p>
+</li>
+<li>
+<p>ta58启动正常后，pc上先清除所有arp，连接pc的网口<br></p>
+</li>
+<li>
+<p>pc向ta58 ping包<br></p>
 </li>
 </ol>
 </div>
+</li>
+<li>
+<p>抓包排查结果<br>
+..</p>
 </li>
 </ol>
 </div>
@@ -936,7 +946,7 @@ ta58驱动问题，测试下来，应该也是不好复现的，没有专门的�
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-24 07:13:09 UTC
+Last updated 2016-05-24 15:53:06 CST
 </div>
 </div>
 </body>
