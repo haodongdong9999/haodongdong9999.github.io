@@ -31,5 +31,5 @@ push:
 	git push
 
 clean:
-	@find . -regex '.*html\~\|.*nouse.*\|.*\.cache' -exec rm -rf {} \;
+	@find . -regex '.*html\|.*html\~\|.*nouse.*\|.*\.cache' -exec rm -rf {} \;
 
