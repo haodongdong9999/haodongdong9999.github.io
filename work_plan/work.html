@@ -921,10 +921,10 @@ ta58驱动问题，测试下来，应该也是不好复现的，没有专门的�
 <ol class="arabic">
 <li>
 <p>ta58网口不通问题复现条件</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<div class="ulist">
+<ul>
 <li>
-<p>百兆交换机连接ta58与pc<br></p>
+<p>#<strong><em>百兆</em></strong>#交换机连接ta58与pc<br></p>
 </li>
 <li>
 <p>ta58启动正常后，pc上先清除所有arp，连接pc的网口<br></p>
@@ -932,21 +932,46 @@ ta58驱动问题，测试下来，应该也是不好复现的，没有专门的�
 <li>
 <p>pc向ta58 ping包<br></p>
 </li>
-</ol>
+</ul>
 </div>
 </li>
 <li>
-<p>抓包排查结果<br>
-..</p>
+<p>抓包排查结果<br></p>
+<div class="ulist">
+<ul>
+<li>
+<p>AP上抓包，发现收到pc端的arp request报文，也有响应arp报文发出<br></p>
+</li>
+<li>
+<p>pc上抓包，仅仅有arp请求报文<br></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>抓包情况如下<br>
+image::image/ta58_ping.png[caption="1",title="300",height="200"]</p>
 </li>
 </ol>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+该问题请求研发一部同事也给予帮助意见，应该是驱动有问题
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-24 15:53:06 CST
+Last updated 2016-05-24 16:08:08 CST
 </div>
 </div>
 </body>
