@@ -199,7 +199,7 @@ IMPORTANT: 普通ap的测试条件，胖版本是否存在该问题，需要确�
 * AP上抓包，发现收到pc端的arp request报文，也有响应arp报文发出 +
 * pc上抓包，仅仅有arp请求报文 +
 . 抓包情况如下 +
-image::image/ta58_ping.png[caption="1",title="300",height="200"]
+image::image/ta58-ping.png[caption="1",title="300",height="200"]
 
 IMPORTANT: 该问题请求研发一部同事也给予帮助意见，应该是驱动有问题
 
