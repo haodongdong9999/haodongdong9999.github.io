@@ -33,9 +33,9 @@ after_success:
   - git checkout master
   - git status
   - git remote rm origin
-  - git remote add origin 
-  - git config --global user.email "fabius8@126.com"
-  - git config --global user.name "fabius8-travis-ci"
+  - git remote add origin git@github.com:haodongdong9999/haodongdong9999.github.io.git
+  - git config --global user.email "haodongdong@gbcom.com.cn"
+  - git config --global user.name "haodongdong-travis-ci"
   - git add -A
   - git status
   - git commit -m "update by travis-ci"
