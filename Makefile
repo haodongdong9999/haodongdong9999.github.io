@@ -10,6 +10,7 @@ ORG_2_HTML = $(patsubst %.org, %.html, $(ORG_FILES))
 ADOC_2_HTML = $(patsubst %.adoc, %.html, $(ADOC_FILES))
 
 all: $(ORG_2_HTML) $(ADOC_2_HTML)
+	@echo $(ORG_2_HTML) $(ADOC_2_HTML)
 
 %.html: %.org
 	@echo $(EMACS)
