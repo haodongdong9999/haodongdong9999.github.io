@@ -21,7 +21,3 @@ TIP: 动物园之行当天天气实在是非行热，穿的毛衣什么的简直
 
 image:image/tr_1.jpg[image,600,600,role="center"]
 image:image/tr_2.jpg[image,600,600,role="center"]
-image:image/tr_3.jpg[image,600,600,role="center"]
-image:image/tr_4.jpg[image,600,600,role="center"]
-image:image/tr_5.jpg[image,600,600,role="center"]
-image:image/tr_6.jpg[image,600,600,role="center"]
