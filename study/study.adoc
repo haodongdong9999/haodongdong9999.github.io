@@ -266,7 +266,7 @@ echo $name
 .注意事项
 * 安装vim
 * 同步github上的vim的配置
-* git clone link:https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim[git目录]
+* git clone: link:https://github.com/VundleVim/Vundle.vim.git[git目录] ~/.vim/bundle/Vundle.vim
 
 * 完成配置
 
