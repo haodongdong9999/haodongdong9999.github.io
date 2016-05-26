@@ -446,6 +446,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_23_shell之用户输入">9. 5-23 shell之用户输入</a></li>
 <li><a href="#_5_24文件输入输出">10. 5-24文件输入输出</a></li>
 <li><a href="#_5_25vim插件安装">11. 5-25vim插件安装</a></li>
+<li><a href="#_5_26_代码关系图工具doxygen">12. 5-26 代码关系图工具doxygen</a></li>
 </ul>
 </div>
 </div>
@@ -898,17 +899,25 @@ echo $name</code></pre>
 <div class="sect1">
 <h2 id="_5_25vim插件安装">11. 5-25vim插件安装</h2>
 <div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+注意事项
+* 安装vim
+* 同步github上的vim的配置
+* git clone: <a href="https://github.com/VundleVim/Vundle.vim.git">git目录</a> ~/.vim/bundle/Vundle.vim
+</td>
+</tr>
+</table>
+</div>
 <div class="ulist">
-<div class="title">注意事项</div>
 <ul>
 <li>
-<p>安装vim</p>
-</li>
-<li>
-<p>同步github上的vim的配置</p>
-</li>
-<li>
-<p>git clone: <a href="https://github.com/VundleVim/Vundle.vim.git">git目录</a> ~/.vim/bundle/Vundle.vim</p>
+<p>安装ctags,cscope</p>
 </li>
 <li>
 <p>完成配置</p>
@@ -917,10 +926,53 @@ echo $name</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_5_26_代码关系图工具doxygen">12. 5-26 代码关系图工具doxygen</h2>
+<div class="sectionbody">
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+*doxygen*是一个根据源码生成文档的工具，可以将代码中的调用关系生成表格<br>
+以及结构体中的关系调用等等。
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="title">使用步骤</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>下载安装doxygen</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>在源码的根目录执行*<em>doxygen -g</em>*就会生成一个*Doxygen*的配置文件</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>安装工具#graphviz#,目的是为了安装dot</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>开始配置配置文件</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-25 20:52:07 CST
+Last updated 2016-05-26 10:39:06 CST
 </div>
 </div>
 </body>
