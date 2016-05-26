@@ -263,17 +263,26 @@ echo $name
 
 == 5-25vim插件安装
 
-.注意事项
+NOTE: 注意事项
 * 安装vim
 * 同步github上的vim的配置
-* git clone: link:https://github.com/VundleVim/Vundle.vim.git[git目录] ~/.vim/bundle/Vundle.vim
+* git clone: link:https://github.com/VundleVim/Vundle.vim.git[git目录] ~/.vim/bundle/Vundle.vim 
 
+* 安装ctags,cscope
 * 完成配置
 
+== 5-26 代码关系图工具doxygen
 
+TIP: *doxygen*是一个根据源码生成文档的工具，可以将代码中的调用关系生成表格 +
+以及结构体中的关系调用等等。
 
-
-
+.使用步骤
+****
+<1> 下载安装doxygen
+<2> 在源码的根目录执行*__doxygen -g__*就会生成一个*Doxygen*的配置文件
+<3> 安装工具#graphviz#,目的是为了安装dot
+<4> 开始配置配置文件
+****
 
 
 
