@@ -99,7 +99,7 @@ NOTE: 排查思路只是平时工作中遇到问题，解决问题后的一些�
 *** 典型例子2：释放skb调用 #kfree()# ,同样造成来内存泄漏.
 *** 典型例子3：内核中某些报文流程处理后，没有及时释放SKB。比如，数据面自己封装完SKB后调用SOCKET发送，发送完成后，忘记释放SKB
 * 贴上一个内存泄漏的堆栈 +
-image:image/memout.jpg[memout,300,400,role="center"]
+image:image/memout.jpg[memout,600,600,role="center"]
 
 ==== double free问题
 ==== 空指针问题
