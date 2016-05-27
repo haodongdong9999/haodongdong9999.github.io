@@ -96,10 +96,10 @@ NOTE: 排查思路只是平时工作中遇到问题，解决问题后的一些�
 ** 内核中kmalloc申请来很多内存块，代码free流程中释放不当，或者忘记释放，会造成内存泄漏
 ** 申请释放所使用的函数不一致，导致无效释放内存造成内存泄漏。 
 *** 典型例子1：申请skb 调用 #dev_kmalloc()#, 但是释放skb处却调用来 kfree_skb,造成不断申请的skb buff，无法正常释放，最后内存耗尽，堆栈死机
-*** 典型例子2：申请SKB调用 #kmalloc()#,释放skb缺调用 #kfree()# ,同样造成来内存泄漏。
+*** 典型例子2：释放skb调用 #kfree()# ,同样造成来内存泄漏.
 *** 典型例子3：内核中某些报文流程处理后，没有及时释放SKB。比如，数据面自己封装完SKB后调用SOCKET发送，发送完成后，忘记释放SKB
 * 贴上一个内存泄漏的堆栈 +
-image:image/memout.jpg[memout,100,100,role="center"]
+image:image/memout.jpg[memout,300,400,role="center"]
 
 ==== double free问题
 ==== 空指针问题
