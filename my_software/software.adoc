@@ -55,3 +55,6 @@ GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
 */1 * * * * /home/hdd/my_importent/my_git_update.sh
 
 ****
+== 免费GIT库资源
+* 各种资源大全
+* http://repo.or.cz/
