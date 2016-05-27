@@ -290,6 +290,7 @@ TIP: *doxygen* 是一个根据源码生成文档的工具，可以将代码中�
 
 * 各种调试工具以及心得
 * 点击 link:http://my.oschina.net/fgq611/blog/113249[内核调试手段]
+* link:http://my.oschina.net/fgq611/blog/112929[大牛写的内核调试技术总结]
 
 
 
