@@ -8,6 +8,7 @@ haodongdong
 :sectnums:
 
 == PING包不通问题
+
 TIP: AP 不通问题要跟据实际情况实际排查，文中思路只是经验排查
 
 * 常见排除原因
@@ -20,15 +21,16 @@ TIP: AP 不通问题要跟据实际情况实际排查，文中思路只是经验
 *** 清除命令：iptables -F
 ** 以上情况都排除以后，只有抓包来确认报文不通位置
 ***  *ap上抓包有接收到报文和响应报文，PC上没有收到*
-**** 确认转发状态设置正常，'cat /proc/sys/net/ipv4/ip_forward' 是否为1，如果不等于1，则置1
-**** 'cat /sys/class/net/eth0/statistics/tx_bytes/rx_bytes'查看状态，确认流量正常，PC端抓包，排除AP驱动问题.
+**** 确认转发状态设置正常 'cat /proc/sys/net/ipv4/ip_forward' 是否为1，如果不等于1，则置1
+**** 'cat /sys/class/net/eth0/statistics/tx_bytes/rx_bytes' 查看状态，确认流量正常，PC端抓包，排除AP驱动问题.
 ** 其他手段
 
 == AP重启问题排查总结
 
-=== [red]#重启种类#
+=== 重启种类
 
 TIP: 重启种类：正常重启和异常重启，本文主要讨论异常重启 
+
 . 异常重启：
 .. 用户层异常调用reboot，这种重启AP会记录重启原因，一般根据重启原因找到相对应的代码块位置即可找到问题，解决问题
 .. 内核态重启：看门狗重启和堆栈重启

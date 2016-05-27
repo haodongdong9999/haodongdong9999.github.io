@@ -434,7 +434,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_ping包不通问题">1. PING包不通问题</a></li>
 <li><a href="#_ap重启问题排查总结">2. AP重启问题排查总结</a>
 <ul class="sectlevel2">
-<li><a href="#__span_class_red_重启种类_span">2.1. <span class="red">重启种类</span></a></li>
+<li><a href="#_重启种类">2.1. 重启种类</a></li>
 <li><a href="#_异常重启分析">2.2. 异常重启分析</a>
 <ul class="sectlevel3">
 <li><a href="#_用户层导致重启">2.2.1. 用户层导致重启</a></li>
@@ -500,10 +500,10 @@ filter配置。检查命令如下：</p>
 <div class="ulist">
 <ul>
 <li>
-<p>确认转发状态设置正常，'cat /proc/sys/net/ipv4/ip_forward' 是否为1，如果不等于1，则置1</p>
+<p>确认转发状态设置正常 'cat /proc/sys/net/ipv4/ip_forward' 是否为1，如果不等于1，则置1</p>
 </li>
 <li>
-<p>'cat /sys/class/net/eth0/statistics/tx_bytes/rx_bytes&#8217;查看状态，确认流量正常，PC端抓包，排除AP驱动问题.</p>
+<p>'cat /sys/class/net/eth0/statistics/tx_bytes/rx_bytes' 查看状态，确认流量正常，PC端抓包，排除AP驱动问题.</p>
 </li>
 </ul>
 </div>
@@ -525,7 +525,7 @@ filter配置。检查命令如下：</p>
 <h2 id="_ap重启问题排查总结">2. AP重启问题排查总结</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="__span_class_red_重启种类_span">2.1. <span class="red">重启种类</span></h3>
+<h3 id="_重启种类">2.1. 重启种类</h3>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -534,12 +534,26 @@ filter配置。检查命令如下：</p>
 </td>
 <td class="content">
 重启种类：正常重启和异常重启，本文主要讨论异常重启
-. 异常重启：
-.. 用户层异常调用reboot，这种重启AP会记录重启原因，一般根据重启原因找到相对应的代码块位置即可找到问题，解决问题
-.. 内核态重启：看门狗重启和堆栈重启
 </td>
 </tr>
 </table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>异常重启：</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>用户层异常调用reboot，这种重启AP会记录重启原因，一般根据重启原因找到相对应的代码块位置即可找到问题，解决问题</p>
+</li>
+<li>
+<p>内核态重启：看门狗重启和堆栈重启</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -639,7 +653,7 @@ filter配置。检查命令如下：</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 10:12:45 CST
+Last updated 2016-05-27 11:00:12 CST
 </div>
 </div>
 </body>
