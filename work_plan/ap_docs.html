@@ -435,15 +435,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_ap重启问题排查总结">2. AP重启问题排查总结</a>
 <ul class="sectlevel2">
 <li><a href="#_重启种类">2.1. 重启种类</a></li>
-<li><a href="#_异常重启分析">2.2. 异常重启分析</a>
+<li><a href="#_用户态异常重启">2.2. 用户态异常重启</a></li>
+<li><a href="#_内核态重启">2.3. 内核态重启</a>
 <ul class="sectlevel3">
-<li><a href="#_用户层导致重启">2.2.1. 用户层导致重启</a></li>
-<li><a href="#_内核态重启">2.2.2. 内核态重启</a>
-<ul class="sectlevel4">
-<li><a href="#_看门狗重启">看门狗重启</a></li>
-<li><a href="#_堆栈重启">堆栈重启</a></li>
-</ul>
-</li>
+<li><a href="#_看门狗重启">2.3.1. 看门狗重启</a></li>
+<li><a href="#_堆栈重启">2.3.2. 堆栈重启</a></li>
 </ul>
 </li>
 </ul>
@@ -562,9 +558,7 @@ filter配置。检查命令如下：</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_异常重启分析">2.2. 异常重启分析</h3>
-<div class="sect3">
-<h4 id="_用户层导致重启">2.2.1. 用户层导致重启</h4>
+<h3 id="_用户态异常重启">2.2. 用户态异常重启</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -579,10 +573,10 @@ filter配置。检查命令如下：</p>
 </ul>
 </div>
 </div>
+<div class="sect2">
+<h3 id="_内核态重启">2.3. 内核态重启</h3>
 <div class="sect3">
-<h4 id="_内核态重启">2.2.2. 内核态重启</h4>
-<div class="sect4">
-<h5 id="_看门狗重启">看门狗重启</h5>
+<h4 id="_看门狗重启">2.3.1. 看门狗重启</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -597,8 +591,12 @@ filter配置。检查命令如下：</p>
 </li>
 </ul>
 </div>
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
 <p>Linux 自带了一个 watchdog 的实现，用于监视系统的运行，包括一个内核 watchdog module 和一个用户空间的 watchdog 程序。内核 watchdog 模块通过 /dev/watchdog 这个字符设备与用户空间通信。用户空间程序一旦打开 /dev/watchdog 设备（俗称“开门放狗”），就会导致在内核中启动一个1分钟的定时器（系统默认时间），此后，用户空间程序需要保证在1分钟之内向这个设备写入数据（俗称“定期喂狗”），每次写操作会导致重新设定定时器。如果用户空间程序在1分钟之内没有写操作，定时器到期会导致一次系统 reboot 操作（“狗咬人了”呵呵）。通过这种机制，我们可以保证系统核心进程大部分时间都处于运行状态，即使特定情形下进程崩溃，因无法正常定时“喂狗”，Linux系统在看门狗作用下重新启动（reboot），核心进程又运行起来了</p>
+</div>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -628,8 +626,8 @@ filter配置。检查命令如下：</p>
 </ul>
 </div>
 </div>
-<div class="sect4">
-<h5 id="_堆栈重启">堆栈重启</h5>
+<div class="sect3">
+<h4 id="_堆栈重启">2.3.2. 堆栈重启</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -717,10 +715,9 @@ filter配置。检查命令如下：</p>
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 13:56:17 CST
+Last updated 2016-05-27 14:01:23 CST
 </div>
 </div>
 </body>
