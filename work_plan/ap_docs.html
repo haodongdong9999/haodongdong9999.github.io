@@ -717,18 +717,37 @@ filter配置。检查命令如下：</p>
 <div class="ulist">
 <ul>
 <li>
-<p>内存泄漏出现的原因</p>
+<p>判断内存泄漏依据</p>
+<div class="ulist">
+<ul>
+<li>
+<p>看堆栈，发现有内存不足的打印</p>
+</li>
+<li>
+<p>定时查看 <mark>free</mark> 发现持续减少，不会恢复</p>
+</li>
+<li>
+<p><mark>cat /proc/meminfo</mark> 发现可用内存一直在减少</p>
+</li>
+<li>
+<p><mark>cat /proc/slabinfo</mark> 可以看出slab中一些内存块增加速度非常快</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>常见内存泄漏原因</p>
 <div class="ulist">
 <ul>
 <li>
 <p>内核中kmalloc申请来很多内存块，代码free流程中释放不当，或者忘记释放，会造成内存泄漏</p>
 </li>
 <li>
-<p>申请释放所使用的函数不一致，导致无效释放内存造成内存泄漏。</p>
+<p>申请释放所使用的函数不一致，导致无效释放内存造成内存泄漏</p>
 <div class="ulist">
 <ul>
 <li>
-<p>典型例子1：申请skb 调用 <mark>dev_kmalloc()</mark>, 但是释放skb处却调用来 kfree_skb,造成不断申请的skb buff，无法正常释放，最后内存耗尽，堆栈死机</p>
+<p>典型例子1：申请skb 调用 <mark>dev_kmalloc_skb()</mark>, 但是释放skb处却调用来 kfree_skb,造成不断申请的skb buff，无法正常释放，最后内存耗尽，堆栈死机</p>
 </li>
 <li>
 <p>典型例子2：释放skb调用 <mark>kfree()</mark> ,同样造成来内存泄漏.</p>
@@ -804,7 +823,7 @@ filter配置。检查命令如下：</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 17:21:56 CST
+Last updated 2016-05-27 17:44:10 CST
 </div>
 </div>
 </body>
