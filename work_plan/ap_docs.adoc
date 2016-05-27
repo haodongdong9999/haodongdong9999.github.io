@@ -68,8 +68,10 @@ TIP: 重启种类：正常重启和异常重启，本文主要讨论异常重启
 ****
 panic是英文中是惊慌的意思，Linux Kernel panic正如其名，linux kernel不知道如何走了，它会尽可能把它此时能获取的全部信息都打印出来。
 有两种主要类型kernel panic，后面会对这两类panic做详细说明：
-<1> hard panic(也就是Aieee信息输出)
-<2> soft panic (也就是Oops信息输出)
+
+<1>hard panic(也就是Aieee信息输出)
+<2>soft panic(也就是Oops信息输出)
+
 ****
 +
 . 我们产品常见的kernel panic类型
