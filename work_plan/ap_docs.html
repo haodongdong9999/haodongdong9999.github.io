@@ -440,12 +440,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#_看门狗重启">2.3.1. 看门狗重启</a></li>
 <li><a href="#_堆栈重启">2.3.2. 堆栈重启</a></li>
-<li><a href="#_内存泄漏问题">2.3.3. 内存泄漏问题</a></li>
-<li><a href="#_double_free问题">2.3.4. double free问题</a></li>
-<li><a href="#_空指针问题">2.3.5. 空指针问题</a></li>
-<li><a href="#_非法地址访问">2.3.6. 非法地址访问</a></li>
-<li><a href="#_内存不足页表映射错误">2.3.7. 内存不足页表映射错误</a></li>
-<li><a href="#_死锁">2.3.8. 死锁</a></li>
+</ul>
+</li>
+<li><a href="#_ap内核堆栈排查思路">2.4. AP内核堆栈排查思路</a>
+<ul class="sectlevel3">
+<li><a href="#_内存泄漏问题">2.4.1. 内存泄漏问题</a></li>
+<li><a href="#_double_free问题">2.4.2. double free问题</a></li>
+<li><a href="#_空指针问题">2.4.3. 空指针问题</a></li>
+<li><a href="#_非法地址访问">2.4.4. 非法地址访问</a></li>
+<li><a href="#_内存不足页表映射错误">2.4.5. 内存不足页表映射错误</a></li>
+<li><a href="#_死锁">2.4.6. 死锁</a></li>
 </ul>
 </li>
 </ul>
@@ -659,6 +663,9 @@ filter配置。检查命令如下：</p>
 </li>
 <li>
 <p>常见引发内核堆栈的行为</p>
+</li>
+</ol>
+</div>
 <div class="sidebarblock">
 <div class="content">
 <div class="colist arabic">
@@ -687,12 +694,10 @@ filter配置。检查命令如下：</p>
 </div>
 </div>
 </div>
-<div class="paragraph">
-<p>=== AP内核堆栈排查思路</p>
 </div>
-</li>
-</ol>
 </div>
+<div class="sect2">
+<h3 id="_ap内核堆栈排查思路">2.4. AP内核堆栈排查思路</h3>
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -707,9 +712,8 @@ filter配置。检查命令如下：</p>
 </tr>
 </table>
 </div>
-</div>
 <div class="sect3">
-<h4 id="_内存泄漏问题">2.3.3. 内存泄漏问题</h4>
+<h4 id="_内存泄漏问题">2.4.1. 内存泄漏问题</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -765,23 +769,23 @@ filter配置。检查命令如下：</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_double_free问题">2.3.4. double free问题</h4>
+<h4 id="_double_free问题">2.4.2. double free问题</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_空指针问题">2.3.5. 空指针问题</h4>
+<h4 id="_空指针问题">2.4.3. 空指针问题</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_非法地址访问">2.3.6. 非法地址访问</h4>
+<h4 id="_非法地址访问">2.4.4. 非法地址访问</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_内存不足页表映射错误">2.3.7. 内存不足页表映射错误</h4>
+<h4 id="_内存不足页表映射错误">2.4.5. 内存不足页表映射错误</h4>
 
 </div>
 <div class="sect3">
-<h4 id="_死锁">2.3.8. 死锁</h4>
+<h4 id="_死锁">2.4.6. 死锁</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -819,7 +823,7 @@ filter配置。检查命令如下：</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-27 17:51:15 CST
+Last updated 2016-05-27 17:56:07 CST
 </div>
 </div>
 </body>
