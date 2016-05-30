@@ -45,3 +45,7 @@
 == 旅游攻略
 .看到的旅游攻略
 * link:http://www.fumubang.com/t107793.html[亲子游攻略]
+
+== 获取GREENVAPN地址方法
+
+* 请发送任意邮件至 GreenDizhi@gmail.com 系统将自动回复最新地址到您的邮箱
