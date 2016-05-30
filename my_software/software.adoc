@@ -58,3 +58,45 @@ GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
 == 免费GIT库资源
 * 各种资源大全
 * http://repo.or.cz/
+
+== 构建asciidoctor环境基础
+=== 编译环境
+
+以在 _CentOS_ 上安装为例：
+
+==== 安装 _Ruby_ 环境
+
+[source,bash,linenums]
+----
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+# \curl -sSL https://get.rvm.io | bash -s stable --ruby
+----
+==== 安装 _asciidoctor_
+
+[source,bash,linenums]
+----
+# gem install asciidoctor # <1>
+# gem install asciidoctor-diagram && yum install java-openjdk graphviz # <2>
+# gem install asciidoctor-pdf-cjk asciidoctor-pdf-cjk-kai_gen_gothic asciidoctor-pdf-cjk-kaigen-gothic-kr && asciidoctor-pdf-cjk-kai_gen_gothic-install # <3>
+----
+
+<1> 安装 _asciidoctor_ 基本功能，支持导出 html5
+<2> 安装 http://asciidoctor.org/docs/asciidoctor-diagram[asciidoctor-diagram] 扩展，支持文档内嵌入 _plantuml_、 _diaa_、 _Graphviz_、 _Shaape_
+<3> 安装 _PDF_ 扩展，支持 _PDF_ 输出
+
+==== 使用 _asciidoctor_
+
+语法说明请阅读 http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc Syntax Quick Reference]
+
+[source,bash,linenums]
+----
+# asciidoctor sample.adoc # <1>
+# asciidoctor -r asciidoctor-diagram sample.adoc # <2>
+# asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN sample.adoc # <3>
+# asciidoctor -r asciidoctor-diagram -a data-uri sample.adoc # <4>
+----
+
+<1> 将 `sample.adoc` 输出为 `sample.html`
+<2> 将 `sample.adoc` 输出为 `sample.html`，将 `sample.adoc` 中嵌入的 _plantuml_、 _diaa_ 转为为图片并插入 `sample.html`中
+<3> 将 `sample.adoc` 输出为 `sample.pdf`
+<4> 将 `sample.adoc` 输出为 `sample.html`，并将图片直接嵌入到 `sample.html`，这样不依赖外部图片文件
