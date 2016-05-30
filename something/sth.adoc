@@ -1,0 +1,17 @@
+= 规划中的明天
+读书旅行
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 计划
+
+NOTE: 必须坚持到底
+
+* 早上6点起床，写一篇文章
+* 俯卧撑30个
+* 小区跑20分钟
+* 读书
