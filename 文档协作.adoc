@@ -1,0 +1,109 @@
+= 文档协作
+GB
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+Content is KING!
+
+== 关于文档
+文档要写，文档难写，好的文档赏心悦目，赏心悦目的文档更难写。
+内容为王，样式重要。磨刀不误砍柴工！
+
+好的工具应该具备：门槛低、效率高、能力强、可对比、易发布……
+
+=== _WORD_
+
+WORD是最常用的办公文档工具，但要想写出美观的WORD文档真心难。
+写一篇技术类文档，许多时间耗在格式上，有违『内容为王、高效专注』。
+
+- [*] 门槛低
+- [ ] 效率高
+- [*] 能力强：能力很强，但写一篇格式丰富的文档也是遭罪
+- [ ] 可对比：支持，好用吗
+- [ ] 易发布：不方便
+
+=== _Asciidoc_
+
+标记类语言有很多，如 _Markdown_ 非常流行，但其能力太弱，方言太多，不作为我们的选择。
+我们选择的 _asciidoc_ 格式标记能力强大，工具链完善，上手也容易。
+工具链我们选择 http://asciidoctor.org[_Asciidoctor_]。
+
+- [*] 门槛低：比 _WORD_ 略高，一小时门槛
+- [*] 效率高：专注内容
+- [*] 能力强：方便的流程图、代码插入，还记得代码插入到 _WORD_ 多丑吗？
+- [*] 可对比：文本对比，没的说
+- [*] 易发布：一次编写，多格式发布
+
+== Workflow
+
+与代码开发类似，基本流程如下：
+
+. _adoc_ 源文档提交到 `git@git.gbcom.com.cn:GB/docs.git` 库中。
+. 提交后自动触发 `Buildbot` 构建输出 `html` `pdf` 格式文档，并发送邮件通知。
+. 通过 `http://docs.gbcom.com.cn` 获取查看文档。
+
+这样即可以随时随地修改查看『文本』，又有版本控制，便于跟踪对比，也便于搜索，一旦定稿，还可以将 _PDF_ 对外发布。
+
+== _Asciidoc_ 上手
+
+- 推荐阅读 http://asciidoctor.org/docs/what-is-asciidoc[What is AsciiDoc? Why do we need it?]
+- 快速上手 http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc Syntax Quick Reference]
+- 更多阅读 http://asciidoctor.org/docs/user-manual[Asciidoctor User Manual]
+
+=== 编辑器
+
+任选顺手喜欢的文本编辑器均可，推荐使用 http://atom.io[_atom_] 配合 _zen_、 _language-asciidoc_、 _asciidoc-preview_ 三个插件，效果如下图：
+
+image::images/atom.png[]
+
+[NOTE]
+====
+. 插件安装：在设置页面『安装插件标签』里面搜索插件名称。
+. 文件编辑使用到此就够了。不需要关注下面的编译环境部分。
+====
+
+=== 编译环境
+
+以在 _CentOS_ 上安装为例：
+
+==== 安装 _Ruby_ 环境
+
+[source,bash,linenums]
+----
+# gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+# \curl -sSL https://get.rvm.io | bash -s stable --ruby
+----
+
+==== 安装 _asciidoctor_
+
+[source,bash,linenums]
+----
+# gem install asciidoctor # <1>
+# gem install asciidoctor-diagram && yum install java-openjdk graphviz # <2>
+# gem install asciidoctor-pdf-cjk asciidoctor-pdf-cjk-kai_gen_gothic asciidoctor-pdf-cjk-kaigen-gothic-kr && asciidoctor-pdf-cjk-kai_gen_gothic-install # <3>
+----
+
+<1> 安装 _asciidoctor_ 基本功能，支持导出 html5
+<2> 安装 http://asciidoctor.org/docs/asciidoctor-diagram[asciidoctor-diagram] 扩展，支持文档内嵌入 _plantuml_、 _diaa_、 _Graphviz_、 _Shaape_
+<3> 安装 _PDF_ 扩展，支持 _PDF_ 输出
+
+==== 使用 _asciidoctor_
+
+语法说明请阅读 http://asciidoctor.org/docs/asciidoc-syntax-quick-reference[AsciiDoc Syntax Quick Reference]
+
+[source,bash,linenums]
+----
+# asciidoctor sample.adoc # <1>
+# asciidoctor -r asciidoctor-diagram sample.adoc # <2>
+# asciidoctor-pdf -r asciidoctor-diagram -r asciidoctor-pdf-cjk-kai_gen_gothic -a pdf-style=KaiGenGothicCN sample.adoc # <3>
+# asciidoctor -r asciidoctor-diagram -a data-uri sample.adoc # <4>
+----
+
+<1> 将 `sample.adoc` 输出为 `sample.html`
+<2> 将 `sample.adoc` 输出为 `sample.html`，将 `sample.adoc` 中嵌入的 _plantuml_、 _diaa_ 转为为图片并插入 `sample.html`中
+<3> 将 `sample.adoc` 输出为 `sample.pdf`
+<4> 将 `sample.adoc` 输出为 `sample.html`，并将图片直接嵌入到 `sample.html`，这样不依赖外部图片文件
