@@ -295,6 +295,7 @@ TIP: *doxygen* 是一个根据源码生成文档的工具，可以将代码中�
 == 5-30greenVPN地址
 
 * http://gjsq.me/11435742
+* 请发送任意邮件至 GreenDizhi@gmail.com 系统将自动回复最新地址到您的邮箱
 
 == 5-31shell学习
 
