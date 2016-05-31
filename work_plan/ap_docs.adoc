@@ -114,7 +114,7 @@ image:image/memout.jpg[memout,600,600,role="center"]
 ** 且堆栈打印中有出现NULL porinter字样
 ** 每次堆栈信息不变，而且几乎必现
 * 堆栈如下图所示 +
-image:image/NULL.png[null,600,600,role="center"]
+image:image/NULL.png[null,900,900,role="center"]
 
 ==== 非法地址访问
 ==== 内存不足页表映射错误
