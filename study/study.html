@@ -449,6 +449,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_26_代码关系图工具doxygen">12. 5-26 代码关系图工具doxygen</a></li>
 <li><a href="#_5_27内核调试工具手段总结">13. 5-27内核调试工具手段总结</a></li>
 <li><a href="#_5_30greenvpn地址">14. 5-30greenVPN地址</a></li>
+<li><a href="#_5_31shell学习">15. 5-31shell学习</a></li>
 </ul>
 </div>
 </div>
@@ -1015,10 +1016,58 @@ echo $name</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_5_31shell学习">15. 5-31shell学习</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>将一个文件描述符重定向到 <mark>&amp;-</mark> 表示关闭该文件描述符，关闭后，不可以使用</p>
+</li>
+<li>
+<p>使用 <mark>exec</mark> ,该命令可以使一个定义永久有效，直到重新分配为止</p>
+<div class="ulist">
+<ul>
+<li>
+<p>比如 exec 3&gt;&amp;-</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>使用命令查看打开的文件描述符</p>
+<div class="ulist">
+<ul>
+<li>
+<p>/usr/sbin/lsof -a -p $$ -d 0,1,2    0,1,2是文件描述符的名字</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>使用 <mark>/dev/null</mark> 可以阻止消息，也可以清空一个文件: <mark>cat /dev/null &gt; testfile</mark></p>
+</li>
+<li>
+<p>#mktemp#命令会在 /tmp下建立一个名字唯一的文件，-d 参数可以创建一个目录</p>
+</li>
+<li>
+<p><mark>tee</mark> 可以让结果既在显示器上打印，又保存到指定文件中</p>
+<div class="ulist">
+<ul>
+<li>
+<p>date | tee -a filetest</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-30 09:26:15 CST
+Last updated 2016-05-31 10:53:07 CST
 </div>
 </div>
 </body>
