@@ -309,6 +309,26 @@ TIP: *doxygen* 是一个根据源码生成文档的工具，可以将代码中�
 * #tee# 可以让结果既在显示器上打印，又保存到指定文件中
 ** date | tee -a filetest
 
+== 6-6shell学习之trap
+
+* trap会捕捉到将要执行的linux 信号，从而阻止
+* 例子
+
+[source,c]
+****
+#! /bin/bash
+# test the trap
+trap "echo 'sorry,I can not stop by CRTL-C '" SIGINT SIGTERM
+echo "This is a dangerous shell"
+loop=1
+while [ $loop -lt 10  ]
+do
+echo "Loop $loop"
+sleep 5
+loop=$[ $loop+1  ]
+done
+echo "This is end of this program"
+****
 
 
 

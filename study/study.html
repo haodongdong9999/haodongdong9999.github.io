@@ -450,6 +450,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_27内核调试工具手段总结">13. 5-27内核调试工具手段总结</a></li>
 <li><a href="#_5_30greenvpn地址">14. 5-30greenVPN地址</a></li>
 <li><a href="#_5_31shell学习">15. 5-31shell学习</a></li>
+<li><a href="#_6_6shell学习之trap">16. 6-6shell学习之trap</a></li>
 </ul>
 </div>
 </div>
@@ -1067,10 +1068,43 @@ echo $name</code></pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_6_6shell学习之trap">16. 6-6shell学习之trap</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>trap会捕捉到将要执行的linux 信号，从而阻止</p>
+</li>
+<li>
+<p>例子</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>#! /bin/bash
+# test the trap
+trap "echo 'sorry,I can not stop by CRTL-C '" SIGINT SIGTERM
+echo "This is a dangerous shell"
+loop=1
+while [ $loop -lt 10  ]
+do
+echo "Loop $loop"
+sleep 5
+loop=$[ $loop+1  ]
+done
+echo "This is end of this program"</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-05-31 12:49:46 CST
+Last updated 2016-06-06 10:50:11 CST
 </div>
 </div>
 </body>
