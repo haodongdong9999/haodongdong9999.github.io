@@ -451,6 +451,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_5_30greenvpn地址">14. 5-30greenVPN地址</a></li>
 <li><a href="#_5_31shell学习">15. 5-31shell学习</a></li>
 <li><a href="#_6_6shell学习之trap">16. 6-6shell学习之trap</a></li>
+<li><a href="#_6_8学习之cront">17. 6-8学习之CRONT</a></li>
 </ul>
 </div>
 </div>
@@ -1101,10 +1102,34 @@ echo "This is end of this program"</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_6_8学习之cront">17. 6-8学习之CRONT</h2>
+<div class="sectionbody">
+<div class="sidebarblock">
+<div class="content">
+<div class="title">cron时间表</div>
+<div class="ulist">
+<ul>
+<li>
+<p>判断每月最后一天，可以用以下命令</p>
+<div class="ulist">
+<ul>
+<li>
+<p>00 12 * * * if['date + %d -d tomorrow ' = 01];then;command</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-06-06 10:50:11 CST
+Last updated 2016-06-08 09:57:45 CST
 </div>
 </div>
 </body>

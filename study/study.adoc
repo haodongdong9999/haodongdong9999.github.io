@@ -329,6 +329,11 @@ loop=$[ $loop+1  ]
 done
 echo "This is end of this program"
 ****
+== 6-8学习之CRONT
+.cron时间表
+****
+* 判断每月最后一天，可以用以下命令
+** 00 12 * * * if['date + %d -d tomorrow ' = 01];then;command
 
 
 
