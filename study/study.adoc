@@ -334,6 +334,26 @@ echo "This is end of this program"
 ****
 * 判断每月最后一天，可以用以下命令
 ** 00 12 * * * if['date + %d -d tomorrow ' = 01];then;command
+****
+== 6-12学习之shell中的函数返回值
 
+* shell中的函数返回值可以用 #return#
+* 可以用 [red]#$?# 来获取函数退出码
+
+NOTE: 采用 #$?# return返回值必须在 0-255 之间
+
+* 可以采用下列例子巧妙的返回大于255的值
+
+[source,c]
+
+function my_test
+{
+    read -P "Enter a value" value
+    echo $[ $value*2 ]
+
+}
+
+result='my_test'
+echo  "The result is $result "
 
 
