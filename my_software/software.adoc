@@ -117,3 +117,6 @@ TIP: 一定要首先安装 #zsh#
 * chsh -s /bin/zsh
 * 加载自己的zsh配置即可
 
+NOTE:  遇到问题 #Could not resolve airline theme "solarized". Themes have been migrated to github.com/vim-airline/vim#
+解决办法是，在 ～/.vimrc 中添加： #Plugin 'vim-airline/vim-airline-themes'#
+
