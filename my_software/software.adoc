@@ -104,6 +104,7 @@ GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
 == 构建zsh环境
 
 .如何安装zsh环境
+
 TIP: 一定要首先安装 #zsh#
 
 * yum install zsh
