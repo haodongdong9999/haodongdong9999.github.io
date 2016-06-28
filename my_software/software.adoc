@@ -100,3 +100,19 @@ GEM_PATH=/home/hdd/.rvm/gems/ruby-2.2.1:/home/hdd/.rvm/gems/ruby-2.2.1@global
 <2> 将 `sample.adoc` 输出为 `sample.html`，将 `sample.adoc` 中嵌入的 _plantuml_、 _diaa_ 转为为图片并插入 `sample.html`中
 <3> 将 `sample.adoc` 输出为 `sample.pdf`
 <4> 将 `sample.adoc` 输出为 `sample.html`，并将图片直接嵌入到 `sample.html`，这样不依赖外部图片文件
+
+== 构建zsh环境
+
+.如何安装zsh环境
+TIP: 一定要首先安装 #zsh#
+
+* yum install zsh
+* git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+* cp ~/.zshrc ~/.zshrc.orig
+
+* cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+* chsh -s /bin/zsh
+* 加载自己的zsh配置即可
+
