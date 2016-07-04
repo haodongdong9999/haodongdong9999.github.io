@@ -34,7 +34,6 @@ TIP: 堆栈问题排查
 - [*] 根据log信息确认定位问题
 - [ ] 结论
 ****
-+
 
 * 结论
 
@@ -60,8 +59,9 @@ image:image/wa2020.jpg[image.600.600.role="center"]
 *** OA2025AC如下图
 
 image:image/oa2025ac.jpg[image.600.600.role="center"]
-+
+
 * 已完成
+
 - [*] WA2020/CA1020/TA3025合入内存门限机制
 - [*] TA2025AC 属于偶像，且换设备后无法复现，无法确认是否软件问题
 
