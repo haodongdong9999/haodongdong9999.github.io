@@ -356,4 +356,8 @@ function my_test
 result='my_test'
 echo  "The result is $result "
 
+== 7-28日配置linux下wireshark
 
+NOTE: 注意根据配置一步一步来
+
+* link:http://jingyan.baidu.com/article/c74d60009d992f0f6a595de6.html
