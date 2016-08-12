@@ -7,4 +7,5 @@
 * link:work.html[五月工作记录]
 * link:work6.html[六月工作记录]
 * link:work7.html[七月工作记录]
+* link:work8.html[八月工作记录]
 * link:ap_docs.html[AP技术排查总结]

@@ -1,0 +1,20 @@
+= 工作内容
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 8-12工作记录
+
+TIP: 配合赵灿验证AP胖瘦模式零配置流程
+
+.今日计划
+****
+- [*] 新版本验证
+- [*] 查看AC重启日志，进一步确定重启原因
+- [ ] AP胖瘦模式零配置最后验证
+- [ ] 每日学习
+****
