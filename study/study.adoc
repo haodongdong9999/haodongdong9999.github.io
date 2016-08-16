@@ -361,3 +361,9 @@ echo  "The result is $result "
 NOTE: 注意根据配置一步一步来
 
 * link:http://jingyan.baidu.com/article/c74d60009d992f0f6a595de6.html
+
+== 8-16配置代理服务器访问外网
+
+* 地址为：link:https://shadowsocks.org/en/download/clients.html
+* 下载相对应的客户端，配置服务器地址
+* 然后配置相对应的浏览器代理配置即可
