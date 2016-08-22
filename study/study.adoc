@@ -367,3 +367,11 @@ NOTE: 注意根据配置一步一步来
 * 地址为：link:https://shadowsocks.org/en/download/clients.html
 * 下载相对应的客户端，配置服务器地址
 * 然后配置相对应的浏览器代理配置即可
+
+== 8-22 构建自动telnet脚本
+
+TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件：expect
+
+* apt-get install expect
+* 参考目录下auto_telnet.sh
+* 修改脚本参数
