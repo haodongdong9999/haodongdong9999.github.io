@@ -1,0 +1,22 @@
+= 工作内容
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+
+== 9-12工作记录
+
+TIP: 配合赵灿验证AP胖瘦模式零配置流程
+
+.今日计划
+****
+- [*] 完成ftpX挂死问题，完成提交
+- [*] 完成AP胖瘦模式配置的网页侧问题
+- [ ] 排查新BUG
+- [ ] 每日学习
+****
+
