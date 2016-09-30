@@ -380,3 +380,4 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 == 9-30学习vimdiff的命令
 
 * link:http://jingyan.baidu.com/article/ae97a646da05debbfd461d33.html[学习vimdiff]
+* 学习
