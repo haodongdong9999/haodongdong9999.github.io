@@ -202,7 +202,6 @@ int main(int argc, char *argv[])
 SELINUX=disabled +
 [root@Gitlab-CI-Build0 ~]# chkconfig --del iptables +
 [root@Gitlab-CI-Build0 ~]# cat /etc/samba/smb.conf +
-[homes]
 comment = Home Directories +
 browseable = yes +
 writable = yes +
@@ -315,6 +314,7 @@ TIP: *doxygen* 是一个根据源码生成文档的工具，可以将代码中�
 * 例子
 
 [source,c]
+
 ****
 #! /bin/bash
 # test the trap
