@@ -381,3 +381,7 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 
 * link:http://jingyan.baidu.com/article/ae97a646da05debbfd461d33.html[学习vimdiff]
 * 学习
+
+== 10-9日上海幼儿园论坛
+
+* link:http://www.libaclub.com/t_13_7379921_7.htm[幼儿园报名论坛]
