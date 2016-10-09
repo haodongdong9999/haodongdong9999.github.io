@@ -385,3 +385,4 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 == 10-9日上海幼儿园论坛
 
 * link:http://www.libaclub.com/t_13_7379921_7.htm[幼儿园报名论坛]
+* link:http://www.age06.com/Age06.Web/[上海学前教育官网]
