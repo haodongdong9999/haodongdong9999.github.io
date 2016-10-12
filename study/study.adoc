@@ -390,8 +390,8 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 
 == 10-12国外免费素材图片网站
 
-* link:http://stokpic.com
-* link:http://pixabay.com
-* link:http://finda.photo
-* link:http://unsplash.com
-* link:http://gettyimages.com
+* link: http://stokpic.com
+* link: http://pixabay.com
+* link: http://finda.photo
+* link: http://unsplash.com
+* link: http://gettyimages.com
