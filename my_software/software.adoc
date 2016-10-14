@@ -148,3 +148,29 @@ TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使�
 * sudo apt-get update
 * sudo apt-get install emacs-snapshot
 
+== 配置shadowsocks　上谷歌
+
+* aws服务端安装pip,apt-get install python-pip
+* pip install shadowsocks
+* 配置文件名为.json的配置文件
+* 配置文件内容为
+
+[source,python]
+
+{
+    "server":"0.0.0.0",
+        "server_port":6666,
+        "local_address": "127.0.0.1",
+        "local_port":1080,
+        "password":"12345678",
+        "timeout":600,
+        "method":"aes-256-cfb",
+        "fast_open": true
+
+}
+
+* 客户端安装客户端软件地址为:https://shadowsocks.org/en/download/clients.html
+
+* 配置客户端，打开设置-->网络设置-->代理配置-->配置代理路径为file:///etc/proxy.pac
+* proxy.pac 文件在工程中
+* 就可以了，大功告成。
