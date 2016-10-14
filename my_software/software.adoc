@@ -139,8 +139,8 @@ TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使�
 == 根据亚马逊云搭建VPN服务器
 
 * wget https://git.io/vpnsetup -O vpnsetup.sh && sudo sh vpnsetup.sh
-* VPN 教程在 github 上：https://github.com/hwdsl2/setup-ipsec-vpn
-* 客户端地址：https://shadowsocks.org/en/download/clients.html
+* VPN 教程在 github 上: https://github.com/hwdsl2/setup-ipsec-vpn
+* 客户端地址: https://shadowsocks.org/en/download/clients.html
 
 == 安装emacs
 
