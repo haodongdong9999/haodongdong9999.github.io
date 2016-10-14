@@ -450,6 +450,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_远程构建ams云服务器">7. 远程构建ams云服务器</a></li>
 <li><a href="#_根据亚马逊云搭建vpn服务器">8. 根据亚马逊云搭建VPN服务器</a></li>
 <li><a href="#_安装emacs">9. 安装emacs</a></li>
+<li><a href="#_配置shadowsocks_上谷歌">10. 配置shadowsocks　上谷歌</a></li>
 </ul>
 </div>
 </div>
@@ -788,10 +789,63 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_配置shadowsocks_上谷歌">10. 配置shadowsocks　上谷歌</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>aws服务端安装pip,apt-get install python-pip</p>
+</li>
+<li>
+<p>pip install shadowsocks</p>
+</li>
+<li>
+<p>配置文件名为.json的配置文件</p>
+</li>
+<li>
+<p>配置文件内容为</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="python">{
+    "server":"0.0.0.0",
+        "server_port":6666,
+        "local_address": "127.0.0.1",
+        "local_port":1080,
+        "password":"12345678",
+        "timeout":600,
+        "method":"aes-256-cfb",
+        "fast_open": true</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>}</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>客户端安装客户端软件地址为:https://shadowsocks.org/en/download/clients.html</p>
+</li>
+<li>
+<p>配置客户端，打开设置-&#8594;网络设置-&#8594;代理配置-&#8594;配置代理路径为file:///etc/proxy.pac</p>
+</li>
+<li>
+<p>proxy.pac 文件在工程中</p>
+</li>
+<li>
+<p>就可以了，大功告成。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-14 13:58:57 CST
+Last updated 2016-10-14 16:25:47 CST
 </div>
 </div>
 </body>
