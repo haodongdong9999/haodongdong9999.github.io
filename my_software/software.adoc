@@ -122,9 +122,9 @@ NOTE:  遇到问题 #Could not resolve airline theme "solarized". Themes have be
 
 == 远程构建ams云服务器
 
-.申请亚马逊云地址 link:https://aws.amazon.com/cn/
-.install EC2
-.install ubuntu
+* 申请亚马逊云地址 link:https://aws.amazon.com/cn/
+* install EC2
+* install ubuntu
 
 TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使用。
 
