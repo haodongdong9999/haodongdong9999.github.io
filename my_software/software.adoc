@@ -136,4 +136,15 @@ TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使�
 * 也就是说，将本地机器的id_rsa.pub　复制到亚马逊机器的authorized_keys下
 * 然后就可以通过hdd@52.197.239.60　登陆了
 
+== 根据亚马逊云搭建VPN服务器
+
+* wget https://git.io/vpnsetup -O vpnsetup.sh && sudo sh vpnsetup.sh
+* VPN 教程在 github 上：https://github.com/hwdsl2/setup-ipsec-vpn
+* 客户端地址：https://shadowsocks.org/en/download/clients.html
+
+== 安装emacs
+
+* sudo add-apt-repository -y ppa:ubuntu-elisp
+* sudo apt-get update
+* sudo apt-get install emacs-snapshot
 
