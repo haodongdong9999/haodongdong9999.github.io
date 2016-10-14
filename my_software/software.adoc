@@ -120,3 +120,20 @@ TIP: 一定要首先安装 #zsh#
 NOTE:  遇到问题 #Could not resolve airline theme "solarized". Themes have been migrated to github.com/vim-airline/vim#
 解决办法是，在 ～/.vimrc 中添加： #Plugin 'vim-airline/vim-airline-themes'#
 
+== 远程构建ams云服务器
+
+.申请亚马逊云地址 link:https://aws.amazon.com/cn/
+.install EC2
+.install ubuntu
+
+TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使用。
+
+* 原有的登陆方式比较麻烦，并且默认的用户名是ubuntu，还需要使用公钥，比较麻烦。
+* 首先useradd 一个用户比如hdd 
+* su hdd
+* 生成ssh 公钥和私钥　id_rsd和id_rsa.pub文件
+* 然后在亚马逊机器上，打开authorized_keys，添加需要登陆这台服务器的linux系统的公钥即可
+* 也就是说，将本地机器的id_rsa.pub　复制到亚马逊机器的authorized_keys下
+* 然后就可以通过hdd@52.197.239.60　登陆了
+
+
