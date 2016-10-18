@@ -395,3 +395,8 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 * link: http://finda.photo
 * link: http://unsplash.com
 * link: http://gettyimages.com
+
+== emacs中的whick-key地址
+
+* link:https://github.com/justbur/emacs-which-key
+
