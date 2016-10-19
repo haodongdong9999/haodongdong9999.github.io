@@ -177,9 +177,9 @@ TIP: 安装完成后，就是一台远端的linux环境，公网地址可以使�
 
 == ubutu下安装英汉翻译词典
 
-* 下载安装　　apt-get install startdic
+* 下载安装　　apt-get install stardict
 * 软件地址: https://code.google.com/archive/p/stardict-3/downloads
 * 下载词典库:link: https://www.oschina.net/news/36374/startdict-3-0-4
 * 词典库地址: link:http://abloz.com/huzheng/stardict-dic/zh_CN/[词典库]
-* 将词典解压到　/usr/share/startdic/dic中
+* 将词典解压到　/usr/share/stardict/dic中
 * 打开划词开关即可
