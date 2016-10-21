@@ -400,3 +400,6 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 
 * link:https://github.com/justbur/emacs-which-key
 
+== 配置进程不被oom杀掉
+
+*  pgrep -f "/usr/sbin/sshd" | while read PID;do echo -17 > /proc/$PID/oom_adj;done 

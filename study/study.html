@@ -460,6 +460,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_10_9日上海幼儿园论坛">23. 10-9日上海幼儿园论坛</a></li>
 <li><a href="#_10_12国外免费素材图片网站">24. 10-12国外免费素材图片网站</a></li>
 <li><a href="#_emacs中的whick_key地址">25. emacs中的whick-key地址</a></li>
+<li><a href="#_配置进程不被oom杀掉">26. 配置进程不被oom杀掉</a></li>
 </ul>
 </div>
 </div>
@@ -1325,10 +1326,22 @@ echo  "The result is $result "</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_配置进程不被oom杀掉">26. 配置进程不被oom杀掉</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>pgrep -f "/usr/sbin/sshd" | while read PID;do echo -17 &gt; /proc/$PID/oom_adj;done</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-18 16:36:34 CST
+Last updated 2016-10-21 16:02:59 CST
 </div>
 </div>
 </body>
