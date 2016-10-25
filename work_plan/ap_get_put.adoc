@@ -42,6 +42,7 @@ image:image/ap2.png[image,600,600,role="center"]
 ** nc用法
 
 . 使用nc，把AP上一个文件xxx，发送到AC（或者网关，或者任何一台支持nc的设备）
+
 <1>在需要接收文件的设备上，运行如下命令:
 
 #nc -l -p 8880 > test.log#  端口可以修改，文件名假设是位于ap上tmp/test.log
@@ -55,12 +56,17 @@ image:image/ap2.png[image,600,600,role="center"]
 整个过程如下图所示:
 
 . AC侧
+
 image:image/ac_nc.png[image,600,600,role="center"]
 
 . AP侧
+
 image:image/nc_ap.png[image,600,600,role="center"]
 
 . 结果查看
+
 image:image/nc_3.png[image,600,600,role="center"]
+
+*** tfpX用法
 
 
