@@ -67,6 +67,28 @@ image:image/nc_ap.png[image,600,600,role="center"]
 
 image:image/nc_3.png[image,600,600,role="center"]
 
-*** tfpX用法
+*** ftpX用法
+
+* ftpX 是AP侧我们自己实现的一个tfp服务程序(注意下面例子以AC或者网关为例)。可以AP上传送和获取文件，主要用于版本的升级。
+* 传送AP上一个文件到一个支持ftp的设备上方法如下:
+
+<1> 进入AP文件所在路径下
+
+<2> 执行命令　#ftpX put 10.60.200.237 21 gbcom gbcom /tmp/cpuinfo ./cpuinfo# +
+命令中，10.60.200.237是AC的地址，#21#　是端口,文件位于AP的　/tmp/下cpuinfo
+
+<3> 登陆AC的ftp配置目录，企业网AC在　/usr/local/ac下
+
+* 整个执行过程如下图所示：
+
+.AP侧：
+
+image:image/ap_ftpx.png[image,600,600,role="center"]
+
+.AC侧
+
+
+
+
 
 

@@ -591,9 +591,40 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>tfpX用法</p>
+<p>ftpX用法</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ftpX 是AP侧我们自己实现的一个tfp服务程序(注意下面例子以AC或者网关为例)。可以AP上传送和获取文件，主要用于版本的升级。</p>
+</li>
+<li>
+<p>传送AP上一个文件到一个支持ftp的设备上方法如下:</p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>进入AP文件所在路径下</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>执行命令　<mark>ftpX put 10.60.200.237 21 gbcom gbcom /tmp/cpuinfo ./cpuinfo</mark><br>
+命令中，10.60.200.237是AC的地址，<mark>21</mark>　是端口,文件位于AP的　/tmp/下cpuinfo</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>登陆AC的ftp配置目录，企业网AC在　/usr/local/ac下</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<div class="title">AP侧：</div>
+<p><span class="image center"><img src="data:image/png:base64," alt="image" width="600" height="600"></span></p>
 </div>
 </div>
 </div>
@@ -601,7 +632,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-25 15:37:00 CST
+Last updated 2016-10-25 16:06:32 CST
 </div>
 </div>
 </body>
