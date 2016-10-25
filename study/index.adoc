@@ -4,5 +4,5 @@
 
 :icons: font
 
-* link:studay.html[综合知识归类]
+* link:study.html[综合知识归类]
 * link:kernel.html[linux内核相关]
