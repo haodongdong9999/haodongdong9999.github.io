@@ -1,0 +1,8 @@
+= 学习目录
+
+学习，每天积累
+
+:icons: font
+
+* link:studay.html[综合知识归类]
+* link:kernel.html[linux内核相关]

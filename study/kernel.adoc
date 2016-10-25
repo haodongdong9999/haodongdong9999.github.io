@@ -1,0 +1,17 @@
+= 学习笔记
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 5-6学习内容
+
+.今日学习计划
+****
+
+- [*] 学习shell中for/while 用法
+- [*] 学习nc用法
+
