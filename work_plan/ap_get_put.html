@@ -549,20 +549,35 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>&lt;1&gt;在需要接收文件的设备上，运行如下命令:</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>在需要接收文件的设备上，运行如下命令:</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><mark>nc -l -p 8880 &gt; test.log</mark>  端口可以修改，文件名假设是位于ap上tmp/test.log</p>
 </div>
-<div class="paragraph">
-<p>&lt;2&gt;在AP上文件目录下执行以下命令：</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>在AP上文件目录下执行以下命令：</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p><mark>cat test.log | nc 192.168.1.136 8880</mark>  地址是接收文件的地址，端口是第一步中绑定的端口</p>
 </div>
-<div class="paragraph">
-<p>&lt;3&gt;在接收端设备上可以看到test.log已经收到。完美。</p>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>在接收端设备上可以看到test.log已经收到。完美。</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>整个过程如下图所示:</p>
@@ -610,7 +625,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-25 15:28:54 CST
+Last updated 2016-10-25 15:32:19 CST
 </div>
 </div>
 </body>
