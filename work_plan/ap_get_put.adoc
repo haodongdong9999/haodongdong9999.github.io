@@ -16,9 +16,9 @@ TIP: 该文档总结了AP和不同设备之间上传或者下载文件的所有�
 . ftpX
 . ftpget
 
-=== 各种方法使用详细总结
+== 各种方法使用详细总结
 
-* tftp
+==== tftp
 . PC端和AP
 
 　AP上默认开启了tftp服务，PC端需要下载第三方的tftp客户端即可。
@@ -39,7 +39,7 @@ AP上获取文件 <1> cd /tmp <2> #tftp -gl /tmp/xxx x.x.x.x(PC端地址)#
 
 image:image/ap2.png[image,600,600,role="center"]
 
-** nc用法
+==== nc用法
 
 .使用nc，把AP上一个文件xxx，发送到AC（或者网关，或者任何一台支持nc的设备）
 
@@ -67,7 +67,7 @@ image:image/nc_ap.png[image,600,600,role="center"]
 
 image:image/nc_3.png[image,600,600,role="center"]
 
-*** ftpX用法
+==== ftpX用法
 
 * ftpX 是AP侧我们自己实现的一个tfp服务程序(注意下面例子以AC或者网关为例)。可以AP上传送和获取文件，主要用于版本的升级。
 * 传送AP上一个文件到一个支持ftp的设备上方法如下:
@@ -89,8 +89,33 @@ image:image/ap_ftpx.png[image,600,600,role="center"]
 
 image:image/ac_ftpx.png[image,600,600,role="center"]
 
+* ptpX get用法类似，套用即可，不再详细叙述
 
+==== ftpget/ftpput用法
 
+* ftpget/ftpput 是AP上支持传输文件的另外一个基于ftp的服务程序。
+* 在AP上获取AC上的一个文件方法
+
+<1> AC上文件放在　#/usr/local/ac#　下
+
+<2> AP上执行命令:ftpget -u gbcom -p gbcom -P 21 x.x.x.x /tmp/xxx xxx
+
+<3> AP上在/tmp下查看文件xxx即可
+
+<4> 使用举例如下图所示
+
+.AC上
+
+image:image/ac_ftpget.png[image,600,600,role="center"]
+
+.AP上
+
+image:image/ap_ftpget.png[image,600,600,role="center"]
+
+* ftpput使用方法类似，套用即可
+
+IMPORTANT: 以上方法，可以实现AP和AC之间上传和下载文件。这些方法我都亲自测试可用，方便大家以后排查问题使用。
+任何问题，请和我讨论。
 
 
 
