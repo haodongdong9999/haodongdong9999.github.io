@@ -1,4 +1,4 @@
-= 学习笔记
+= 内核笔记
 认真
 :toc:
 :toclevels: 4
@@ -7,11 +7,13 @@
 :icons: font
 :sectnums:
 
-== 5-6学习内容
+== linux内存篇之oom机制
 
-.今日学习计划
-****
+TIP: linux内存管理非常复杂，今日开始用心研究学习，并且记录
 
-- [*] 学习shell中for/while 用法
-- [*] 学习nc用法
+oom学习::
+
+* 博客不错: link:http://www.wowotech.net/memory_management/oom.html[linux_oom相关参数介绍]
+
+
 
