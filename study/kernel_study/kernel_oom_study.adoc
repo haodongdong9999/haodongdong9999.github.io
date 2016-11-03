@@ -47,9 +47,23 @@ image:image/UMA.png[image,600,600,role="center"]
 
 image:image/NUMA.png[image,600,600,role="center"]
 
-* 那么，为何说在NUMA系统上，产生oom并非一定是内存不足了呢？请看下一节介绍
+=== 参数panic_on_oom
 
+* panic_on_oom　位于系统 #/proc/sys/vm/# 下，该值配置不同的数值，内核处理oom时就会有不同的策略
+* 配置该参数，会调用内核函数接收配置的数值，决定启动不同的处理策略,内核接收函数如下图：
 
+image:image/oom_code.png[image,600,600,role="center"]
+
+* 不同的参数值，表示内核遇到oom时，应当如何处置：
+** panic_on_oom = 0 直接返回，相当于开启了oom_killer机制
+** panic_on_oom = 1 并且没有配置无约束标志　**#CONSTRAINT_NONE#** ,可以尝试oom_killer
+** panic_on_oom = 2 直接panic
+
+=== oom原因判定
+
+* 内核中有四个标志性变量，分别表示一定的约束条件，如下图所示：
+
+image:image/four.png[image,600,600,role="center"]
 
 
 
