@@ -37,6 +37,15 @@ TIP: kernel产生oom，是否说明系统一定内存不足了呢？
 
 === UMA介绍
 
+* UMA计算机（一致内存访问，uniform memory access）,这种类型内核将可用的内存以连续方式组织起来（也可能存在小洞情况以后再总结），在SMP系统中
+每个CPU访问各自的内存区都是异样快。简单类似以下图示情况：
+
+image:image/UMA.png[image,600,600,role="center"]
+
+* NUMA计算机（非一致内存访问，non-uniform memory access）,这种类型总是多处理器计算机，系统的每个CPU都有本地内存，各个CPU之间通过总线连接起来
+所以每个CPU都可以访问其它处理器的本地内存，但是访问速度上会慢一些。简单图示如下图：
+
+image:image/NUMA.png[image,600,600,role="center"]
 
 
 
