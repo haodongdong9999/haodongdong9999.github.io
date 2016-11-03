@@ -65,6 +65,7 @@ image:image/oom_code.png[image,600,600,role="center"]
 
 image:image/four.png[image,600,600,role="center"]
 
+* 每个标志位的含义解释如下：
 
 
 
