@@ -1,19 +1,8 @@
-= 内核笔记
-认真
-:toc:
-:toclevels: 4
-:toc-position: left
-:source-highlighter: pygments
+= 学习目录
+
+学习，每天积累
+
 :icons: font
-:sectnums:
 
-== linux内存篇之oom机制
-
-TIP: linux内存管理非常复杂，今日开始用心研究学习，并且记录
-
-oom学习::
-
-* 博客不错: link:http://www.wowotech.net/memory_management/oom.html[linux_oom相关参数介绍]
-
-
-
+* link:kernel_study/kernel_oom_study.html[linux内核内存管理之OOM]
+* link:kernel_study/kernel_page_study.html[linux内核内存管理之页表]

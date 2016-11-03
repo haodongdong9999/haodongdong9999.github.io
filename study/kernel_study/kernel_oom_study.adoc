@@ -1,0 +1,13 @@
+= linux内核内存管理之oom
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== oom学习
+[options=interactive]
+- [*] 完成BUG
+- [ ] 写总结
