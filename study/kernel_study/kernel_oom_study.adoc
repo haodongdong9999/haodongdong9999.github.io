@@ -21,9 +21,9 @@ oom 是out of memory的缩写。对linux而言，内核一般将处理器的虚�
 
 * linux kernel 遇到了oom会怎么样？通常内核此时有两种选择：
 
-<1> 系统崩溃并产生堆栈，就是常说的kernel panic
+<1> 系统崩溃并产生堆栈，就是常说的kernel panic,也就是立刻死机
 
-<2> 内核会启动一个机制：OOM Killer
+<2> 内核会启动一个机制：OOM Killer，仍然试图继续运行
 
     * OOM killer（Out-Of-Memory killer),该机制会监控系统中占用内存过大的进程，尤其是那些突然消耗非常大内存的进程，
 　　
@@ -33,7 +33,7 @@ oom 是out of memory的缩写。对linux而言，内核一般将处理器的虚�
 
 TIP: kernel产生oom，是否说明系统一定内存不足了呢？
 
-* 对于该问题的答案，要分情况来看待，对于 __#UMA#__ 而言，一般就是内存不足了，但对于__#NUMA#__ 而言，并不一定。那么，究竟UMA和NUMA是什么？
+* 对于该问题的答案，要分情况来看待，对于 **__#UMA#__**  而言，一般就是内存不足了，但对于 **__#NUMA#__**  而言，并不一定。那么，究竟UMA和NUMA是什么？
 
 === UMA和NUMA介绍
 
@@ -46,6 +46,10 @@ image:image/UMA.png[image,600,600,role="center"]
 所以每个CPU都可以访问其它处理器的本地内存，但是访问速度上会慢一些。简单图示如下图：
 
 image:image/NUMA.png[image,600,600,role="center"]
+
+* 那么，为何说在NUMA系统上，产生oom并非一定是内存不足了呢？请看下一节介绍
+
+
 
 
 
