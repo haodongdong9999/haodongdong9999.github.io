@@ -631,7 +631,24 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 </div>
 <div class="sect2">
 <h3 id="_oom_kill_allocating_task介绍">4.1. oom_kill_allocating_task介绍</h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p>该参数 <mark>oom_kill_allocating_task</mark> 是决定系统产生oom后，oom_killer机制启动，内核到底可以杀掉哪个进程。
+配置不同的数值（0/1）,内核可以有两个选择</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red"><mark>1</mark></strong>  哪个进程触发了oom，就干掉它</p>
+</li>
+<li>
+<p><strong class="red"><mark>0</mark></strong> 根据一定算法计算出，此刻哪个进程“得分”最高，干掉它</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_oom_dump_tasks介绍">4.2. oom_dump_tasks介绍</h3>
@@ -651,7 +668,7 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-04 10:47:24 CST
+Last updated 2016-11-04 11:02:44 CST
 </div>
 </div>
 </body>
