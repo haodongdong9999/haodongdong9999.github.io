@@ -440,6 +440,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_oom原因判定">3.3. oom原因判定</a></li>
 </ul>
 </li>
+<li><a href="#_oom有关的几个参数配置参考">4. OOM有关的几个参数配置参考</a></li>
 </ul>
 </div>
 </div>
@@ -555,7 +556,7 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 <p>panic_on_oom = 0 直接返回，相当于开启了oom_killer机制</p>
 </li>
 <li>
-<p>panic_on_oom = 1 并且没有配置无约束标志　<strong><mark>CONSTRAINT_NONE</mark></strong> ,可以尝试oom_killer</p>
+<p>panic_on_oom = 1 并且没有配置无约束标志　<strong><mark>CONSTRAINT_NONE</mark></strong> ,可以尝试oom_killer。<em>但是UMA系统，该处总是 <strong><mark>CONSTRAINT_NONE</mark></strong></em></p>
 </li>
 <li>
 <p>panic_on_oom = 2 直接panic</p>
@@ -581,10 +582,35 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 <div class="ulist">
 <ul>
 <li>
-<p>每个标志位的含义解释如下：</p>
+<p>每个标志位的含义解释如下，需要说明的是，下列配置选项仅针对　<span class="red"><strong><em>NUMA</em></strong></span> :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>[red] <mark>CONSTRAINT_CPUSET</mark>  cpuset是linux kernel的一种机制，该机制可以把一组cpu和memory node分配给特定的
+一组进程。如果此时出现了OOM，仅仅说明该进程能分配memory的那个node出现问题，此时系统还有很多内存。</p>
+</li>
+<li>
+<p>[red] <mark>CONSTRAINT_MEMORY_POLICY</mark>  memory policy是NUMA系统中，如何控制分配各个memory node资源的一个策略模块。
+产生OOM，也可能是该memory policy出现问题导致。</p>
+</li>
+<li>
+<p>[red] <mark>CONSTRAINT_MEMCG</mark>  memory control group,简单说就是控制系统memory分配的控制器。该控制器可以将一组进程
+内存使用限制在一个范围呢，如果超出该范围，就会出现 <mark>OOM</mark></p>
 </li>
 </ul>
 </div>
+</li>
+<li>
+<p>综上，对于UMA系统，出现OOM,一般就是内存不足了。但是对于NUMA系统，出现OOM,或许系统还有充足的内存，具体原因就要进一步分析了。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_oom有关的几个参数配置参考">4. OOM有关的几个参数配置参考</h2>
+<div class="sectionbody">
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -598,10 +624,9 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-03 18:28:13 CST
+Last updated 2016-11-04 10:00:07 CST
 </div>
 </div>
 </body>
