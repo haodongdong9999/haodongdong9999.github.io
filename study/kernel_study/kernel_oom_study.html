@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.4">
-<meta name="author" content="认真">
+<meta name="author" content="郝东东">
 <title>linux内核内存管理之oom</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -426,7 +426,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="header">
 <h1>linux内核内存管理之oom</h1>
 <div class="details">
-<span id="author" class="author">认真</span><br>
+<span id="author" class="author">郝东东</span><br>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -464,11 +464,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
-<pre>oom 是out of memory的缩写。对linux而言，内核一般将处理器的虚拟地址空间划分为两个部分。底部比较大的部分用于用户进程，
+<pre>* oom 是out of memory的缩写。对linux而言，内核一般将处理器的虚拟地址空间划分为两个部分。底部比较大的部分用于用户进程，
 顶部专门用于内核。可用的物理内存被映射到内核的地址空间中，上层所有的进程不能直接操作物理内存，而是通过页表访问内存。
 所以linux运行期间，需要不断的维护页表的申请，回收，再利用以保证程序可以有充足的可利用的内存。
 
-那么，如果某个时刻，由于系统参数配置不当或者系统存在内存泄露等问题，造成了kernel分配page frame时候遇到内存耗尽，无法分配成功。
+* 那么，如果某个时刻，由于系统参数配置不当或者系统存在内存泄露等问题，造成了kernel分配page frame时候遇到内存耗尽，无法分配成功。
 此时kernek遇到的情况，就是一种oom情形。</pre>
 </div>
 </div>
@@ -869,7 +869,7 @@ oom_score，分数越高，被内核杀掉的几率越高。然而这个oom_scor
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-04 14:53:23 CST
+Last updated 2016-11-04 15:12:02 CST
 </div>
 </div>
 </body>
