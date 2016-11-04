@@ -65,7 +65,7 @@ image:image/oom_code.png[image,600,600,role="center"]
 
 image:image/four.png[image,600,600,role="center"]
 
-* 每个标志位的含义解释如下，需要说明的是，下列配置选项仅针对[red]#**__NUMA__**# :
+* 每个标志位的含义解释如下，需要说明的是，下列配置选项仅针对 [red]#**__NUMA__**# :
 ** [red]#__CONSTRAINT_CPUSET__#  cpuset是linux kernel的一种机制，该机制可以把一组cpu和memory node分配给特定的
 一组进程。如果此时出现了OOM，仅仅说明该进程能分配memory的那个node出现问题，此时系统还有很多内存。
 ** [red]#__CONSTRAINT_MEMORY_POLICY__#  memory policy是NUMA系统中，如何控制分配各个memory node资源的一个策略模块。
