@@ -119,7 +119,8 @@ image:image/oom_obj1.png[image,600,600,role="center"]
 ****
 [source,shell]
 
-__pgrep -f "sshd" | while read PID; do echo -17 > /proc/$PID/oom_adj;done__
+pgrep -f "sshd" | while read PID; do echo -17 > /proc/$PID/oom_adj;done
+
 ****
 
 == 内存有关其它配置
@@ -134,6 +135,9 @@ WARNING: #min_free_kbytes#　这个值配置时候一定要非常慎重，因为
 如果该值配置太低，导致系统挂起并触发oom的killer杀死多个进程。之前的TA98设备该值过低，导致powerap不断被杀掉导致AP离线。
 如果该值配置过高(占系统总内存的5%-10%),会造成系统很快内存不足。
 
+** 以下图示说明了系统总内存和 min_free_kbytes最低值的对应关系参考:
+
+image:image/min_free_kbytes.png[image,600,600,role="center"]
 
 
 
