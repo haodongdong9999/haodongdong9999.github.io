@@ -734,9 +734,7 @@ oom_score，分数越高，被内核杀掉的几率越高。然而这个oom_scor
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>[source,c]
-
-pgrep -f "sshd" | while read PID; do echo -17 &gt; /proc/$PID/oom_adj;done</pre>
+<pre>pgrep -f "sshd" | while read PID; do echo -17 &gt; /proc/$PID/oom_adj;done</pre>
 </div>
 </div>
 </div>
@@ -871,7 +869,7 @@ pgrep -f "sshd" | while read PID; do echo -17 &gt; /proc/$PID/oom_adj;done</pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-04 14:51:22 CST
+Last updated 2016-11-04 14:53:23 CST
 </div>
 </div>
 </body>
