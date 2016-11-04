@@ -444,6 +444,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel2">
 <li><a href="#_oom_kill_allocating_task介绍">4.1. oom_kill_allocating_task介绍</a></li>
 <li><a href="#_oom_dump_tasks介绍">4.2. oom_dump_tasks介绍</a></li>
+<li><a href="#_其他参数">4.3. 其他参数</a></li>
 </ul>
 </li>
 </ul>
@@ -658,6 +659,55 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 </div>
 <div class="sect2">
 <h3 id="_oom_dump_tasks介绍">4.2. oom_dump_tasks介绍</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>该参数 <mark>oom_dump_task</mark> 可以配置 <mark>0</mark> 或者 <mark>1</mark>,主要是系统产生oom时候，是否要收集输出一些进程信息。</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong class="red"><mark>0</mark></strong> --不会打印出该信息</p>
+</li>
+<li>
+<p><strong class="red"><mark>1</mark></strong> --要去收集进程关于内存方面的信息并且打出，方便找出oom具体原因</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_其他参数">4.3. 其他参数</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>常见的其他进程相关的oom参数有以下几个</p>
+<div class="ulist">
+<ul>
+<li>
+<p>oom_adj</p>
+</li>
+<li>
+<p>oom_score</p>
+</li>
+<li>
+<p>oom_score_adj</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>这些参数位于 <mark>/proc/PID/</mark> 下，其中PID指的是进程ID,如下图</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="image center"><img src="data:image/png:base64," alt="image" width="600" height="600"></span></p>
+</div>
+<div class="paragraph">
+<p>*</p>
+</div>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -674,7 +724,7 @@ kernel产生oom，是否说明系统一定内存不足了呢？
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-04 11:19:14 CST
+Last updated 2016-11-04 11:31:55 CST
 </div>
 </div>
 </body>

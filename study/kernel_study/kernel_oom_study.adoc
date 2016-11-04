@@ -94,8 +94,21 @@ image:image/oom_config_2.png[image,600,600,role="center"]
 
 === oom_dump_tasks介绍
 
+* 该参数 #oom_dump_task# 可以配置 #0# 或者 #1#,主要是系统产生oom时候，是否要收集输出一些进程信息。
+** [red]**#0#** --不会打印出该信息
+** [red]**#1#** --要去收集进程关于内存方面的信息并且打出，方便找出oom具体原因
 
+=== 其他参数
 
+* 常见的其他进程相关的oom参数有以下几个
+** oom_adj
+** oom_score
+** oom_score_adj
+* 这些参数位于 #/proc/PID/# 下，其中PID指的是进程ID,如下图
+
+image:image/other_oom__config.png[image,600,600,role="center"]
+
+* 
 
 
 
