@@ -116,12 +116,11 @@ image:image/oom_obj1.png[image,600,600,role="center"]
 
 * 所以，如果要配置一个进程不被oom_kill，则可以参照下面一个配置例子,以ssh为例:
 
-****
-[source,shell]
+....
+[source,c]
 
 pgrep -f "sshd" | while read PID; do echo -17 > /proc/$PID/oom_adj;done
-
-****
+....
 
 == 内存有关其它配置
 
