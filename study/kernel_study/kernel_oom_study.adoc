@@ -127,7 +127,7 @@ pgrep -f "sshd" | while read PID; do echo -17 > /proc/$PID/oom_adj;done
 
 === min_free_kbytes
 
-* 该参数 #min_free_kbytes#,位于系统目录 #/proc/sys/vm#下
+* 该参数 #min_free_kbytes#,位于系统目录 #/proc/sys/vm# 下
 
 ** 该值保证系统间可用的最小KB数，这个值被内核用来计算每个低内存区的水印值，然后为其大小按照比例分配保留可用页。
 
@@ -139,13 +139,25 @@ WARNING: #min_free_kbytes#　这个值配置时候一定要非常慎重，因为
 
 image:image/min_free_kbytes.png[image,600,600,role="center"]
 
+=== drop_caches
 
+* 该参数 #drop_caches# ,同样位于目录 #/proc/sys/vm# 下
 
+** 该值的配置，参见下图，下图是linux内核中文档关于该参数配置说明
 
+image:image/drop_caches_1.png[image,600,600,role="center"]
 
+** 通过查看内核文档，可以看出
+*** drop_caches=1 系统释放所有页缓冲内存
+*** drop_caches=2 系统释放所有未使用的slab缓冲内存
+*** drop_caches=3 系统释放所有页缓冲内存和slab缓冲内存
 
+NOTE: 利用sysctl命令配置该参数为０，禁止内核清理缓存。对于我们的AP设备，由于重点在于网络数据的转发，
+所以该参数最好配置为０，缓冲数据有利于报文的转发，提升转发效率。
+
+== 总结
 
 
 [options=interactive]
-- [*] 完成BUG
-- [ ] 写总结
+- [*] 初稿完成
+- [ ] 继续完善，修改，总结
