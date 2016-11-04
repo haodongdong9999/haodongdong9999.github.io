@@ -23,9 +23,9 @@ oom 是out of memory的缩写。对linux而言，内核一般将处理器的虚�
 
 <1> 系统崩溃并产生堆栈，就是常说的kernel panic,也就是立刻死机
 
-<2> 内核会启动一个机制：OOM Killer，仍然试图继续运行
+<2> 内核会启动一个机制：OOM Killer，杀掉一些进程，试图继续运行
 
-    * OOM killer（Out-Of-Memory killer),该机制会监控系统中占用内存过大的进程，尤其是那些突然消耗非常大内存的进程，
+* #OOM killer#（Out-Of-Memory killer),该机制会监控系统中占用内存过大的进程，尤其是那些突然消耗非常大内存的进程，
 　　
 　　为了防止内存耗尽或者为了保证内核中重要进程有足够内存可以使用，会杀掉该进程，释放一部分内存出来。
 
@@ -37,12 +37,12 @@ TIP: kernel产生oom，是否说明系统一定内存不足了呢？
 
 === UMA和NUMA介绍
 
-* UMA计算机（一致内存访问，uniform memory access）,这种类型内核将可用的内存以连续方式组织起来（也可能存在小洞情况以后再总结），在SMP系统中
-每个CPU访问各自的内存区都是异样快。简单类似以下图示情况：
+* **__UMA计算机__**_（一致内存访问，uniform memory access）,这种类型内核将可用的内存以连续方式组织起来（也可能存在小洞情况以后再总结），在SMP系统中
+每个CPU访问各自的内存区都是一样快。简单类似以下图示情况：
 
 image:image/UMA.png[image,600,600,role="center"]
 
-* NUMA计算机（非一致内存访问，non-uniform memory access）,这种类型总是多处理器计算机，系统的每个CPU都有本地内存，各个CPU之间通过总线连接起来
+* **__NUMA计算机__**（非一致内存访问，non-uniform memory access）,这种类型总是多处理器计算机，系统的每个CPU都有本地内存，各个CPU之间通过总线连接起来
 所以每个CPU都可以访问其它处理器的本地内存，但是访问速度上会慢一些。简单图示如下图：
 
 image:image/NUMA.png[image,600,600,role="center"]
@@ -126,7 +126,13 @@ __pgrep -f "sshd" | while read PID; do echo -17 > /proc/$PID/oom_adj;done__
 
 === min_free_kbytes
 
-* 该参数 #min_free_kbytes# 
+* 该参数 #min_free_kbytes#,位于系统目录 #/proc/sys/vm#下
+
+** 该值保证系统间可用的最小KB数，这个值被内核用来计算每个低内存区的水印值，然后为其大小按照比例分配保留可用页。
+
+WARNING: #min_free_kbytes#　这个值配置时候一定要非常慎重，因为该值配置过高或者过低都会很大风险。
+如果该值配置太低，导致系统挂起并触发oom的killer杀死多个进程。之前的TA98设备该值过低，导致powerap不断被杀掉导致AP离线。
+如果该值配置过高(占系统总内存的5%-10%),会造成系统很快内存不足。
 
 
 
