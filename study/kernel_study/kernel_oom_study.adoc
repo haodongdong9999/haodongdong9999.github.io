@@ -86,8 +86,11 @@ image:image/oom_config_1.png[image,600,600,role="center"]
 
 * 该参数 #oom_kill_allocating_task# 是决定系统产生oom后，oom_killer机制启动，内核到底可以杀掉哪个进程。
 配置不同的数值（0/1）,内核可以有两个选择
-** [red]**#1#**  哪个进程触发了oom，就干掉它
-** [red]**#0#** 根据一定算法计算出，此刻哪个进程“得分”最高，干掉它
+** [red]**#1#** --哪个进程触发了oom，就干掉它
+** [red]**#0#** --根据一定算法计算出，此刻哪个进程“得分”最高，干掉它
+** 代码依据如下图所示:
+
+image:image/oom_config_2.png[image,600,600,role="center"]
 
 === oom_dump_tasks介绍
 
