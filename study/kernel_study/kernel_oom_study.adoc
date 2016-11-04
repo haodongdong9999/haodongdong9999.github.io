@@ -76,6 +76,16 @@ image:image/four.png[image,600,600,role="center"]
 
 == OOM有关的几个参数配置参考
 
+* 在系统路径　#/proc/sys/vm# 下，可以看到关于oom的有两个很关键的参数，如下图所示:
+
+image:image/oom_config_1.png[image,600,600,role="center"]
+
+那么，这两个参数到底有什么用途呢？
+
+=== oom_kill_allocating_task介绍
+
+=== oom_dump_tasks介绍
+
 
 
 
