@@ -108,7 +108,12 @@ image:image/oom_config_2.png[image,600,600,role="center"]
 
 image:image/other_oom_config.png[image,600,600,role="center"]
 
-* 
+* 这些参数又有什么用呢？当系统出现oom时，又配置内核选择oom_killer机制时，内核会根据算法给每个进程一个
+oom_score，分数越高，被内核杀掉的几率越高。然而这个oom_score是根据oom_obj计算出来的，oom_obj是可以配置的，
+配置范围为15 ~ -16 之间，配置-17则说明，禁止使用oom_killer，参见以下内核代码：
+
+
+image:image/oom_obj.png[image,600,600,role="center"]
 
 
 
