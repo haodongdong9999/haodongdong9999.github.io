@@ -447,6 +447,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_其他参数">4.3. 其他参数</a></li>
 </ul>
 </li>
+<li><a href="#_内存有关其它配置">5. 内存有关其它配置</a>
+<ul class="sectlevel2">
+<li><a href="#_min_free_kbytes">5.1. min_free_kbytes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -724,8 +729,32 @@ oom_score，分数越高，被内核杀掉的几率越高。然而这个oom_scor
 </li>
 </ul>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="shell"></code></pre>
+</div>
+</div>
 <div class="paragraph">
-<p>pgrep -f "sshd" | while read PID; do echo -17 &gt; /proc/$PID/oom_adj;done</p>
+<p><em>pgrep -f "sshd" | while read PID; do echo -17 &gt; /proc/$PID/oom_adj;done</em></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_内存有关其它配置">5. 内存有关其它配置</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_min_free_kbytes">5.1. min_free_kbytes</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>该参数 <mark>min_free_kbytes</mark></p>
+</li>
+</ul>
 </div>
 <div class="ulist checklist">
 <ul class="checklist">
@@ -743,7 +772,7 @@ oom_score，分数越高，被内核杀掉的几率越高。然而这个oom_scor
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-04 13:05:24 CST
+Last updated 2016-11-04 13:39:00 CST
 </div>
 </div>
 </body>
