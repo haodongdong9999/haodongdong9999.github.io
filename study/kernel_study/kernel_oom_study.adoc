@@ -56,7 +56,7 @@ image:image/oom_code.png[image,600,600,role="center"]
 
 * 不同的参数值，表示内核遇到oom时，应当如何处置：
 ** panic_on_oom = 0 直接返回，相当于开启了oom_killer机制
-** panic_on_oom = 1 并且没有配置无约束标志　**#CONSTRAINT_NONE#** ,可以尝试oom_killer
+** panic_on_oom = 1 并且没有配置无约束标志　**#CONSTRAINT_NONE#** ,可以尝试oom_killer。__但是UMA系统，该处总是 **#CONSTRAINT_NONE#**__
 ** panic_on_oom = 2 直接panic
 
 === oom原因判定
@@ -65,7 +65,18 @@ image:image/oom_code.png[image,600,600,role="center"]
 
 image:image/four.png[image,600,600,role="center"]
 
-* 每个标志位的含义解释如下：
+* 每个标志位的含义解释如下，需要说明的是，下列配置选项仅针对　[red]#**__NUMA__**# :
+** [red] #CONSTRAINT_CPUSET#  cpuset是linux kernel的一种机制，该机制可以把一组cpu和memory node分配给特定的
+一组进程。如果此时出现了OOM，仅仅说明该进程能分配memory的那个node出现问题，此时系统还有很多内存。
+** [red] #CONSTRAINT_MEMORY_POLICY#  memory policy是NUMA系统中，如何控制分配各个memory node资源的一个策略模块。
+产生OOM，也可能是该memory policy出现问题导致。
+** [red] #CONSTRAINT_MEMCG#  memory control group,简单说就是控制系统memory分配的控制器。该控制器可以将一组进程
+内存使用限制在一个范围呢，如果超出该范围，就会出现 #OOM#
+* 综上，对于UMA系统，出现OOM,一般就是内存不足了。但是对于NUMA系统，出现OOM,或许系统还有充足的内存，具体原因就要进一步分析了。
+
+== OOM有关的几个参数配置参考
+
+
 
 
 
