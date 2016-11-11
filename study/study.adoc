@@ -407,3 +407,17 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 == vim更新
 
 * http://www.vim.org/git.php
+
+== ubutu搭建smaba服务器
+
+* 安装smaba服务
+* 配置/etc/smab/smb.conf
+添加以下语句：
+[source,c]
+
+
+[share]
+ comment=this is Linux share directory
+ path=/home/hdd
+ public=yes
+ writable=yes

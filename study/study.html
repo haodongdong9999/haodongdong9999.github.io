@@ -462,6 +462,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_emacs中的whick_key地址">25. emacs中的whick-key地址</a></li>
 <li><a href="#_配置进程不被oom杀掉">26. 配置进程不被oom杀掉</a></li>
 <li><a href="#_vim更新">27. vim更新</a></li>
+<li><a href="#_ubutu搭建smaba服务器">28. ubutu搭建smaba服务器</a></li>
 </ul>
 </div>
 </div>
@@ -1351,10 +1352,34 @@ echo  "The result is $result "</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_ubutu搭建smaba服务器">28. ubutu搭建smaba服务器</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>安装smaba服务</p>
+</li>
+<li>
+<p>配置/etc/smab/smb.conf
+添加以下语句：</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>comment=this is Linux share directory
+path=/home/hdd
+public=yes
+writable=yes</pre>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-10-25 10:37:59 CST
+Last updated 2016-11-11 09:37:38 CST
 </div>
 </div>
 </body>
