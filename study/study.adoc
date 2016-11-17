@@ -421,3 +421,13 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
  path=/home/hdd
  public=yes
  writable=yes
+
+
+== 设置应用程序在多核上的亲和性
+
+TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
+
+* 方法:使用命令 taskset
+
+* 举例　taskset -p PID  可以看出当前进程在哪个核上
+** 绑定　taskset -pc 3 PID 绑定pid到 cpu4上
