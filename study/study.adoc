@@ -431,3 +431,9 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 
 * 举例　taskset -p PID  可以看出当前进程在哪个核上
 ** 绑定　taskset -pc 3 PID 绑定pid到 cpu4上
+
+== top查看进程归属cpu的方法
+
+* top -d 1之后，按　__#f#__ ,然后选中J 即可
+* 然后回车会发现top命令后边，出现了一个P，这个值显示了不同的进程不同时刻在不同的CPU上
+

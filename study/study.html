@@ -464,6 +464,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_vim更新">27. vim更新</a></li>
 <li><a href="#_ubutu搭建smaba服务器">28. ubutu搭建smaba服务器</a></li>
 <li><a href="#_设置应用程序在多核上的亲和性">29. 设置应用程序在多核上的亲和性</a></li>
+<li><a href="#_top查看进程归属cpu的方法">30. top查看进程归属cpu的方法</a></li>
 </ul>
 </div>
 </div>
@@ -1411,10 +1412,25 @@ writable=yes</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_top查看进程归属cpu的方法">30. top查看进程归属cpu的方法</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>top -d 1之后，按　<em><mark>f</mark></em> ,然后选中J 即可</p>
+</li>
+<li>
+<p>然后回车会发现top命令后边，出现了一个P，这个值显示了不同的进程不同时刻在不同的CPU上</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-11-17 18:03:43 CST
+Last updated 2016-11-18 11:12:33 CST
 </div>
 </div>
 </body>
