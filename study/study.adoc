@@ -442,3 +442,7 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 * 可以将新内核编译为rpm形式，用make rpm命令即可
 * 在新设备上安装新内核，用rpm -ivh *.rpm
 * 需要重新制作内核的引导initrd文件，制作方法，调用命令mkinitrd命令即可
+
+== ubutu安装更新后的软件
+
+* http://blog.csdn.net/skykingf/article/details/45267517/
