@@ -450,3 +450,8 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 == thunderbird 插件地址
 
 * https://addons.mozilla.org/en-US/thunderbird/search/?q=mail&appver=&platform=
+
+== linux下检测内存泄露的工具
+
+* http://valgrind.org/downloads/current.html#current
+
