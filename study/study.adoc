@@ -446,3 +446,7 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 == ubutu安装更新后的软件
 
 * http://blog.csdn.net/skykingf/article/details/45267517/
+
+== thunderbird 插件地址
+
+* https://addons.mozilla.org/en-US/thunderbird/search/?q=mail&appver=&platform=
