@@ -1,4 +1,4 @@
-= 每日学习
+= 绍兴两日游计划
 学无止境
 :toc:
 :toclevels: 4
@@ -7,72 +7,8 @@
 :icons: font
 :sectnums:
 
-== 5-5
+== 旅行计划
 
-. 学习mac下配置asciidoc
-.. Plugin 'dagwieers/asciidoc-vim' 
-.. autocmd BufRead,BufNewFile *.adoc set filetype=asciidoc
-- [*] 读书计划每天半小时之shell脚本学习
-
-== 5-9
-. 天下雨了，心情不好
-. 今日任务估计完不成，心情郁闷啊
-. 当然不开心了
-. my test
-. my_study
-. my_stud222y
-
-== 5-20
-
-.过好这一天
-
-====
-
-<1> 做好这一天的工作任务
-<2> 让多余的时间充分释放出来
-<3> 做好自己，活出精彩
-
-====
-
-,===
-
- 任务列表,完成状态
- 每日学习,{checkedbox} That's done!
- 做好文档,进行中
-
-,===
-
-== 旅游攻略
-.看到的旅游攻略
-* link:http://www.fumubang.com/t107793.html[亲子游攻略]
-
-== 获取GREENVAPN地址方法
-
-* 请发送任意邮件至 GreenDizhi@gmail.com 系统将自动回复最新地址到您的邮箱
-
-== 发表文章的网站
-
-. 文章阅读网
-. 九九文章网
-. 爱写作网
-. 56文章阅读网
-. 美文网
-
-* 京东装修服务网址：
-
-http://mall.jd.com/index-155868.html
-
-== 9-30
-
-TIP: 今日完成目标
-
-- [*] 完成公众号文章
-- [*] 十一准备交房
-- [*] 每日学习
-
-== 11-2 新生活
-
-TIP: 公众号运营开心
-
-* 总结输出
-* 总结反思
+* 景点:鲁迅故居
+* 兰亭
+* 大禹陵
