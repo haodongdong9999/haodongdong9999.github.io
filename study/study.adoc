@@ -456,3 +456,7 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 * http://valgrind.org/downloads/current.html#current
 ** 使用方法
 ***  valgrind --leak-check=full ./malloc 即可看到检测结果
+
+== emacs的几个插件娃网站
+
+* https://gold.xitu.io/entry/57957f7dd342d30059ed4aba
