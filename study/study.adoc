@@ -460,3 +460,7 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 == emacs的几个插件娃网站
 
 * https://gold.xitu.io/entry/57957f7dd342d30059ed4aba
+
+== 查看程序依赖库
+
+* readelf -d  zabbix-3.2.3/src/zabbix_agent/zabbix_agentd | grep NEEDED
