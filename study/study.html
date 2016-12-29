@@ -471,6 +471,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_linux下检测内存泄露的工具">34. linux下检测内存泄露的工具</a></li>
 <li><a href="#_emacs的几个插件娃网站">35. emacs的几个插件娃网站</a></li>
 <li><a href="#_查看程序依赖库">36. 查看程序依赖库</a></li>
+<li><a href="#_查看linux内核32_64">37. 查看linux内核32/64</a></li>
 </ul>
 </div>
 </div>
@@ -1525,10 +1526,34 @@ writable=yes</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_查看linux内核32_64">37. 查看linux内核32/64</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>在linux中查看CPU是否64位的方法：如果/proc/cpuinfo内的flags字段中含有"lm"，则表示使用的是64位CPU(运行“grep 'lm' /proc/cpuinfo”命令，输出不为空</p>
+</li>
+<li>
+<p>执行shell命令“arch”，显示为x86_64表示当前系统为64位，显示为i386,i486等表示系统是32位的。</p>
+</li>
+<li>
+<p>执行shell命令“file /usr/bin/xxx", 如果是32位程序，显示为"ELF 32-bit &#8230;&#8203;"；如果是64位，则显示为："ELF 64-bit</p>
+</li>
+<li>
+<p>"make ARCH=i386 menuconfig"，"make ARCH=i386"用于配置，编译32位内核</p>
+</li>
+<li>
+<p>make ARCH=x86_64 menuconfig"，"make ARCH=x86_64"则用于配置，编译64位内核"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2016-12-23 17:49:52 CST
+Last updated 2016-12-29 11:17:53 CST
 </div>
 </div>
 </body>

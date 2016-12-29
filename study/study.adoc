@@ -464,3 +464,15 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 == 查看程序依赖库
 
 * readelf -d  zabbix-3.2.3/src/zabbix_agent/zabbix_agentd | grep NEEDED
+
+== 查看linux内核32/64
+
+* 在linux中查看CPU是否64位的方法：如果/proc/cpuinfo内的flags字段中含有"lm"，则表示使用的是64位CPU(运行“grep 'lm' /proc/cpuinfo”命令，输出不为空
+
+* 执行shell命令“arch”，显示为x86_64表示当前系统为64位，显示为i386,i486等表示系统是32位的。
+
+* 执行shell命令“file /usr/bin/xxx", 如果是32位程序，显示为"ELF 32-bit ..."；如果是64位，则显示为："ELF 64-bit
+
+* "make ARCH=i386 menuconfig"，"make ARCH=i386"用于配置，编译32位内核
+
+* make ARCH=x86_64 menuconfig"，"make ARCH=x86_64"则用于配置，编译64位内核"
