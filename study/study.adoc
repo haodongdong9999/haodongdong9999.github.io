@@ -476,3 +476,8 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 * "make ARCH=i386 menuconfig"，"make ARCH=i386"用于配置，编译32位内核
 
 * make ARCH=x86_64 menuconfig"，"make ARCH=x86_64"则用于配置，编译64位内核"
+
+== linux模块相关
+
+* 用 #modinfo# 可以查询模块的信息，作者，注释之类
+* 用 #nm# 可以查询内核模块的依赖情况
