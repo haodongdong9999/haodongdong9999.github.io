@@ -190,9 +190,9 @@ int main(int argc, char *argv[])
 .一步一步
 ****
 开启samba服务。
-与 ubuntu 不同，Centos的安全级别默认高一些，需要关闭 SELINUX、iptables。 
+与 ubuntu 不同，Centos的安全级别默认高一些，需要关闭 SELINUX、iptables。
 [source,c]
-[root@Gitlab-CI-Build0 ~]# cat /etc/selinux/config 
+[root@Gitlab-CI-Build0 ~]# cat /etc/selinux/config
 
 # This file controls the state of SELinux on the system. +
 # SELINUX= can take one of these three values: +
@@ -226,7 +226,7 @@ browseable = yes  +
 writable = yes +
 valid users = %S +
 smbpasswd –a xxx +
-chkconfig  *_smb_* on 
+chkconfig  *_smb_* on
 
 ****
 
@@ -247,7 +247,7 @@ echo $name
 
 == 5-24文件输入输出
 
-. 文件描述符 
+. 文件描述符
 +
 ,===
 文件描述符,缩写,描述
@@ -258,7 +258,7 @@ echo $name
 +
 . 使用 #&># 来表示将错误信息和正常输出全部重定向到某一个地方去
 
-. 未完待续 
+. 未完待续
 
 == 5-25vim插件安装
 
@@ -266,7 +266,7 @@ NOTE: 注意事项
 
 * 安装vim
 * 同步github上的vim的配置
-* git clone: link:https://github.com/VundleVim/Vundle.vim.git[git目录] ~/.vim/bundle/Vundle.vim 
+* git clone: link:https://github.com/VundleVim/Vundle.vim.git[git目录] ~/.vim/bundle/Vundle.vim
 
 * 安装ctags,cscope
 * 完成配置
@@ -402,7 +402,7 @@ TIP: 该方法可以自动telnet方式登陆AP，前提是要安装一个软件�
 
 == 配置进程不被oom杀掉
 
-*  pgrep -f "/usr/sbin/sshd" | while read PID;do echo -17 > /proc/$PID/oom_adj;done 
+*  pgrep -f "/usr/sbin/sshd" | while read PID;do echo -17 > /proc/$PID/oom_adj;done
 
 == vim更新
 
@@ -481,3 +481,25 @@ TIP: 首先要确定内核支持SMP，用uname -a 就可以看到
 
 * 用 #modinfo# 可以查询模块的信息，作者，注释之类
 * 用 #nm# 可以查询内核模块的依赖情况
+
+== linux下获取端口状态
+[source,c]
+interface_status_t interface_detect_beat_ethtool(int fd, char *iface)
+{
+struct ifreq ifr;
+struct ethtool_value edata;
+
+memset(&ifr, 0, sizeof(ifr));
+strncpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name)-1);
+
+edata.cmd = ETHTOOL_GLINK;
+ifr.ifr_data = (caddr_t) &edata;
+
+if (ioctl(fd, SIOCETHTOOL, &ifr) == -1)
+{
+    perror("ETHTOOL_GLINK failed ");
+    return IFSTATUS_ERR;
+}
+
+return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
+}

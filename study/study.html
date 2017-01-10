@@ -473,6 +473,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_查看程序依赖库">36. 查看程序依赖库</a></li>
 <li><a href="#_查看linux内核32_64">37. 查看linux内核32/64</a></li>
 <li><a href="#_linux模块相关">38. linux模块相关</a></li>
+<li><a href="#_linux下获取端口状态">39. linux下获取端口状态</a></li>
 </ul>
 </div>
 </div>
@@ -1566,10 +1567,42 @@ writable=yes</pre>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_linux下获取端口状态">39. linux下获取端口状态</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre class="pygments highlight"><code data-lang="c">interface_status_t interface_detect_beat_ethtool(int fd, char *iface)
+{
+struct ifreq ifr;
+struct ethtool_value edata;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>memset(&amp;ifr, 0, sizeof(ifr));
+strncpy(ifr.ifr_name, iface, sizeof(ifr.ifr_name)-1);</p>
+</div>
+<div class="paragraph">
+<p>edata.cmd = ETHTOOL_GLINK;
+ifr.ifr_data = (caddr_t) &edata;</p>
+</div>
+<div class="paragraph">
+<p>if (ioctl(fd, SIOCETHTOOL, &amp;ifr) == -1)
+{
+    perror("ETHTOOL_GLINK failed ");
+    return IFSTATUS_ERR;
+}</p>
+</div>
+<div class="paragraph">
+<p>return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
+}</p>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-03 09:56:24 CST
+Last updated 2017-01-10 16:45:40 CST
 </div>
 </div>
 </body>
