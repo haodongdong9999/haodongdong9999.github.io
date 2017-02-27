@@ -1595,14 +1595,22 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 <div class="paragraph">
 <p>return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
-}</p>
+}
+== linux系统启动顺序</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>系统先加载/etc/inittab文件，执行其中的内容，引导加载/etc/rc.d下的东西</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-01-10 16:45:40 CST
+Last updated 2017-02-27 16:05:23 CST
 </div>
 </div>
 </body>
