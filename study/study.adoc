@@ -506,3 +506,9 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 == linux系统启动顺序
 
 * 系统先加载/etc/inittab文件，执行其中的内容，引导加载/etc/rc.d下的东西
+
+== linux调试有关
+
+* sar -u -2 10 可以显示cpu适用情况
+
+* lnstat -s1 -i1 -c-1 -f rt_cache 可以看路由缓存情况
