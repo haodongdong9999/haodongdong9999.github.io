@@ -512,3 +512,7 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 * sar -u -2 10 可以显示cpu适用情况
 
 * lnstat -s1 -i1 -c-1 -f rt_cache 可以看路由缓存情况
+
+== centos7升级内核方法
+
+* link:https://www.tesun.net/centos7sheng-ji-nei-he/
