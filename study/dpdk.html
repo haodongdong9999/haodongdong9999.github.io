@@ -431,7 +431,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_dpdk定义">1. dpdk定义</a></li>
+<li><a href="#_dpdk定义">1. dpdk定义</a>
+<ul class="sectlevel2">
+<li><a href="#_dpdk_编译安装使用">1.1. dpdk 编译安装使用</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -453,12 +457,48 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="sect2">
+<h3 id="_dpdk_编译安装使用">1.1. dpdk 编译安装使用</h3>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+官网地址： link:http://www.dpdk.org
+</td>
+</tr>
+</table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>首先要确认一下设备网卡驱动是否在dpdk支持列表中，具体可以看官方的文档有支持列表</p>
+</li>
+<li>
+<p>下载DPDK版本，在这里 link:http://www.dpdk.org/download</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>*</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>export RTE_SDK=/opt/dpdk-2.2.0
+export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-12 10:44:05 CST
+Last updated 2017-04-13 14:54:15 CST
 </div>
 </div>
 </body>
