@@ -35,6 +35,8 @@ IMPORTANT: 官网地址： link:http://www.dpdk.org
 *** export RTE_SDK=/opt/dpdk-2.2.0
     export RTE_TARGET=x86_64-native-linuxapp-gcc
 
-* export RTE_SDK=/opt/dpdk-2.2.0
-  export RTE_TARGET=x86_64-native-linuxapp-gcc
+** 安装编译器: #make install T=x86_64-native-linuxapp-gcc DESTDIR=/usr/local#
+
+** 加载绑定端口
+*** modprobe uio/insmod igb_uio.ko
 
