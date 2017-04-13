@@ -478,14 +478,49 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li>
 <p>下载DPDK版本，在这里 link:http://www.dpdk.org/download</p>
+<div class="ulist">
+<ul>
+<li>
+<p>解压/编译/安装</p>
+<div class="ulist">
+<ul>
+<li>
+<p>tar xf dpdk.tar.gz</p>
+</li>
+<li>
+<p>cd dpdk</p>
+</li>
+<li>
+<p>make config T=x86_64-native-linuxapp-gcc</p>
+</li>
+<li>
+<p>sed -ri 's,(PMD_PCAP=).*,\1y,' build/.config</p>
+</li>
+<li>
+<p>make</p>
+</li>
+<li>
+<p>mkdir -p /mnt/huge
+mount -t hugetlbfs nodev /mnt/huge
+echo 64 &gt; /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>*</p>
-</div>
+</li>
+<li>
+<p>配置编译所需要的环境变量</p>
 <div class="ulist">
 <ul>
+<li>
+<p>export RTE_SDK=/opt/dpdk-2.2.0
+export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
 <li>
 <p>export RTE_SDK=/opt/dpdk-2.2.0
 export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
@@ -498,7 +533,7 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-13 14:54:15 CST
+Last updated 2017-04-13 15:55:26 CST
 </div>
 </div>
 </body>
