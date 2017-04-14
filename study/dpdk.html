@@ -500,9 +500,17 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>make</p>
 </li>
 <li>
-<p>mkdir -p /mnt/hugei<br>
-mount -t hugetlbfs nodev /mnt/huge<br>
-echo 64 &gt; /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages</p>
+<p>mkdir -p /mnt/huge</p>
+<div class="literalblock">
+<div class="content">
+<pre>mount -t hugetlbfs nodev /mnt/huge</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>echo 64 &gt; /sys/devices/system/node/node0/hugepages/hugepages-2048kB/nr_hugepages</pre>
+</div>
+</div>
 </li>
 </ul>
 </div>
@@ -528,6 +536,9 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
 <li>
 <p>modprobe uio/insmod igb_uio.ko</p>
 </li>
+<li>
+<p>./tools/dpdk_nic_bind.py --status</p>
+</li>
 </ul>
 </div>
 </li>
@@ -542,7 +553,7 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-13 19:15:02 CST
+Last updated 2017-04-14 18:24:16 CST
 </div>
 </div>
 </body>
