@@ -515,11 +515,11 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 
 == centos7升级内核方法
 
-* link:https://www.tesun.net/centos7sheng-ji-nei-he/
+* link:https://www.tesun.net/centos7sheng-ji-nei-he/[点我]
 
 == firefox改变背景颜色的方法
 
-* link:https://zhidao.baidu.com/question/152183687.html
+* link:https://zhidao.baidu.com/question/152183687.html[点我]
 
 == ubutu下将屏幕旋转显示
 
