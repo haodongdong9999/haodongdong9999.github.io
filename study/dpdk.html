@@ -436,6 +436,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_dpdk_编译安装使用">1.1. dpdk 编译安装使用</a></li>
 </ul>
 </li>
+<li><a href="#_dpdk应用篇">2. dpdk应用篇</a></li>
 </ul>
 </div>
 </div>
@@ -551,10 +552,44 @@ export RTE_TARGET=x86_64-native-linuxapp-gcc</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_dpdk应用篇">2. dpdk应用篇</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>加载l2fw转发模块:  ./build/l2fwd -c f -n 2&#8201;&#8212;&#8201;-q 1 -p 0x3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>-c  f    指分配4个core给dpdk程序，这个参数是主参数，必须设定</p>
+</li>
+<li>
+<p>-n 2     指内存通道数</p>
+</li>
+<li>
+<p>&#8201;&#8212;&#8201;        由于程序有主次参数之分，主参数是在指所有实例程序都可以用的参数；次参数，是指每个实例程序自身拥有的参数，&#8201;&#8212;&#8201;之后的为次参数</p>
+</li>
+<li>
+<p>-p  0x3 设置dpdk起点的端口数，也是以16进制的源码作为标志位， 0x3是指  后两位为1，也就是起点两个端口</p>
+</li>
+<li>
+<p>-q  1    是只每个端口所拥有的的发送和接收队列是多几个，默认是1个，也就是收在一个队列中收，发在一个队列中发</p>
+</li>
+<li>
+<p>-T       在执行程序的时候，会有一些统计数据打印到屏幕上，这个的 参数是设定多长时间统计一次，显示到屏幕，模式是10秒钟一次</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-04-17 14:00:55 CST
+Last updated 2017-04-17 17:03:02 CST
 </div>
 </div>
 </body>
