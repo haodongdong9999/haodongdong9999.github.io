@@ -17,6 +17,7 @@
 === dpdk 编译安装使用
 
 IMPORTANT: 官网地址： link:http://www.dpdk.org
+中文说明文档地址: link:http://www.mamicode.com/info-detail-1728647.html
 
 * 首先要确认一下设备网卡驱动是否在dpdk支持列表中，具体可以看官方的文档有支持列表
 
