@@ -520,3 +520,10 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 == firefox改变背景颜色的方法
 
 * link:https://zhidao.baidu.com/question/152183687.html
+
+== ubutu下将屏幕旋转显示
+
+* xrandr -o left 向左旋转90度
+* xrandr -o right 向右旋转90度
+* xrandr -o inverted 上下翻转
+* xrandr -o normal 回到正常角度
