@@ -16,12 +16,12 @@
 
 === dpdk 编译安装使用
 
-IMPORTANT: 官网地址： link:http://www.dpdk.org
-中文说明文档地址: link:http://www.mamicode.com/info-detail-1728647.html
+IMPORTANT: 官网地址： http://www.dpdk.org
+中文说明文档地址: http://www.mamicode.com/info-detail-1728647.html
 
 * 首先要确认一下设备网卡驱动是否在dpdk支持列表中，具体可以看官方的文档有支持列表
 
-* 下载DPDK版本，在这里 link:http://www.dpdk.org/download
+* 下载DPDK版本，在这里 http://www.dpdk.org/download
 
 ** 解压/编译/安装
    *** tar xf dpdk.tar.gz
@@ -37,13 +37,13 @@ IMPORTANT: 官网地址： link:http://www.dpdk.org
 
 ** 配置编译所需要的环境变量
 
-*** export RTE_SDK=/opt/dpdk-2.2.0
+*** export RTE_SDK=/opt/dpdk-2.2.0 +
     export RTE_TARGET=x86_64-native-linuxapp-gcc
 
 ** 安装编译器: #make install T=x86_64-native-linuxapp-gcc DESTDIR=/usr/local#
 
 ** 加载绑定端口
-*** modprobe uio/insmod igb_uio.ko
+*** modprobe uio     insmod igb_uio.ko
 *** ./tools/dpdk_nic_bind.py --status
 
 == dpdk应用篇
