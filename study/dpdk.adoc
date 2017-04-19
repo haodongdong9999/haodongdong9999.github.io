@@ -46,7 +46,7 @@ TIP: 官网地址： link:http://www.dpdk.org[dpdk官网]
 ** 加载绑定端口
 *** modprobe uio
 *** insmod igb_uio.ko
-*** ./tools/dpdk_nic_bind.py --status
+*** ./tools/dpdk_nic_bind.py -s
 
 == dpdk应用篇
 
@@ -57,3 +57,5 @@ TIP: 官网地址： link:http://www.dpdk.org[dpdk官网]
 ** -p       0x3 设置dpdk起点的端口数，也是以16进制的源码作为标志位， 0x3是指  后两位为1，也就是起点两个端口
 ** -q  1    是只每个端口所拥有的的发送和接收队列是多几个，默认是1个，也就是收在一个队列中收，发在一个队列中发
 ** -T       在执行程序的时候，会有一些统计数据打印到屏幕上，这个的 参数是设定多长时间统计一次，显示到屏幕，模式是10秒钟一次
+
+== dpdk 二层转发流程
