@@ -58,4 +58,13 @@ TIP: 官网地址： link:http://www.dpdk.org[dpdk官网]
 ** -q  1    是只每个端口所拥有的的发送和接收队列是多几个，默认是1个，也就是收在一个队列中收，发在一个队列中发
 ** -T       在执行程序的时候，会有一些统计数据打印到屏幕上，这个的 参数是设定多长时间统计一次，显示到屏幕，模式是10秒钟一次
 
+* 执行效果如下
+** image:image/dpdk_test.png[image,600,600,role="center"]
+** image:image/dpdk_test2.png[image,600,600,role="center"]
+
 == dpdk 二层转发流程
+
+* 流程图
+** image:image/dpdk_l2fw1.jpeg[image,600,600,role="center"]
+** image:image/dpdk_l2fw2.jpeg[image,600,600,role="center"]
+
