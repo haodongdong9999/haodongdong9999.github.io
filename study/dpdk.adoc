@@ -71,3 +71,4 @@ TIP: 官网地址： link:http://www.dpdk.org[dpdk官网]
 == 学习记录
 * 一个讲解dpdk网卡初始化的博客: link:http://www.cnblogs.com/MerlinJ/p/4108021.html[点我]
 * 讲解rte_malloc过程原理的博客: link:http://blog.csdn.net/sollor525/article/details/55805059[点我查看]
+* 网友基于dpdk做的DNS服务器: link:https://sanwen8.cn/p/112y6j5.html[点我查看]
