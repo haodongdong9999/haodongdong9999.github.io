@@ -68,3 +68,6 @@ TIP: 官网地址： link:http://www.dpdk.org[dpdk官网]
 ** image:image/dpdk_l2fw1.jpeg[image,600,600,role="center"]
 ** image:image/dpdk_l2fw2.jpeg[image,600,600,role="center"]
 
+== 学习记录
+* 一个讲解dpdk网卡初始化的博客: link:http://www.cnblogs.com/MerlinJ/p/4108021.html[点我]
+
