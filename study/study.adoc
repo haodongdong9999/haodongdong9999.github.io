@@ -527,3 +527,7 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 * xrandr -o right 向右旋转90度
 * xrandr -o inverted 上下翻转
 * xrandr -o normal 回到正常角度
+
+== linux下bridge转发远离学习
+
+* http://www.cnblogs.com/zmkeil/archive/2013/04/21/3034733.html
