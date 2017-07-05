@@ -531,3 +531,7 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 == linux下bridge转发远离学习
 
 * http://www.cnblogs.com/zmkeil/archive/2013/04/21/3034733.html
+
+== linux反向路径过滤问题
+
+* http://blog.chinaunix.net/uid-20718384-id-3239147.html
