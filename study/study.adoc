@@ -535,3 +535,11 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 == linux反向路径过滤问题
 
 * http://blog.chinaunix.net/uid-20718384-id-3239147.html
+
+== linux内核slab造成内存泄露的排查方法
+
+* http://linuxperf.com/?p=148
+
+== 用工具排查linux内核内存泄露的方法
+
+* http://linuxperf.com/?p=188
