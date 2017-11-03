@@ -543,3 +543,24 @@ return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 == 用工具排查linux内核内存泄露的方法
 
 * http://linuxperf.com/?p=188
+
+== fcntl解决进程继承端口号问题
+
+* http://deshunfan.blog.163.com/blog/static/3424410120107203536137/
+
+* 问题描述:
+
+****
+linux中经常调用system，容易出现在一个进程中调用system去启动另外一个进程。system的实现就是fork+exec
+这样的话，fork后的子进程会继承父进程的所有的资源包括文件描述符在内，经常出现父进程的端口资源被新启动
+的进程占用。
+
+尤其特殊的是AP中的powerap　5002端口经常被占用，原因就是在powerap中调用system去启动了多个进程导致。
+
+解决方案，是利用fcntl函数，对socket fd进程重新设置，设置为close-on-exec就可以
+具体是
+
+fcntl(fd,F_SETFD,FD_CLOEXEC)
+
+****
+
