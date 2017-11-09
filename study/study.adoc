@@ -563,4 +563,10 @@ linux中经常调用system，容易出现在一个进程中调用system去启动
 fcntl(fd,F_SETFD,FD_CLOEXEC)
 
 ****
+== pppoe拨号终端打不开网页问题
 
+* 原因是由于pppoe mtu 和 TCPMSS 配置不当引起的
+
+* 可以参考 http://blog.csdn.net/lepton126/article/details/70810316
+
+* 配置下MSS,解决。
