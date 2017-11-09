@@ -483,6 +483,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_linux内核slab造成内存泄露的排查方法">46. linux内核slab造成内存泄露的排查方法</a></li>
 <li><a href="#_用工具排查linux内核内存泄露的方法">47. 用工具排查linux内核内存泄露的方法</a></li>
 <li><a href="#_fcntl解决进程继承端口号问题">48. fcntl解决进程继承端口号问题</a></li>
+<li><a href="#_pppoe拨号终端打不开网页问题">49. pppoe拨号终端打不开网页问题</a></li>
 </ul>
 </div>
 </div>
@@ -1758,10 +1759,28 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_pppoe拨号终端打不开网页问题">49. pppoe拨号终端打不开网页问题</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>原因是由于pppoe mtu 和 TCPMSS 配置不当引起的</p>
+</li>
+<li>
+<p>可以参考 <a href="http://blog.csdn.net/lepton126/article/details/70810316" class="bare">http://blog.csdn.net/lepton126/article/details/70810316</a></p>
+</li>
+<li>
+<p>配置下MSS,解决。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-03 09:44:29 CST
+Last updated 2017-11-09 20:01:06 CST
 </div>
 </div>
 </body>
