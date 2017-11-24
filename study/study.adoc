@@ -570,3 +570,10 @@ fcntl(fd,F_SETFD,FD_CLOEXEC)
 * 可以参考 http://blog.csdn.net/lepton126/article/details/70810316
 
 * 配置下MSS,解决。
+
+== ubutu下神器推荐
+
+* link:http://blog.csdn.net/Jesse_Mx/article/details/52816928
+** 截图神器:shutter
+** MAC主题配置
+
