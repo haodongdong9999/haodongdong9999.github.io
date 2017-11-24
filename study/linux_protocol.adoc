@@ -4,7 +4,5 @@
 
 :icons: font
 
-* link:kernel_study/kernel_oom_study.html[linux内核内存管理之OOM]
-* link:kernel_study/kernel_page_study.html[linux内核内存管理之页表]
-* link:kernel_study/linux_check_out_of_memory.html[linux下内存泄露检查工具]
-* link:kernel_study/linux_netconsole.html[linux下netonsole详解]
+* link:linux_protocol_study/linux_protocol_1.html[《探寻linux协议栈》之一:linux协议栈概述]
+* link:linux_protocol_study/linux_protocol_2.html[《探寻linux协议栈》之二:源于skb的一场大联欢]
