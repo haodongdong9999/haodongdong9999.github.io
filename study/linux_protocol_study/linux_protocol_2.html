@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>《探寻linux协议栈》之二:源于skb的一场大联欢</title>
+<link rel="stylesheet" href="https://stackedit.io/res-min/themes/base.css" />
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+</head>
+<body><div class="container"><h1 id="写在前面">写在前面</h1>
+
+<blockquote>
+  <p>上一节，大概探讨了linux中协议栈的范围以及一个正常的封包在linux kernel中是如何传输的。当然实际代码层面的报文传输逻辑远远比上一章节中展示出来的几幅图复杂太多了，但无论如何复杂，基本的动向流程还是相当清晰。我觉得探寻协议栈一定要从大到小，从流程到细节。流程框架的东西搞清楚弄明白，基本上再从细微处看代码自己实践，就会非常清晰。本章节，我从帧的结构剖析，来看看一个封包是如何被linux kernel接收并处理的。</p>
+</blockquote>
+
+
+
+<h1 id="skb是什么">skb是什么</h1>
+
+<p>正如我写的标题一样，探寻linux协议栈，既然是协议栈，离不开最本质的东西：报文。</p>
+
+<ul>
+<li><p>报文是什么，站在用户的角度来讲，就是消息，是信息，是自己用手机、电脑等发出去的各种消息。站在linux kernek角度来看，报文是一个数据结构，一块data，一个buffer里存储的各种数据。站在驱动层来看，一个报文就是一段二进制数据。</p></li>
+<li><p>报文从哪里来？要到哪里去？</p>
+
+<p>　　报文从哪里来呢？毫无疑问，一台PC接在网络中，通过网线链接到本身的网卡中，每一秒都在接收来自网络中的各种报文。这些报文先经过网卡驱动处理之后然后才会被送到操作系统中处理。所以报文是接收而来的来自网络间的数据或者说信号，要被送给操作系统协议栈处理发送或者其它用途。</p></li>
+<li><p>skb出场</p>
+
+<p>　　那么skb究竟是什么？在linux x86架构下的系统中，驱动(以e1000e为例)，接收到一个消息后，这些消息是各种二进制组成的data，机器识别没问题，但是软件层不会认识，写软件的程序员更头疼。那么，x86体系下，为了管理这些数据，为了协议栈能正确接收处理这些报文，引入了一个结构体定义，linux 协议栈里，叫做skb.我们可以这么说，所谓的协议栈，就是处理一个个skb的过程。</p></li>
+<li><p>结论</p>
+
+<p>skb就是一个容器，驱动收到报文之后，就会把数据转化了skb结构，相当于给报文量身定做了一套衣服。之后报文在整个linux内部的传输，全部是以skb为单位用于转发，控制。</p></li>
+</ul>
+
+<h2 id="skb长什么样">skb长什么样</h2>
+
+<p>skb既然是linux协议栈中最基本最重要的东西，本身到底是什么样的，我从以下两个方面来说明</p>
+
+<ol>
+<li><p>linux源码中的定义，参见　<strong>/include/linux/skbuff.h</strong> kernel version:3.3.8</p>
+
+<ul><li>下图是内核中针对skbuff结构体定义的一些注释.其中一些比较常见的变量我做出了标示</li></ul></li>
+</ol>
+
+<p><img src="http://img.blog.csdn.net/20171124145103510?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFpZHVfMjcxNTUwOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="linux" title=""></p>
+
+<ul>
+<li>代码中的定义见下:</li>
+</ul>
+
+
+
+<pre class="prettyprint"><code class="language-c hljs "><span class="hljs-keyword">struct</span> sk_buff {
+    <span class="hljs-comment">/* These two members must be first. */</span>
+    <span class="hljs-keyword">struct</span> sk_buff      *next;
+    <span class="hljs-keyword">struct</span> sk_buff      *prev;
+
+    ktime_t         tstamp;
+
+    <span class="hljs-keyword">struct</span> sock     *sk;
+    <span class="hljs-keyword">struct</span> net_device   *dev;　-----netdev的结构体，包含了设备信息比如:端口名，端口状态等等
+        .
+    .
+    .
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>        len,
+                data_len;
+    __u16           mac_len,
+                hdr_len;
+    .
+    .
+    .
+    __be16          protocol;
+
+
+    .
+    .
+    .
+
+    __u16           vlan_tci;
+
+    sk_buff_data_t      transport_header;
+    sk_buff_data_t      network_header;
+    sk_buff_data_t      mac_header;
+    <span class="hljs-comment">/* These elements must be at the end, see alloc_skb() for details.  */</span>
+    sk_buff_data_t      tail;
+    sk_buff_data_t      end;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>       *head,
+                *data;
+    <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span>        truesize;
+    atomic_t        users;
+}</code></pre>
+
+<p>以上就是skb结构在linux内核里的定义，当然我贴出来的有删减，只是列出了最常见最常用到的部分。</p>
+
+<p>首先，上面的代码定义中，有几个指针要特别说明以下</p>
+
+<ul>
+<li>head  这个指针指向一个skb整个数据结构的起始位置</li>
+<li>data 这个指针指向一个skb中的data段开始位置</li>
+<li>tail  这个指针指向一个skb中data段的结束位置</li>
+<li><p>end　这个指针指向一个skb整个数据结构的结束位置</p>
+
+<p>它们看起来像是这样的:</p></li>
+</ul>
+
+<p><img src="http://img.blog.csdn.net/20171124153019802?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvYmFpZHVfMjcxNTUwOTU=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="skb" title=""></p>
+
+<h2 id="skb中和网络协议有关的指针">skb中和网络协议有关的指针</h2>
+
+<ul>
+<li><p>主要是以下三个指针：</p>
+
+<ul><li>sk_buff_data_t      transport_header;</li>
+<li>sk_buff_data_t      network_header;</li>
+<li>sk_buff_data_t      mac_header;</li></ul></li>
+<li><p>transport_header 主要指向传输层头部，比如udp/tcp协议</p></li>
+<li>network_header 主要指向网络层头部比如IP层</li>
+<li><p>mac_header　主要指向链路层头部ether</p></li>
+<li><p>还有其它比较重要的数据成员，这里仅作简单介绍</p>
+
+<ul><li><p>data_len:储存SKB的内存区并非都是线性连续的一整块区域，也有可能是不连续的两块内存区。这样的话，有可能一个skb的数据却存储在两个不连续的内存中，这就是skb分段。为了确定每一段大小，引入了这个变量，它显示的是本段内skb数据的大小。</p></li>
+<li><p>len 是skb中真实数据的长度</p></li>
+<li>protocol 协议，比如标识vlan的8021q协议</li>
+<li>cb[48] 这个是私有数据，如果想保存一些信息希望在整个协议栈传输过程中一直可以读到，就可以存储在这里面  </li></ul></li>
+</ul>
+
+
+
+<h2 id="skb的储存">skb的储存</h2>
+
+<ul>
+<li>线性区：即报文第一个buffer区域</li>
+<li><p>非线性区：报文除第一个buffer部分其余的区域</p></li>
+<li><p>skb结构描述的内存区域包含几个部分：  <br>
+1）sk_buff结构体本身；  <br>
+2）线性buffer区域，由skb-&gt;head,data,tail,end等几个指针来描述，并且包含skb_shared_info结构；  <br>
+3）“paged data”：通过skb_shared_info结构管理的一组保存在 内存page 中的数据；  <br>
+4）skb_shared_info(skb)-&gt;frag_list队列包含分片的skb队列，队列成员是skb链表指针。</p></li>
+</ul>
+
+<h1 id="skb如何到linux内核协议栈中">skb如何到linux内核协议栈中</h1>
+
+<ul>
+<li><p>驱动收到报文初始化之后生成skb结构，然后接下来就要发送报文，发给linux协议栈，那么大概是个什么样的逻辑呢？</p></li>
+<li><p>先从驱动接收帧说起，驱动接收到一个帧到来后，要做三件事情:</p>
+
+<ul><li>把帧拷贝到sk_buff结构中(使用DMA方式的处理要简单许多)</li>
+<li>初始化sk_buff中的一些网络相关参数，比如 skb-&gt;protocol</li>
+<li>更新驱动设备一些私有数据参数,产生中断告知cpu</li></ul>
+
+<p>经过以上的处理，驱动就完成了一个帧到来的准备工作，那么接下来，就要把一个帧交给linux内核cpu来处理了。那么，驱动是如何通知linux内核cpu来处理报文呢?显然是触发一个中断给内核，通知cpu</p></li>
+<li><p>驱动通知内核机制简介</p>
+
+<ul><li>老的接口netif_rx</li>
+<li>NAPI</li></ul>
+
+<p>该部分内容讲起来非常复杂，并不是本章节需要重点关注的内容。目前先简单来说，就是netif_rx采用中断去唤醒cpu来处理。而NAPI的网卡是采用中断+轮询的机制去通知内核cpu来处理。</p></li>
+</ul>
+
+
+
+<h1 id="内核接收驱动skb的入口函数netifreceiveskb">内核接收驱动skb的入口函数:netif_receive_skb</h1>
+
+<ul>
+<li>驱动完成一个skb的初始化之后，产生中断，中断处理函数最终调用的内核接收函数,就是netif_receive_skb函数。 <br>
+所以说，该函数是一扇大门，这扇大门的开启，标志着，一个报文，自驱动接收以后，万里长征预备工作完成。而该大门之后，就是linux内核世界里，充满凶险和刺激的协议栈旅程。一个skb的万里长征路，正式开启。</li>
+</ul>
+
+
+
+<h1 id="总结">总结</h1>
+
+<p>一个报文的产生和发送，都需要硬件和软件的完美配合。硬件层面接收到报文之后，做一系列的初始化操作，之后驱动才开始把一个封包封装为skb。当然这是在x86架构下，如果是在cavium架构下，封包是wqe形式存在。不管是skb还是wqe，都仅仅是一种手段，一种达到完成报文传输所采用的一种解决方案，一种方法而已。</p>
+
+<p>或许处理方案的具体实现细节差别万千，但是基本的原理，都是殊途同归，万变不离其宗。</p>
+
+<p>skb的产生，让linux协议栈旅程的开启，具备了最基本的条件，接下来的协议栈之旅，才会更加精彩。</p></div></body>
+</html>
