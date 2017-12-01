@@ -573,7 +573,16 @@ fcntl(fd,F_SETFD,FD_CLOEXEC)
 
 == ubutu下神器推荐
 
-* link:http://blog.csdn.net/Jesse_Mx/article/details/52816928
+* http://blog.csdn.net/Jesse_Mx/article/details/52816928
 ** 截图神器:shutter
 ** MAC主题配置
 
+== ubutu仿mac主题配置
+* http://blog.topspeedsnail.com/archives/4663
+
+== ubutu下minicom使用
+
+* 安装minicom
+* dmesg查看串口连接后的名称:ttyUSB0等等
+* sudo minicom -s　配置下-->保存,如果另存为，一定要起一个名字，比如ttyUSB1
+* 链接多个串口设备时候，启动时候指定串口名称: sudo minicom ttyUSB1
