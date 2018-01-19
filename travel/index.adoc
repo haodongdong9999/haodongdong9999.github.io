@@ -4,5 +4,5 @@
 
 :icons: font
 
-* link:tar.html[旅行记录]
-* link:work6.html[三亚旅行计划]
+* link:travel.html[旅行记录]
+* link:travel_sanya.html[三亚旅行计划]
