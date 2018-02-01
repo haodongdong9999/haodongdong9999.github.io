@@ -8,3 +8,4 @@
 * link:kernel.html[linux内核相关]
 * link:dpdk.html[dpdk学习]
 * link:linux_protocol.html[探寻linux协议栈]
+* link:open_uci.html[openWRT-uci机制学习总结]

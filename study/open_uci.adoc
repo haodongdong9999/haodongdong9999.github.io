@@ -1,0 +1,30 @@
+= uci学习
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== uci定义
+[options=interactive]
+
+TIP: uci是openWRT系统引入的一个软件包,是为了实现配置集中化管理.通过uci提供的API函数，可以方便
+地通过调用实现配置增删改查等操作。UCI也提供了命令行，可以在命令行直接调用。
+
+
+== uci配置结构解析
+
+* uci的一个配置文件结构包含以下几个关键要素:
+** 包(package)
+** 节点(section)
+** 数值(value)
+
+* 系统所有的配置文件都储存在 #__/etc/config__#中，参见下图:
+
+** image:image/pic_uci1.png[image,600,600,role="center"]
+** image:image/pic_uci2.png[image,600,600,role="center"]
+
+== uci命令行使用
+
