@@ -1846,17 +1846,33 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-此方法适合调试内核模块堆栈情况,
+此方法适合调试内核模块堆栈情况,EIP指针会指向堆栈发生的位置。
 </td>
 </tr>
 </table>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>将模块重新编译，添加选项 <em>EXTRA_CFLAGS+=-g</em> ,例如 make M=modules EXTRA_CFLAGS+=-g</p>
+</li>
+<li>
+<p>执行　gdb moudles.o</p>
+</li>
+<li>
+<p>执行　b *(EIP)  例如 *(ixgbe_xmit_frame_ring+0x7d0)</p>
+</li>
+<li>
+<p>然后就可以看到堆栈具体所在的行号位置</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-03-30 14:59:23 CST
+Last updated 2018-03-30 15:08:48 CST
 </div>
 </div>
 </body>

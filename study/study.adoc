@@ -589,4 +589,10 @@ fcntl(fd,F_SETFD,FD_CLOEXEC)
 
 == gdb调试内核堆栈方法
 
-TIP: 此方法适合调试内核模块堆栈情况,
+TIP: 此方法适合调试内核模块堆栈情况,EIP指针会指向堆栈发生的位置。
+
+* 将模块重新编译，添加选项 __EXTRA_CFLAGS+=-g__ ,例如 make M=modules EXTRA_CFLAGS+=-g
+* 执行　gdb moudles.o
+* 执行　b *(EIP)  例如 *(ixgbe_xmit_frame_ring+0x7d0)
+* 然后就可以看到堆栈具体所在的行号位置
+
