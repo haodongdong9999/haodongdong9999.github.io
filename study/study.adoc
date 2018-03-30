@@ -586,3 +586,7 @@ fcntl(fd,F_SETFD,FD_CLOEXEC)
 * dmesg查看串口连接后的名称:ttyUSB0等等
 * sudo minicom -s　配置下-->保存,如果另存为，一定要起一个名字，比如ttyUSB1
 * 链接多个串口设备时候，启动时候指定串口名称: sudo minicom ttyUSB1
+
+== gdb调试内核堆栈方法
+
+TIP: 此方法适合调试内核模块堆栈情况,
