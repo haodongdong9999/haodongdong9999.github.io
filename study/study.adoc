@@ -503,6 +503,7 @@ if (ioctl(fd, SIOCETHTOOL, &ifr) == -1)
 
 return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
 }
+
 == linux系统启动顺序
 
 * 系统先加载/etc/inittab文件，执行其中的内容，引导加载/etc/rc.d下的东西

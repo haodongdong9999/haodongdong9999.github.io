@@ -474,20 +474,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_查看linux内核32_64">37. 查看linux内核32/64</a></li>
 <li><a href="#_linux模块相关">38. linux模块相关</a></li>
 <li><a href="#_linux下获取端口状态">39. linux下获取端口状态</a></li>
-<li><a href="#_linux调试有关">40. linux调试有关</a></li>
-<li><a href="#_centos7升级内核方法">41. centos7升级内核方法</a></li>
-<li><a href="#_firefox改变背景颜色的方法">42. firefox改变背景颜色的方法</a></li>
-<li><a href="#_ubutu下将屏幕旋转显示">43. ubutu下将屏幕旋转显示</a></li>
-<li><a href="#_linux下bridge转发远离学习">44. linux下bridge转发远离学习</a></li>
-<li><a href="#_linux反向路径过滤问题">45. linux反向路径过滤问题</a></li>
-<li><a href="#_linux内核slab造成内存泄露的排查方法">46. linux内核slab造成内存泄露的排查方法</a></li>
-<li><a href="#_用工具排查linux内核内存泄露的方法">47. 用工具排查linux内核内存泄露的方法</a></li>
-<li><a href="#_fcntl解决进程继承端口号问题">48. fcntl解决进程继承端口号问题</a></li>
-<li><a href="#_pppoe拨号终端打不开网页问题">49. pppoe拨号终端打不开网页问题</a></li>
-<li><a href="#_ubutu下神器推荐">50. ubutu下神器推荐</a></li>
-<li><a href="#_ubutu仿mac主题配置">51. ubutu仿mac主题配置</a></li>
-<li><a href="#_ubutu下minicom使用">52. ubutu下minicom使用</a></li>
-<li><a href="#_gdb调试内核堆栈方法">53. gdb调试内核堆栈方法</a></li>
+<li><a href="#_linux系统启动顺序">40. linux系统启动顺序</a></li>
+<li><a href="#_linux调试有关">41. linux调试有关</a></li>
+<li><a href="#_centos7升级内核方法">42. centos7升级内核方法</a></li>
+<li><a href="#_firefox改变背景颜色的方法">43. firefox改变背景颜色的方法</a></li>
+<li><a href="#_ubutu下将屏幕旋转显示">44. ubutu下将屏幕旋转显示</a></li>
+<li><a href="#_linux下bridge转发远离学习">45. linux下bridge转发远离学习</a></li>
+<li><a href="#_linux反向路径过滤问题">46. linux反向路径过滤问题</a></li>
+<li><a href="#_linux内核slab造成内存泄露的排查方法">47. linux内核slab造成内存泄露的排查方法</a></li>
+<li><a href="#_用工具排查linux内核内存泄露的方法">48. 用工具排查linux内核内存泄露的方法</a></li>
+<li><a href="#_fcntl解决进程继承端口号问题">49. fcntl解决进程继承端口号问题</a></li>
+<li><a href="#_pppoe拨号终端打不开网页问题">50. pppoe拨号终端打不开网页问题</a></li>
+<li><a href="#_ubutu下神器推荐">51. ubutu下神器推荐</a></li>
+<li><a href="#_ubutu仿mac主题配置">52. ubutu仿mac主题配置</a></li>
+<li><a href="#_ubutu下minicom使用">53. ubutu下minicom使用</a></li>
+<li><a href="#_gdb调试内核堆栈方法">54. gdb调试内核堆栈方法</a></li>
 </ul>
 </div>
 </div>
@@ -1609,9 +1610,13 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 <div class="paragraph">
 <p>return edata.data ? IFSTATUS_UP : IFSTATUS_DOWN;
-}
-== linux系统启动顺序</p>
+}</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_linux系统启动顺序">40. linux系统启动顺序</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -1622,7 +1627,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_linux调试有关">40. linux调试有关</h2>
+<h2 id="_linux调试有关">41. linux调试有关</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1637,7 +1642,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_centos7升级内核方法">41. centos7升级内核方法</h2>
+<h2 id="_centos7升级内核方法">42. centos7升级内核方法</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1649,7 +1654,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_firefox改变背景颜色的方法">42. firefox改变背景颜色的方法</h2>
+<h2 id="_firefox改变背景颜色的方法">43. firefox改变背景颜色的方法</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1661,7 +1666,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ubutu下将屏幕旋转显示">43. ubutu下将屏幕旋转显示</h2>
+<h2 id="_ubutu下将屏幕旋转显示">44. ubutu下将屏幕旋转显示</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1682,7 +1687,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_linux下bridge转发远离学习">44. linux下bridge转发远离学习</h2>
+<h2 id="_linux下bridge转发远离学习">45. linux下bridge转发远离学习</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1694,7 +1699,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_linux反向路径过滤问题">45. linux反向路径过滤问题</h2>
+<h2 id="_linux反向路径过滤问题">46. linux反向路径过滤问题</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1706,7 +1711,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_linux内核slab造成内存泄露的排查方法">46. linux内核slab造成内存泄露的排查方法</h2>
+<h2 id="_linux内核slab造成内存泄露的排查方法">47. linux内核slab造成内存泄露的排查方法</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1718,7 +1723,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_用工具排查linux内核内存泄露的方法">47. 用工具排查linux内核内存泄露的方法</h2>
+<h2 id="_用工具排查linux内核内存泄露的方法">48. 用工具排查linux内核内存泄露的方法</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1730,7 +1735,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_fcntl解决进程继承端口号问题">48. fcntl解决进程继承端口号问题</h2>
+<h2 id="_fcntl解决进程继承端口号问题">49. fcntl解决进程继承端口号问题</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1764,7 +1769,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_pppoe拨号终端打不开网页问题">49. pppoe拨号终端打不开网页问题</h2>
+<h2 id="_pppoe拨号终端打不开网页问题">50. pppoe拨号终端打不开网页问题</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1782,7 +1787,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ubutu下神器推荐">50. ubutu下神器推荐</h2>
+<h2 id="_ubutu下神器推荐">51. ubutu下神器推荐</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1804,7 +1809,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ubutu仿mac主题配置">51. ubutu仿mac主题配置</h2>
+<h2 id="_ubutu仿mac主题配置">52. ubutu仿mac主题配置</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1816,7 +1821,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_ubutu下minicom使用">52. ubutu下minicom使用</h2>
+<h2 id="_ubutu下minicom使用">53. ubutu下minicom使用</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -1837,7 +1842,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gdb调试内核堆栈方法">53. gdb调试内核堆栈方法</h2>
+<h2 id="_gdb调试内核堆栈方法">54. gdb调试内核堆栈方法</h2>
 <div class="sectionbody">
 <div class="admonitionblock tip">
 <table>
@@ -1872,7 +1877,7 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-03-30 15:08:48 CST
+Last updated 2018-04-04 11:26:27 CST
 </div>
 </div>
 </body>
