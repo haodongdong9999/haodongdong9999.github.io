@@ -600,3 +600,9 @@ TIP: 此方法适合调试内核模块堆栈情况,EIP指针会指向堆栈发�
 == 一种基于netfilter植入广告的方法
 
 * https://blog.csdn.net/u012819339/article/details/50117405
+
+== 查看linux是哪种发行版本的方法
+
+* lsb_release -a
+* cat /proc/version
+* cat /etc/*-release

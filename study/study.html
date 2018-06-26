@@ -490,6 +490,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_ubutu下minicom使用">53. ubutu下minicom使用</a></li>
 <li><a href="#_gdb调试内核堆栈方法">54. gdb调试内核堆栈方法</a></li>
 <li><a href="#_一种基于netfilter植入广告的方法">55. 一种基于netfilter植入广告的方法</a></li>
+<li><a href="#_查看linux是哪种发行版本的方法">56. 查看linux是哪种发行版本的方法</a></li>
 </ul>
 </div>
 </div>
@@ -1887,10 +1888,28 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_查看linux是哪种发行版本的方法">56. 查看linux是哪种发行版本的方法</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>lsb_release -a</p>
+</li>
+<li>
+<p>cat /proc/version</p>
+</li>
+<li>
+<p>cat /etc/*-release</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-05-09 16:04:42 CST
+Last updated 2018-06-26 13:19:21 CST
 </div>
 </div>
 </body>
