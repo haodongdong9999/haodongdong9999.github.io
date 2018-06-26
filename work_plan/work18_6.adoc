@@ -48,12 +48,17 @@ TIP: 下周是dpi项目第二阶段开发以及外场服务器外发后的维护
 
 == 6.25-6.29总结
 
-.每日进展:
+.每日进展 6-25:
 ****
-- [*] dpi监控程序采用　 https://github.com/Supervisor/supervisor　
-- [*] 外发服务器领到，准备基础环境搭建
-- [ ] init脚本搭建基础环境，不再跟随版本，单独领出来
-- [ ] 增加install.sh 在版本包中，主要是一键安装
-- [ ] init脚本中添加supervisor的配置文件
+- [*] dpi监控程序采用supervisor进行，评估自测通过　 [supervisor]https://github.com/Supervisor/supervisor　
+- [*] 外发服务器领到，其中一台准备基础环境搭建完毕。
+- [*] init脚本搭建基础环境，不再跟随版本，单独领出来
 
 ****
+
+.每日进展 6-26
+
+- [ ] 增加install.sh 在版本包中，主要是一键安装
+- [ ] init脚本中添加supervisor的配置文件
+- [ ] 中午服务器１挂公司内网
+- [ ] 下班前服务器２挂公司内网
