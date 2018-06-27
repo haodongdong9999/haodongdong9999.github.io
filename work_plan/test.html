@@ -443,7 +443,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>假设linux设备上有两个实际的物理端口eth0,eth1。eth0配置ip地址/自动获取IP地址均可。eth0就当成wan口，假设地址为10.10.10.1，默认网关从eth0出去。</p>
 </li>
 <li>
-<p>执行命令 brctl add br br0 创建br0桥，ifconfig br0 up;ifconfig br0 192.168.1.254/16,给br0配置一个IP地址.</p>
+<p>执行命令 brctl addbr br0 创建br0桥，ifconfig br0 up;ifconfig br0 192.168.1.254/16,给br0配置一个IP地址.</p>
 </li>
 <li>
 <p>brctl addif br0 eth1 把eth1添加到br0下。ifconfig eth1 up启动端口eth1</p>
@@ -480,7 +480,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-27 16:49:24 CST
+Last updated 2018-06-27 16:55:53 CST
 </div>
 </div>
 </body>
