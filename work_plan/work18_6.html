@@ -615,7 +615,23 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>[] 联调项目跟踪</p>
 </li>
 <li>
-<p>[] 安排外发服务器</p>
+<p>[] 安排外发服务器,自己测试。测试条目如下:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>重启服务器，监控进程supervisor可以正常启动并预期正常启动dpi</p>
+</li>
+<li>
+<p>dpi程序正常起来，可以采集到数据并分析出结果</p>
+</li>
+<li>
+<p>对分析结果进行验证，搭建小代理环境，验证准备准确性</p>
+</li>
+<li>
+<p>down掉端口，杀死dpi进程，看下监控程序supervisor能否正常启动dpi程序，并且记录进程异常log</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
 <p>[] 数据面集采项目打流支持孙昊侧问题</p>
@@ -632,7 +648,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-28 09:29:09 CST
+Last updated 2018-06-28 09:56:57 CST
 </div>
 </div>
 </body>
