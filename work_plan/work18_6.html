@@ -699,6 +699,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </ul>
 </div>
 </li>
+<li>
+<p>数据业务的特征、采集接入以及深度解析</p>
+</li>
+<li>
+<p>优化策略的应用和调控(用户行为、网络带宽、业务的QoS)</p>
+</li>
+<li>
+<p>DPI流量限速的策略</p>
+<div class="ulist">
+<ul>
+<li>
+<p>串联流量控制策略</p>
+</li>
+<li>
+<p>并联干扰控制策略</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TCP截断，伪造TCP RST报文截断TCP链接</p>
+</li>
+<li>
+<p>TCP降速，伪造sequence报文减小TCP花东窗口值</p>
+</li>
+<li>
+<p>UDP截断，通过伪造并发送P2P应用特殊控制命令截断UDP链接</p>
+</li>
+<li>
+<p>UDP降速，通过伪造发送P2P应用特殊命令降低UDP链接的传输速率</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
 </ul>
 </div>
 </div>
@@ -706,7 +741,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-28 16:55:05 CST
+Last updated 2018-06-28 17:17:26 CST
 </div>
 </div>
 </body>
