@@ -14,4 +14,4 @@
 * link:work17_7.html[17-7月工作记录]
 * link:work18_6.html[18-6月工作记录]
 * link:dpi_week.html[DPI项目周报]
-* link:dpi_workplan.html[DPI工作安排]
+* link:dpi_work_plan.html[DPI工作安排]
