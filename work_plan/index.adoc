@@ -13,3 +13,4 @@
 * link:ap_get_put.html[AP上传下载文件方法]
 * link:work17_7.html[17-7月工作记录]
 * link:work18_6.html[18-6月工作记录]
+* link:dpi_week.html[DPI项目周报]
