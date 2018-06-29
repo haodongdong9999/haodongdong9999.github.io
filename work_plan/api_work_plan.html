@@ -433,12 +433,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_本周任务总结">1. 本周任务总结</a></li>
 <li><a href="#_下周工作计划安排">2. 下周工作计划安排</a></li>
-<li><a href="#_遗留问题">3. 遗留问题</a></li>
-<li><a href="#_dpi本周总结">4. DPI本周总结</a></li>
-<li><a href="#_dpi第一代目前问题和近期规划">5. DPI第一代目前问题和近期规划</a></li>
-<li><a href="#_下周安排">6. 下周安排:</a></li>
-<li><a href="#_dpi要做成什么样子">7. DPI要做成什么样子</a></li>
-<li><a href="#_dpi能做成什么样子">8. dpi能做成什么样子</a></li>
 </ul>
 </div>
 </div>
@@ -502,52 +496,100 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p>DPI添加更多应用支持(TTL/微博/游戏/&#8230;&#8203;)---李磊，郝东东</p>
+<p>本周任务安排  6.25-6.29</p>
 </li>
 <li>
-<p>外发服务器准备工作，包括软件环境+公司内部自测&#8212;&#8203;孙昊，郝东东　1.5个工作日</p>
-</li>
-<li>
-<p>外发DPI服务器在外场期间的测试数据监控维护---郝东东，孙昊</p>
-</li>
-<li>
-<p>添加厂商MAC库支持　---郝东东 1工作日</p>
-</li>
-<li>
-<p>自动化编译平台构建---李磊</p>
-</li>
-<li>
-<p>外发DPI服务器BUG以及其它问题</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_遗留问题">3. 遗留问题</h2>
-<div class="sectionbody">
+<p>本周最主要的两件事情</p>
 <div class="ulist">
 <ul>
 <li>
-<p>目前外场是在终端测自动防止代理，这样的话网络中不可能出现代理数据。那么问题</p>
+<p>1.外发服务器环境准备和测试---优先级最高</p>
+</li>
+<li>
+<p>2.DPI第二版本开发</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>人员安排</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p>DPI服务器该如何测试?</p>
+<p>郝东东：</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> Dpi支持TTL ---周一完成</p>
 </li>
 <li>
-<p>已经和叶总商量可以放开终端侧的防代理，但是另外一个问题来了:</p>
+<p><i class="fa fa-check-square-o"></i> Dpi进程监控脚本（周一完成）</p>
 </li>
 <li>
-<p>DPI服务器检测出有代理用户，如何确定真伪?待和外场协调商量中。</p>
+<p><i class="fa fa-check-square-o"></i> 新服务器外发测试/支持相关（周四完成）</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 集采板子打流。---周五</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 编译，软件版本管理相关，DPI未来计划演进计划相关---周五</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 替包软件联合调试</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>李磊:</p>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> 找到适合dpi项目的MAC 厂商库，并在dpi上开发运行---周二</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 整理出带有imei的虚拟身份列表，发出（半个工作日）。然后可行后按照列表开发代码添加（根据实际虚拟身份确定）。---周五</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> TTL合入</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 外发服务器其他相关问题支持。---随时。</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 优化讨论</p>
 </li>
 </ul>
 </div>
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>孙昊：</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-check-square-o"></i> Centos编译机搭建准备，centos系统上外发版本正常运行，为服务器做准备—----周一完成</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 外发服务器软件环境准备，在新机器上安装运行dpi，一切准备就绪，测试，问题解决，发出服务器-----周三</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 确定分析模块配置信息（判定规则参数以及依赖配置）的存储方案并完成修改。---周四</p>
+</li>
+<li>
+<p><i class="fa fa-check-square-o"></i> 集采新板子打流（新驱动适配，打流）--周五</p>
+</li>
+</ul>
+</div>
+<div class="sidebarblock">
+<div class="content">
 <div class="admonitionblock note">
 <table>
 <tr>
@@ -560,13 +602,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>== DPI本周总结</p>
 </div>
 </div>
-<div class="sect1">
-<h2 id="_dpi本周总结">4. DPI本周总结</h2>
-<div class="sectionbody">
-<div class="sidebarblock">
-<div class="content">
+</div>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
@@ -577,13 +617,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="sidebarblock">
+<div class="content">
+<div class="paragraph">
+<p>== DPI第一代目前问题和近期规划</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_dpi第一代目前问题和近期规划">5. DPI第一代目前问题和近期规划</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -610,11 +648,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== 下周安排:</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_下周安排">6. 下周安排:</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -667,11 +703,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== DPI要做成什么样子</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_dpi要做成什么样子">7. DPI要做成什么样子</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -679,11 +713,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="paragraph">
+<p>== dpi能做成什么样子</p>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_dpi能做成什么样子">8. dpi能做成什么样子</h2>
-<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
@@ -774,9 +806,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+</div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-29 13:35:39 CST
+Last updated 2018-06-29 13:47:17 CST
 </div>
 </div>
 </body>
