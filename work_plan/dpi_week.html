@@ -434,8 +434,10 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_本周任务总结">1. 本周任务总结</a></li>
 <li><a href="#_下周工作计划安排">2. 下周工作计划安排</a></li>
 <li><a href="#_遗留问题">3. 遗留问题</a></li>
-<li><a href="#_6_25_6_29总结">4. 6.25-6.29总结</a></li>
-<li><a href="#_dpi应用场景">5. dpi应用场景</a></li>
+<li><a href="#_dpi本周总结">4. DPI本周总结</a></li>
+<li><a href="#_dpi第一代目前问题和近期规划">5. DPI第一代目前问题和近期规划</a></li>
+<li><a href="#_dpi要做成什么样子">6. DPI要做成什么样子</a></li>
+<li><a href="#_dpi能做成什么样子">7. dpi能做成什么样子</a></li>
 </ul>
 </div>
 </div>
@@ -545,100 +547,32 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+6.23-6.29周总结
+</td>
+</tr>
+</table>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_6_25_6_29总结">4. 6.25-6.29总结</h2>
+<h2 id="_dpi本周总结">4. DPI本周总结</h2>
 <div class="sectionbody">
 <div class="sidebarblock">
 <div class="content">
-<div class="title">每日进展 6-25:</div>
 <div class="ulist checklist">
 <ul class="checklist">
 <li>
-<p><i class="fa fa-check-square-o"></i> dpi监控程序采用supervisor进行，评估可行性自测通过用在dpi项目上 [supervisor]<a href="https://github.com/Supervisor/supervisor　5H" class="bare">https://github.com/Supervisor/supervisor　5H</a></p>
+<p><i class="fa fa-check-square-o"></i> DPI外发第一个软件版本v1.0完成，自测完成。(开启启动，监控进程，异常日志记录，自动分析结果csv)</p>
 </li>
 <li>
-<p><i class="fa fa-check-square-o"></i> 外发服务器领到，其中一台准备基础环境搭建完毕。1H</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> init脚本搭建基础环境，不再跟随版本，单独领出来.自测功能。2H</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">每日进展 6-26</div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> 增加install.sh 在版本包中，主要是一键安装+调试　2H</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> 将supervisor添加进代码分之，自动化运行，自动配置所需，开机启动，调试测试　4H</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> 中午服务器１挂公司内网</p>
-</li>
-<li>
-<p><i class="fa fa-square-o"></i> 下班前服务器２挂公司内网</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> 二亚问题沟通处理　2H  ---其中软件安装适配0.3H  沟通测试1.7H,有问题加班到晚上８点半</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">每日进展6-27</div>
-<div class="ulist checklist">
-<ul class="checklist">
-<li>
-<p><i class="fa fa-check-square-o"></i> 二亚项目支持，测试不通过，联合调试支持.本地测试确定不通过，指导对方搭建和我们网关转发方式差不多的环境，进行测试。应该一样有问题。6.5H</p>
-</li>
-<li>
-<p><i class="fa fa-check-square-o"></i> DPI外发服务器install,监控进程启动方法等测试确认.sepervisor配置文件修改，验证，确认没有问题。</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="title">每日进展6-28</div>
-<div class="ulist">
-<ul>
-<li>
-<p>[] 联调项目跟踪,基本可以证明，对方的程序在我们设备上是不起作用的，可能原因在于对方程序的实现机制不适合linux bridge的情况.</p>
-</li>
-<li>
-<p>[] 安排外发服务器,自己测试。测试条目如下:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>重启服务器，监控进程supervisor可以正常启动并预期正常启动dpi</p>
-</li>
-<li>
-<p>dpi程序正常起来，可以采集到数据并分析出结果</p>
-</li>
-<li>
-<p>对分析结果进行验证，搭建小代理环境，验证准备准确性</p>
-</li>
-<li>
-<p>down掉端口，杀死dpi进程，看下监控程序supervisor能否正常启动dpi程序，并且记录进程异常log</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>[] 数据面集采项目打流支持孙昊侧问题</p>
-</li>
-<li>
-<p>[] dpi下一步规划以及项目进展，出报告。可加的应用:腾讯视频，新浪微博，高德地图，优酷，百度地图，爱奇艺，腾讯新闻，酷狗音乐</p>
+<p><i class="fa fa-check-square-o"></i> 外发服务器两台，按照计划准备完毕，已经发出。</p>
 </li>
 </ul>
 </div>
@@ -647,7 +581,50 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_dpi应用场景">5. dpi应用场景</h2>
+<h2 id="_dpi第一代目前问题和近期规划">5. DPI第一代目前问题和近期规划</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>dpi接下来确认可加的应用:腾讯视频，新浪微博，高德地图，优酷，百度地图，爱奇艺，腾讯新闻，酷狗音乐</p>
+</li>
+<li>
+<p>软件性能问题</p>
+<div class="ulist">
+<ul>
+<li>
+<p>采集模块，目前单线程循环采集数据，效率不搞，cpu负荷比较重。考虑采用多个线程分发进行，比如基于五元组hash出一个线程ID，相对应线程ID进行处理。</p>
+</li>
+<li>
+<p>写数据库，目前虽然是异步写入，但每次写入之前都要查询上一次的结果，如果不成功就阻塞，有待优化。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>WEB显示。目前弱需求，但是可以加入代理终端的信息显示。</p>
+</li>
+<li>
+<p>版本升级管理:目前就是强制替换。</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dpi要做成什么样子">6. DPI要做成什么样子</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>第一版如果仅仅是识别代理终端，那么功能实现之后基本就是收敛状态，看需求</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_dpi能做成什么样子">7. dpi能做成什么样子</h2>
 <div class="sectionbody">
 <div class="ulist">
 <ul>
@@ -741,7 +718,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-06-29 09:32:50 CST
+Last updated 2018-06-29 10:00:14 CST
 </div>
 </div>
 </body>
