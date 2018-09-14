@@ -7,6 +7,17 @@
 :icons: font
 :sectnums:
 
+== 负责模块
+
+IMPORTANT: 达到3level
+
+. target for 2018
+
+* Team related AAU(9 AAU:  #__alarm__#, #__log__#, #__cmd__#, #__shell__#, #**memprot**#, #**vpman**#, #**vpmeas**#, #**enp**#, #**plp**#) achieve to skill level 3
+* MISRA C knowledge achieve to skill level 3
+* AutoSar knowledge achieve to skill level 2
+* Understand <Code Complete 2 edition> and do the deep research for 1/3 content
+* Oral English communication achieve to skill level 2(working communication)
 
 == 9-14工作记录
 
