@@ -15,8 +15,8 @@ TIP: 跟踪IHBC测试情况，整理模块关系
 .今日计划
 ****
 - [ ] 询问Cody测试情况
-- [ ] 和Frank Wang交流BYD-HC项目开始情况，定位自己在其中的task
-- [ ] 每日1小时英语学习
+- [*] 和Frank Wang交流BYD-HC项目开始情况，定位自己在其中的task（等待分配任务，主要是paltform）
+- [*] 每日1小时英语学习
 - [ ] 书籍
 ****
 . weekly meeting
