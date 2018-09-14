@@ -1,12 +1,13 @@
 = 东东博客
 
-学习 工作 生活 
+学习 工作 生活
 
 :icons: font
 
 * link:study/index.html[学习总结]
 * link:day_note/day.html[生活记录]
-* link:work_plan/index.html[工作总结]
+* link:work_plan/index.html[GBCOM工作总结]
+* link:veoneer_work/index.html[VEONEER工作总结]
 * link:my_software/software.html[软件/资源]
 * link:travel/index.html[亲子游]
 * link:something/sth.html[生活计划]

@@ -1,0 +1,7 @@
+= 工作记录
+
+记录每一天工作内容
+
+:icons: font
+
+* link:work9.html[九月工作记录]
