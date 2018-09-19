@@ -15,15 +15,15 @@
 ** 存储All errors in ECU
 ** 提供统一的方式读取errors
 
-== Alarm模块和其它模块交互
+== Alarm模块提供接口介绍
 
 * Alarm模块对外提供的接口，可见下图所示
 
-image:../image/alarm_1.png[image,600,600,role="center"]
+image:../image/alarm_1.png[image,800,800,role="center"]
 
 * 接口介绍
 ** **__#ALARM_Report#__** 系列
-*** __#ALARM_setAlarmPoint#__ ,Activates the provided MCU AP. A call to the function has no effect for an active AP.
+*** __#ALARM_setAlarmPoint#__ , Activates the provided MCU AP. A call to the function has no effect for an active AP.
     If the function is called from a domain that is lower than the classification of the AP then the AP is not activated.
     To indicate the error, a system specific alarm is activated. This alarm cannot be deactivated.
 *** __#ALARM_clearAlarmPoint#__,Deactivates the provided MCU AP. A call to the function has no effect for an inactive AP.
@@ -43,6 +43,15 @@ image:../image/alarm_1.png[image,600,600,role="center"]
   If safetyDomain is lower than the safety domain registered to the AP upon activation, the function triggers a system
   specific alarm, which cannot be deactivated. Otherwise, it deactivates the AP (unless already inactive), and checks whether
   the alarm shall be deactivated
+
+** **__#ALARM_ReportAsync#__**
+*** __#ALARM_setAlarmPointIsr#__,Adds the provided MCU alarm point to a list of alarm points that are waiting on being activated.
+    The function suspends all interrupts while modifying the data structure storing the alarm point requests. If the requested
+    alarm point already is in the list then it will not be added again.
+
+** **__#ALARM_GetStatus#__**
+*** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is active, AlvFalse otherwise
+*** __#ALARM_getAlarmStatus#__,Returns status information for the requested alarm
 
 == 总结
 ....
