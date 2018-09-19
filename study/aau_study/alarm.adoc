@@ -50,8 +50,10 @@ image:../image/alarm_1.png[image,800,800,role="center"]
     alarm point already is in the list then it will not be added again.
 
 ** **__#ALARM_GetStatus#__**
-*** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is active, AlvFalse otherwise
-*** __#ALARM_getAlarmStatus#__,Returns status information for the requested alarm
+*** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is active, AlvFalse otherwise.
+*** __#ALARM_getAlarmStatus#__,Returns status information for the requested alarm.
+*** __#ALARM_numberActiveAlarmPoints#__,Returns the total number of active alarm numbers.
+*** __#ALARM_getAlarmStatus#__,
 
 == 总结
 ....
