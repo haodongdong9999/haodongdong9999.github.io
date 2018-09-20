@@ -446,7 +446,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#_alarm模块目的">1. Alarm模块目的</a></li>
 <li><a href="#_alarm模块提供接口介绍">2. Alarm模块提供接口介绍</a></li>
-<li><a href="#_总结">3. 总结</a></li>
+<li><a href="#_模块关联">3. 模块关联</a></li>
+<li><a href="#_jhcjdskc">4. jhcjdskc</a></li>
+<li><a href="#_总结">5. 总结</a></li>
 </ul>
 </div>
 </div>
@@ -565,7 +567,9 @@ alarm point already is in the list then it will not be added again.</p>
 <p><em><mark>ALARM_numberActiveAlarmPoints</mark></em>,Returns the total number of active alarm numbers.</p>
 </li>
 <li>
-<p><em><mark>ALARM_getAlarmStatus</mark></em>,</p>
+<p><em><mark>ALARM_getActiveAlarmStatus</mark></em>,Returns the status for the active alarm points with the provided index. If the index is
+valid MT_OK is returned, MT_NOT_OK otherwise. The value of the return parameters is undefined if MT_NOT_OK is returned.
+Note: Every time an alarm point is activated or deactivated the index to an active alarm point may change</p>
 </li>
 </ul>
 </div>
@@ -578,7 +582,19 @@ alarm point already is in the list then it will not be added again.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_总结">3. 总结</h2>
+<h2 id="_模块关联">3. 模块关联</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_jhcjdskc">4. jhcjdskc</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_总结">5. 总结</h2>
 <div class="sectionbody">
 <div class="literalblock">
 <div class="content">
@@ -592,7 +608,7 @@ alarm point already is in the list then it will not be added again.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-19 16:52:42 CST
+Last updated 2018-09-20 08:51:17 CST
 </div>
 </div>
 </body>
