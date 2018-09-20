@@ -53,7 +53,13 @@ image:../image/alarm_1.png[image,800,800,role="center"]
 *** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is active, AlvFalse otherwise.
 *** __#ALARM_getAlarmStatus#__,Returns status information for the requested alarm.
 *** __#ALARM_numberActiveAlarmPoints#__,Returns the total number of active alarm numbers.
-*** __#ALARM_getAlarmStatus#__,
+*** __#ALARM_getActiveAlarmStatus#__,Returns the status for the active alarm points with the provided index. If the index is
+  valid MT_OK is returned, MT_NOT_OK otherwise. The value of the return parameters is undefined if MT_NOT_OK is returned.
+  Note: Every time an alarm point is activated or deactivated the index to an active alarm point may change
+
+== 模块关联
+
+== jhcjdskc
 
 == 总结
 ....
