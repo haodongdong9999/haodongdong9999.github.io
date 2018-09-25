@@ -21,8 +21,8 @@
 
 image:../image/alarm_1.png[image,800,800,role="center"]
 
-* 接口介绍
 ** **__#ALARM_Report#__** 系列
+* 接口介绍
 *** __#ALARM_setAlarmPoint#__ , Activates the provided MCU AP. A call to the function has no effect for an active AP.
     If the function is called from a domain that is lower than the classification of the AP then the AP is not activated.
     To indicate the error, a system specific alarm is activated. This alarm cannot be deactivated.
@@ -50,21 +50,25 @@ image:../image/alarm_1.png[image,800,800,role="center"]
     alarm point already is in the list then it will not be added again.
 
 ** **__#ALARM_GetStatus#__**
-*** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is active, AlvFalse otherwise.
+*** __#ALARM_isAlarmActive#__,Returns AlvTrue if the alarm is Aactive, AlvFalse otherwise.
 *** __#ALARM_getAlarmStatus#__,Returns status information for the requested alarm.
 *** __#ALARM_numberActiveAlarmPoints#__,Returns the total number of active alarm numbers.
 *** __#ALARM_getActiveAlarmStatus#__,Returns the status for the active alarm points with the provided index. If the index is
   valid MT_OK is returned, MT_NOT_OK otherwise. The value of the return parameters is undefined if MT_NOT_OK is returned.
   Note: Every time an alarm point is activated or deactivated the index to an active alarm point may change
 
+** API总结关系图见下
+
+image:../image/alarm_3.png[image,800,800,role="center"]
+
 == 模块关联
 
-== jhcjdskc
+NOTE: 相关模块关系图见下图:
+
+image:../image/alarm_2.png[image,800,800,role="center"]
 
 == 总结
-....
 
-以上是自己的一点总结，参考来自书籍，网络，内核文档，内核代码。
-当然，毕竟是自己现阶段的理解，也可能对有些概念的阐述存在不当之处。
-希望以上的总结对大家有一点的帮助。
+....
+以上是自己的一点总结
 ....
