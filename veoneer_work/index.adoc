@@ -5,3 +5,4 @@
 :icons: font
 
 * link:work.html[九月工作记录]
+* link:week.html[周总结]
