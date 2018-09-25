@@ -1,0 +1,30 @@
+= 工作内容
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 负责模块
+
+IMPORTANT: 达到3level
+
+. target for 2018
+
+* Team related AAU(9 AAU:  #__alarm__#, #__log__#, #__cmd__#, #__shell__#, #**memprot**#, #**vpman**#, #**vpmeas**#, #**enp**#, #**plp**#) achieve to skill level 3
+* MISRA C knowledge achieve to skill level 3
+* AutoSar knowledge achieve to skill level 2
+* Understand <Code Complete 2 edition> and do the deep research for 1/3 content
+* Oral English communication achieve to skill level 2(working communication)
+
+== 38 weekly work status
+. 完成
+****
+<1> IHBC new requirements done.
+** 学会CANalyzer + Debug Tool 调试程序方法，学习CAPl触发信号方法
+** 学会PTC基本流程操作
+<2> 学习模块，输出alarm模块学习总结
+** 代码层面
+** 功能层面
