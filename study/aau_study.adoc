@@ -5,3 +5,4 @@
 :icons: font
 
 * link:aau_study/alarm.html[alarm模块]
+* link:aau_study/log.html[log模块]
