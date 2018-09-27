@@ -516,37 +516,82 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="ulist">
 <ul>
 <li>
-<p><em><mark>LOG_getLogItem</mark></em>,Provides the next item from the event log if it is in reading state.
+<p><em><mark>LOG_getLogItem</mark></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Provides the next item from the event log if it is in reading state.
 When the last item is read the event log is automatically released. Returns the status of the attempt:
 OK or OK_LAST on success, ERROR if no items present or if reading beyond the last item is attempted.</p>
 </li>
-<li>
-<p><em><mark>LOG_releaseLog</mark></em>,Ends the reading of an event log and reenables the event logging mechanism.
-The function has no effect if the event log is not being read (i.e. the function is always safe to use).</p>
+</ul>
+</div>
 </li>
 <li>
-<p><em><mark>LOG_startLogRead</mark></em>,Resets the read pointer to the beginning of the log. The event logging will
+<p><em><mark>LOG_releaseLog</mark></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ends the reading of an event log and reenables the event logging mechanism.
+The function has no effect if the event log is not being read (i.e. the function is always safe to use).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em><mark>LOG_startLogRead</mark></em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Resets the read pointer to the beginning of the log. The event logging will
 be inhibited until the event log is released. Returns MT_OK if reading is successfully started,
 MT_NOT_OK otherwise.</p>
 </li>
 </ul>
 </div>
 </li>
+</ul>
+</div>
+</li>
 <li>
-<p><strong><em><mark>LOG_ManageLog</mark></em></strong> Interface for managing the log from NVM</p>
+<p><strong><em><mark>LOG_ManageLog</mark></em></strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p><em><mark>LOG_eraseLog</mark></em>,Initiates deletion of the NVM block where the
+<p>Interface for managing the log from NVM</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em><mark>LOG_eraseLog</mark></em></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Initiates deletion of the NVM block where the
 log was saved. The request will fail if there is any NVM related activity ongoing.
 The success or failure of the operation is reported.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em><mark>LOG_loadLog</mark></em></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><em><mark>LOG_loadLog</mark></em>,Load the read buffer with the information found in the NVM block.
+<p>Load the read buffer with the information found in the NVM block.
 The success or failure of the operation is reported</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em><mark>LOG_saveLog</mark></em></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><em><mark>LOG_saveLog</mark></em>,Initiates storage of the log in NVM. The request will fail if there
+<p>Initiates storage of the log in NVM. The request will fail if there
 is any NVM related activity ongoing. An ongoing event log read will be stopped (released).
 The success or failure of the operation is reported.</p>
 </li>
@@ -609,7 +654,7 @@ The success or failure of the operation is reported.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-09-27 16:48:07 CST
+Last updated 2018-09-27 17:37:06 CST
 </div>
 </div>
 </body>
