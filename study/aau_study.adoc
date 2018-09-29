@@ -6,3 +6,4 @@
 
 * link:aau_study/alarm.html[alarm模块]
 * link:aau_study/log.html[log模块]
+* link:aau_study/cmd.html[cmd模块]
