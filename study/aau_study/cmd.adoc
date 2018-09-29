@@ -19,15 +19,25 @@ image:../image/cmd_1.png[image,800,800,role="center"]
 * Cmd模块解析命令以及输出命令结果，分两部分
 ** localCommand:主要是和MCU有关，输入控制MCU有关命令
 ** remoteCommand:主要是和VP有关，输入控制VP有关命令
+** 关系图如下
+
+image:../image/cmd_2.png[image,800,800,role="center"]
+
 == sx11串口cmd调试实例
 
 ** 连接串口，波特率115200，连接上之后状态如下:
-image:../image/cmd_test_1.png[image,800,800,role="center"]
+
+image:../image/cmd_test_0.png[image,800,800,role="center"]
+
 ** 调试cmd,输入: #MCU.cmd.echo hello#
+
 image:../image/cmd_test_3.png[image,800,800,role="center"]
+
 ** 系统模块串口输出的debug信息
+
 image:../image/cmd_test_1.png[image,800,800,role="center"]
 
+==
 
 == 总结
 
