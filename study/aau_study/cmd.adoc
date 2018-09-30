@@ -80,6 +80,10 @@ image:../image/cmd_7.png[image,800,800,role="center"]
 
 image:../image/cmd_5.png[image,800,800,role="center"]
 
+== local commamd流程
+
+image:../image/cmd_8.png[image,800,800,role="center"]
+
 == 总结
 
 ....
