@@ -610,3 +610,7 @@ TIP: 此方法适合调试内核模块堆栈情况,EIP指针会指向堆栈发�
 == windows下搭建atom编辑环境
 
 * link:https://jingyan.baidu.com/article/375c8e19c3105a25f2a22901.html[Atom]
+
+== 比较好的github博客
+
+* link:https://keysaim.github.io[github博客]
