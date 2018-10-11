@@ -1,0 +1,17 @@
+= vpman模块学习
+郝东东
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== shell 模块介绍
+
+image:../image/shell_1.png[image,800,800,role="center"]
+
+
+....
+以上是自己的一点总结
+....
