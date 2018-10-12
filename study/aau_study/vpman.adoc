@@ -11,6 +11,22 @@
 
 image:../image/vpman_1.png[image,800,800,role="center"]
 
+== vpman模块作用
+
+IMPORTANT: vpman模块管理vp的上电和下电，从而控制AP的启动上电以及断电shutdown
+
+=== VPMAN上电顺序
+
+image:../image/vpman_2.png[image,800,800,role="center"]
+
+=== VPMAN下电顺序
+
+image:../image/vpman_3.png[image,800,800,role="center"]
+
+=== 串口调试情况
+
+image:../image/vpman_4.png[image,800,800,role="center"]
+
 ....
 以上是自己的一点总结
 ....
