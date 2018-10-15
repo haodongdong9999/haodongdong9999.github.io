@@ -27,6 +27,18 @@ image:../image/vpman_3.png[image,800,800,role="center"]
 
 image:../image/vpman_4.png[image,800,800,role="center"]
 
+== 模块流程有关
+
+=== 调用逻辑
+
+* 下图可以看出 **__#VPMAN#__** 模块的被调用顺序以及周期(Every 10 ms)
+
+image:../image/vpman_5.png[image,800,800,role="center"]
+
+=== vpman模块基本流程图
+
+image:../image/vpman_6.png[image,800,800,role="center"]
+
 
 
 ....
