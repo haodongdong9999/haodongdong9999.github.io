@@ -11,9 +11,20 @@
 
 image:../image/vpmeas_1.png[image,800,800,role="center"]
 
-== vpman模块作用
+== vpman模块概述
 
-IMPORTANT: vpman模块管理vp的上电和下电，从而控制AP的启动上电以及断电shutdown
+IMPORTANT: vpmeas模块主要通过SPI接收VP侧的measurement value,更新后发送给meas模块
+
+=== meas模块有关联的模块
+
+image:../image/vpmeas_2.png[image,800,800,role="center"]
+
+=== 关联API以及作用
+
+* <1> The ENP_ApplicationIf interface of enp to register a callback to a port
+* <2> The MEAS_ReportMeasurement interface of meas to update the measurement value
+* <3> The ETIME_McuTime interface of etime to get the MCU time
+
 
 
 
