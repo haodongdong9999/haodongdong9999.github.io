@@ -1,4 +1,4 @@
-= vpman模块学习
+= vpmeas模块学习
 郝东东
 :toc:
 :toclevels: 4
@@ -7,71 +7,18 @@
 :icons: font
 :sectnums:
 
-== vpman模块位置
+== vpmeas模块位置
 
-image:../image/vpman_1.png[image,800,800,role="center"]
+image:../image/vpmeas_1.png[image,800,800,role="center"]
 
 == vpman模块作用
 
 IMPORTANT: vpman模块管理vp的上电和下电，从而控制AP的启动上电以及断电shutdown
 
-=== VPMAN上电顺序
 
-image:../image/vpman_2.png[image,800,800,role="center"]
 
-=== VPMAN下电顺序
 
-image:../image/vpman_3.png[image,800,800,role="center"]
 
-=== 串口调试情况
-
-image:../image/vpman_4.png[image,800,800,role="center"]
-
-== 模块流程有关
-
-=== 调用逻辑
-
-* 下图可以看出 **__#VPMAN#__** 模块的被调用顺序以及周期(Every 10 ms)
-
-image:../image/vpman_5.png[image,800,800,role="center"]
-
-=== vpman模块基本流程图
-
-image:../image/vpman_6.png[image,800,800,role="center"]
-
-== vpman模块和其它模块依赖关系图
-
-image:../image/vpman_7.png[image,800,800,role="center"]
-
-== vpman内部逻辑
-
-=== 总体内部逻辑
-
-image:../image/vpman_8.png[image,800,800,role="center"]
-
-=== vpman_actions
-
-* 提供接口去 starup 和 shutdown 外部处理器也就是VP
-
-image:../image/vpman_9.png[image,800,800,role="center"]
-
-=== vpman_conditions
-
-* 提供接口去验证外部处理器（VP）powerap 和 shutdown的条件
-
-image:../image/vpman_10.png[image,800,800,role="center"]
-
-=== vpman_cfg
-
-image:../image/vpman_11.png[image,800,800,role="center"]
-
-== vpman_state
-
-image:../image/vpman_12.png[image,800,800,role="center"]
-
-== vpman state transactions
-
-image:../image/vpman_13.png[image,800,800,role="center"]
 ....
 以上是自己的一点总结
 ....

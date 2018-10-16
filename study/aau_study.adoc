@@ -9,4 +9,4 @@
 * link:aau_study/cmd.html[cmd模块]
 * link:aau_study/shell.html[shell模块]
 * link:aau_study/vpman.html[vpman模块]
-* link:aau_study/vpman.html[vpmeas模块]
+* link:aau_study/vpmeas.html[vpmeas模块]
