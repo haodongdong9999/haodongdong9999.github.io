@@ -506,6 +506,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_查看linux是哪种发行版本的方法">56. 查看linux是哪种发行版本的方法</a></li>
 <li><a href="#_windows下搭建atom编辑环境">57. windows下搭建atom编辑环境</a></li>
 <li><a href="#_比较好的github博客">58. 比较好的github博客</a></li>
+<li><a href="#_学习_attribute_用法">59. 学习 <mark><em>attribute</em></mark> 用法</a></li>
 </ul>
 </div>
 </div>
@@ -1942,10 +1943,39 @@ ifr.ifr_data = (caddr_t) &edata;</p>
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_学习_attribute_用法">59. 学习 <mark><em>attribute</em></mark> 用法</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><em>attribute</em>这个关键词是GNU编译器中的编译属性，ARM编译器也支持这个用法。<em>attribute</em>主要用于
+改变所声明或定义的函数或 数据的特性，它有很多子项，用于改变作用对象的特性。比如对函数，
+noline将禁止进行内联扩展、noreturn表示没有返回值、pure表明函数除 返回值外，不会通过其它（如全局变量、指针）
+对函数外部产生任何影响。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>提到section，就得说RO RI ZI了，在ARM编译器编译之后，代码被划分为不同的段，RO Section(ReadOnly)中存放代码段和常量，RW Section(ReadWrite)中存放可读写静态变量和全局变量，ZI Section(ZeroInit)是存放在RW段中初始化为0的变量。
+<em>attribute</em>section("section_name")，其作用是将作用的函数或数据放入指定名为"section_name"对应的段中。</p>
+</li>
+<li>
+<p>编译时为变量指定段：<em>attribute</em>section("name")</p>
+</li>
+<li>
+<p>编译时为函数指定段：void Function_Attributes_section_0 (void)  <em>attribute</em> section ("new_section");</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-10-10 10:47:16 CST
+Last updated 2018-10-24 11:05:53 CST
 </div>
 </div>
 </body>
