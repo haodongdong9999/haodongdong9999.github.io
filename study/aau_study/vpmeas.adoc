@@ -25,6 +25,43 @@ image:../image/vpmeas_2.png[image,800,800,role="center"]
 <2> The MEAS_ReportMeasurement interface of meas to update the measurement value
 <3> The ETIME_McuTime interface of etime to get the MCU time
 
+== 关于ENP_LISTEN
+
+* APMEAS中调用ENP_LISTEN，注册自己的回调函数到ENP模块中，其本质就是把回调函数的地址储存在某个
+  特殊地址中。ENP_LISTEN的原型
+
+[source,c]
+
+****
+  #define ENP_LISTEN(port, rxCallback) \
+   static const ENP_ListenerEntry listenerEntry_##rxCallback##port \
+   __attribute__((__section__(".enp_listeners"))) PROTECTED_SYMBOL = {port, rxCallback}
+
+****
+
+* .enp_listeners 定义在Application.ld文件中
+
+[source,c]
+
+****
+group enp_listeners(ordered, run_addr = PFLASH0, align = 8, contiguous)
+ {
+    "enpListenersStart" = "_lc_gb_enp_listeners";
+    select ".enp_listeners";
+    "enpListenersEnd" = "_lc_ge_enp_listeners";
+ }
+
+****
+
+== 模块流程交互
+
+image:../image/vpmeas_3.png[image,800,800,role="center"]
+
+
+
+
+
+
 
 
 
