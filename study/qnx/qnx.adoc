@@ -23,6 +23,28 @@
 
 ** pidin fa 可以显示进程以及子进程信息
   image:../image/qnx_2.png[image,800,800,role="center"]
+
+== 软件结构架构
+
+* APPs下结构
+
+image:../image/qnx_3.png[image,800,800,role="center"]
+
+=== ALVMainFrame
+
+* 代码架构图如下
+  image:../image/qnx_4.png[image,800,800,role="center"]
+
+=== app_startup
+
+* 整体结构图
+image:../image/qnx_6.png[image,800,800,role="center"]
+
+* 代码框架图
+
+image:../image/qnx_5.png[image,800,800,role="center"]
+
+
 ....
 以上是自己的一点总结
 ....
