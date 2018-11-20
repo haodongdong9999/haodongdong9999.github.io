@@ -1,5 +1,4 @@
 = PerformanceMCU学习
-
 郝东东
 :toc:
 :toclevels: 4
@@ -7,7 +6,6 @@
 :source-highlighter: pygments
 :icons: font
 :sectnums:
-
 
 == 组织架构
 
