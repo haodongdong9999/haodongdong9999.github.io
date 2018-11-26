@@ -64,6 +64,20 @@ image:../image/qnx_8.png[image,800,800,role="center"]
 image:../image/qnx_9.png[image,800,800,role="center"]
 
 
+=== cpu_load
+
+* 代码框架图
+
+image:../image/qnx_10.png[image,800,800,role="center"]
+
+== qnx启动流程
+
+* 系统启动时会将 CPU 重置 (Reset) ，被重置后 CPU 会执行重置 Vector 中的代码。在 X86 平台中通常都是 BIOS ，在其他平台上可以使 ROM 或直接跳至 IPL 。 BIOS 或 ROM执行后通常跳至 IPL(Initial Program Load) 。 IPL 将启动镜像复制到内存中，并跳至启动 (Startup) 。启动代码会初始化硬件，并为内核的启动收集硬件信息。然后加载并启动procnto( 内核和进程管理器 ) 。
+IPL 和 startup 通常都是 BSP(Board Support Package) 的一部分。 Procnto 启动后会执行启动脚本 (boot script) ，启动脚本控制具体的执行环境和第三方程序的启动。
+
+image:../image/qnx_11.png[image,800,800,role="center"]
+
+
 
 
 
