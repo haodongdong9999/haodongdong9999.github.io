@@ -77,6 +77,19 @@ IPL 和 startup 通常都是 BSP(Board Support Package) 的一部分。 Procnto 
 
 image:../image/qnx_11.png[image,800,800,role="center"]
 
+== denverton intel configured
+
+* 步骤如下
+
+<1> 取到 ddr4的配置文件：.csv,放在ABL_CL1846\IFWIs_ALV\configuration\cdata 下
+<2> ABL_CL1846\IFWIs_ALV\tools\FlashImageTool\spsFIT.exe  打开配置ini文件：ABL_CL1846\IFWIs_ALV\configuration\DNV_B0_AD_ALV_B02.xml
+  然后配置 #trap 7  ，将 CCM2-->CCFP,再将 memory load 改成 0XA
+<3> 配置qnx_kernel,需要将x86_64-denvertion.bin 转换为 x86_64-denvertion.ias,转换方法：/IFWI/tools/iasimage/iasimage.py
+ ./iasimage.py create -o x86_64-denverton.ias -i 0x40000 x86_64-denverton.bin
+<4> 将转换好的os.ias 拷贝到合适的目录下，然后修改PerformanceMCU\Tools\Intel\ABL_CL1846\IFWIs_ALV\ALV_B02_ABL_FSP_LAN0-LEK4-B0_LAN1-LEK4-B0_ELK.ini文件
+主要修改 os=os = ingredients\x86_64-denverton.ias@0x00   os_size=实际大小
+<5> 调用ifwi_gen_tool.py  --conig  ALV_B02_ABL_FSP_LAN0-LEK4-B0_LAN1-LEK4-B0_ELK.ini生成最终的版本，烧入即可
+
 
 
 
