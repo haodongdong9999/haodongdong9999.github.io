@@ -1,0 +1,35 @@
+= 工作内容
+认真
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== denverton逐级目标
+
+- [*] E2板子上running ok,debug ok
+- [*] qnx IDE 环境，编译，加载，调试OK
+- [*] E2U板子上DDR4OK
+- [ ] E2U板子上Ethernet OK
+- [ ] E2U板子上eMMC OK
+- [ ] PerformanceMCU 软件代码架构解析
+- [ ] Test Application 可以集成（Makefile + lib）,can ruuning
+- [ ] IP command 开发跟踪
+- [ ] 第三方软件设计变更考虑的要素
+- [ ] 集成
+
+== 目前优先级高
+
+TIP: Ethernet  E2U板子上eMMC
+
+== 分工
+
+* Ken Wang 负责eMMC
+* David Hao 负责Ethernet
+
+== 计划
+
+* 本周Ethernet 调试结束
+* 本周eMMC要找出原因

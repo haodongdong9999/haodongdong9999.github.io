@@ -7,3 +7,4 @@
 * link:work9.html[九月工作记录]
 * link:work10.html[十月工作记录]
 * link:week.html[周总结]
+* link:denverton_plan.html[denverton工作计划]
