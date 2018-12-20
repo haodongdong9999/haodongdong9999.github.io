@@ -456,6 +456,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_qnx启动流程">4. qnx启动流程</a></li>
 <li><a href="#_denverton_intel_configured">5. denverton intel configured</a></li>
+<li><a href="#_qnx7_0_vlan配置">6. qnx7.0 vlan配置</a></li>
+<li><a href="#_qnx_查看命令">7. qnx 查看命令</a></li>
 </ul>
 </div>
 </div>
@@ -660,6 +662,59 @@ IPL 和 startup 通常都是 BSP(Board Support Package) 的一部分。 Procnto 
 </tr>
 </table>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qnx7_0_vlan配置">6. qnx7.0 vlan配置</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>ifconfig vlan0 create</p>
+</li>
+<li>
+<p>ifconfig vlan0 vlan 6 vlanif tlp0</p>
+</li>
+<li>
+<p>详细可点击
+<a href="http://netbsd.gw.com/cgi-bin/man-cgi?vlan+4+NetBSD-4.0">vlan_qnx配置介绍</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qnx_查看命令">7. qnx 查看命令</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>pidin + 参数</p>
+<div class="ulist">
+<ul>
+<li>
+<p>pidin pmem -F "%a %b %N %p %J %c %d %m" 显示内存</p>
+</li>
+<li>
+<p>pidin sched -F "%a %b %N %p %l %H %J"  显示调度任务在哪个cpu上</p>
+</li>
+<li>
+<p>pidin session 显示所有进程</p>
+</li>
+<li>
+<p>pidin threads 显示所有线程</p>
+</li>
+<li>
+<p>pidin timers 显示线程占用时间</p>
+</li>
+<li>
+<p>pidin times 显示实际进程执行时间状态显示</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>以上是自己的一点总结</pre>
@@ -670,7 +725,7 @@ IPL 和 startup 通常都是 BSP(Board Support Package) 的一部分。 Procnto 
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-12-13 16:00:09 CST
+Last updated 2018-12-20 18:55:35 CST
 </div>
 </div>
 </body>
