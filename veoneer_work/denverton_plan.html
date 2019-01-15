@@ -444,16 +444,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_denverton逐级目标">1. denverton逐级目标</a></li>
-<li><a href="#_目前优先级高">2. 目前优先级高</a></li>
-<li><a href="#_分工">3. 分工</a></li>
-<li><a href="#_计划">4. 计划</a></li>
+<li><a href="#_denverton目前实现">1. denverton目前实现</a></li>
+<li><a href="#_任务">2. 任务</a></li>
+<li><a href="#_第2周任务">3. 第2周任务</a></li>
+<li><a href="#_task">4. task</a></li>
+<li><a href="#_next_section">5. Next section</a></li>
+<li><a href="#_task_review">6. TASK review</a></li>
 </ul>
 </div>
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_denverton逐级目标">1. denverton逐级目标</h2>
+<h2 id="_denverton目前实现">1. denverton目前实现</h2>
 <div class="sectionbody">
 <div class="ulist checklist">
 <ul class="checklist">
@@ -470,104 +472,259 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p><i class="fa fa-check-square-o"></i> E2U板子Ethernet 支持vlan Ok</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> E2U板子上Ethernet OK</p>
+<p><i class="fa fa-check-square-o"></i> E2U板子上Ethernet OK</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> E2U板子上eMMC OK</p>
+<p><i class="fa fa-check-square-o"></i> E2U板子上eMMC OK</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> PerformanceMCU 软件代码架构解析</p>
+<p><i class="fa fa-check-square-o"></i> IP command 开发跟踪，IPCP is finished and test is ok now</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> Test Application 可以集成（Makefile + lib）,can ruuning</p>
+<p><i class="fa fa-square-o"></i> 系统性能测试,qnx有关</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> IP command 开发跟踪</p>
+<p><i class="fa fa-square-o"></i> Uptest</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> 第三方软件设计变更考虑的要素</p>
+<p><i class="fa fa-square-o"></i> 系统开机优化</p>
 </li>
 <li>
-<p><i class="fa fa-square-o"></i> 集成</p>
+<p><i class="fa fa-square-o"></i> 系统代码优化</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> core dump tool.memory debug tool</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> ip link mananger develop</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_目前优先级高">2. 目前优先级高</h2>
+<h2 id="_任务">2. 任务</h2>
 <div class="sectionbody">
-<div class="admonitionblock tip">
+<div class="ulist">
+<ul>
+<li>
+<p>STL</p>
+<div class="ulist">
+<ul>
+<li>
+<p>STL变更，目前还有遗留问题&#8212;&#8203;Ken Wang负责</p>
+</li>
+<li>
+<p>STL设计文档</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>以太网</p>
+<div class="ulist">
+<ul>
+<li>
+<p>整理GEELY需求，对比现在实现情况&#8212;&#8203;Teresa/David</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IPCP</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Sunil 代码review/push</p>
+</li>
+<li>
+<p>集成代码push</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Tao Wang变更代码</p>
+</li>
+<li>
+<p>Uptest相关</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_第2周任务">3. 第2周任务</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>STL遗留问题</p>
+</li>
+<li>
+<p>Denverton相关设计文档</p>
+</li>
+<li>
+<p>Geely需求确认</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_task">4. task</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>STL : update for intel 1846&#8212;&#8203;Ken Wang?</p>
+</li>
+<li>
+<p>eMMC initialize when system startup&#8212;&#8203;Ken Wang?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>build config:need check if the filesystem is ok or not</p>
+</li>
+<li>
+<p>mount /emmc</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IPCP integration test.---David /Sunil</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Denverton and IHU Ip Address confirm, Suni will update the code</p>
+</li>
+<li>
+<p>Denverton build configure will be update and update the os image</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Design document for denverton&#8212;&#8203;Ken/David</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Ken:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>STL</p>
+</li>
+<li>
+<p>cpu_load</p>
+</li>
+<li>
+<p>cpu_burn</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>David:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ALVMainframe</p>
+</li>
+<li>
+<p>app_starup</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>IPCP:suni&#8212;&#8203;ok</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>GEELY Ethernet requirement validation---Teresa/David/ken/derek---</p>
+</li>
+<li>
+<p>Ethernet communication between Denverton and Aurix—Sophie Kou</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_next_section">5. Next section</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Uptest---Teresa/David</p>
+</li>
+<li>
+<p>Wang Tao ---Ken</p>
+</li>
+<li>
+<p>Denverton ix0 MAC_addr---David Hao</p>
+</li>
+<li>
+<p>profiling on Denverton,--ken/David</p>
+</li>
+<li>
+<p>core/kernel dump,--david</p>
+</li>
+<li>
+<p>local config for IPCP,</p>
+</li>
+<li>
+<p>SW lockstep</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_task_review">6. TASK review</h2>
+<div class="sectionbody">
+<div class="colist arabic">
 <table>
 <tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Ethernet  E2U板子上eMMC
-</td>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>QNX操作系统软件框架以及调度有关</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>intel configure for denverton,主要是芯片手册以及编译有关script</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>PerformanceMCU 代码框架，软件集成，代码编译，集成联调</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Ethernet 有关知识</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>版本测试有关，单元测试，集成测试，测试报告</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>Geely requirement</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="7"></i><b>7</b></td>
+<td>issue from test</td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_分工">3. 分工</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>Ken Wang 负责eMMC</p>
-</li>
-<li>
-<p>David Hao 负责Ethernet</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_计划">4. 计划</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>本周Ethernet 调试结束</p>
-<div class="ulist">
-<ul>
-<li>
-<p>板子？</p>
-</li>
-<li>
-<p>软件Aurix?</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>本周eMMC要找出原因</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Intel ABL 对于eMMC的降频处理是否影响</p>
-</li>
-<li>
-<p>intel ABL_1846版本中缺少各种文件对编译结果的影响</p>
-</li>
-<li>
-<p>qnx官方本身问题</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2018-12-20 18:55:35 CST
+Last updated 2019-01-15 16:28:28 CST
 </div>
 </div>
 </body>
