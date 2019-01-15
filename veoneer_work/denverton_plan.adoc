@@ -7,36 +7,84 @@
 :icons: font
 :sectnums:
 
-== denverton逐级目标
+== denverton目前实现
 
 - [*] E2板子上running ok,debug ok
 - [*] qnx IDE 环境，编译，加载，调试OK
 - [*] E2U板子上DDR4OK
 - [*] E2U板子Ethernet 支持vlan Ok
-- [ ] E2U板子上Ethernet OK
-- [ ] E2U板子上eMMC OK
-- [ ] PerformanceMCU 软件代码架构解析
-- [ ] Test Application 可以集成（Makefile + lib）,can ruuning
-- [ ] IP command 开发跟踪
-- [ ] 第三方软件设计变更考虑的要素
-- [ ] 集成
+- [*] E2U板子上Ethernet OK
+- [*] E2U板子上eMMC OK
+- [*] IP command 开发跟踪，IPCP is finished and test is ok now
+- [ ] 系统性能测试,qnx有关
+- [ ] Uptest
+- [ ] 系统开机优化
+- [ ] 系统代码优化
+- [ ] core dump tool.memory debug tool
+- [ ] ip link mananger develop
 
-== 目前优先级高
+== 任务
 
-TIP: Ethernet  E2U板子上eMMC
+* STL
+** STL变更，目前还有遗留问题--Ken Wang负责
+** STL设计文档
+* 以太网
+** 整理GEELY需求，对比现在实现情况--Teresa/David
+* IPCP
+** Sunil 代码review/push
+** 集成代码push
+* Tao Wang变更代码
+* Uptest相关
 
-== 分工
+== 第2周任务
 
-* Ken Wang 负责eMMC
-* David Hao 负责Ethernet
+* STL遗留问题
+* Denverton相关设计文档
+* Geely需求确认
 
-== 计划
+== task
 
-* 本周Ethernet 调试结束
-** 板子？
-** 软件Aurix?
+* STL : update for intel 1846--Ken Wang?
+* eMMC initialize when system startup--Ken Wang?
+ ** build config:need check if the filesystem is ok or not
+ ** mount /emmc
+* IPCP integration test.---David /Sunil
+ ** Denverton and IHU Ip Address confirm, Suni will update the code
+ ** Denverton build configure will be update and update the os image
+* Design document for denverton--Ken/David
+** Ken:
+*** STL
+*** cpu_load
+*** cpu_burn
+** David:
+*** ALVMainframe
+*** app_starup
+** IPCP:suni--ok
+* GEELY Ethernet requirement validation---Teresa/David/ken/derek---
+* Ethernet communication between Denverton and Aurix—Sophie Kou
 
-* 本周eMMC要找出原因
-** Intel ABL 对于eMMC的降频处理是否影响
-** intel ABL_1846版本中缺少各种文件对编译结果的影响
-** qnx官方本身问题
+== Next section
+
+* Uptest---Teresa/David
+* Wang Tao ---Ken
+* Denverton ix0 MAC_addr---David Hao
+* profiling on Denverton,--ken/David
+* core/kernel dump,--david
+* local config for IPCP,
+* SW lockstep
+
+== TASK review
+
+<1> QNX操作系统软件框架以及调度有关
+
+<2> intel configure for denverton,主要是芯片手册以及编译有关script
+
+<3> PerformanceMCU 代码框架，软件集成，代码编译，集成联调
+
+<4> Ethernet 有关知识
+
+<5> 版本测试有关，单元测试，集成测试，测试报告
+
+<6> Geely requirement
+
+<7> issue from test
