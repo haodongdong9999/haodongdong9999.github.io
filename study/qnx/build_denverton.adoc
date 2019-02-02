@@ -1,0 +1,46 @@
+= How to building Denverton
+David Hao
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== 下载PerformanceMCU源码
+
+* gitlab项目地址: https://gitlab-ro.corp.int/GEEA2.0/PerformanceMCU
+* git 客户端，git clone git@gitlab-ro.corp.int:GEEA2.0/PerformanceMCU.git
+
+== 编译环境准备（windows环境）
+
+=== Python环境准备
+
+* Python 版本准备，需要python2.7 和 python3.4
+** Python2.7下载安装地址
+*** link:https://www.python.org/downloads/release/python-2714/[Python2.7.14]
+** Python3.4.0下载地址
+*** link:https://www.python.org/downloads/release/python-340/[Python3.4.0]
+
+** 打开windows cmd窗口，cd C:\Pthon34 ，执行 #python -m pip  install --upgrade pip#
+** cd C:\Python34\script  执行 #pip install Cryptography#
+
+=== tools准备
+
+* install Hexview ,放在 C:\tools下
+* install VBF-Convert 5.2.0,放在 C:\tools下
+
+== 编译工程
+
+* 打开项目工程 PerformanceMCU
+* 进入  PerformanceMCU\Tools\Intel\ABL_CL1846 中，手动解压CL1846_ALV_CCM2_EXTERNAL.zip
+* 进入 PerformanceMCU\Source\Adapt\BSP 下
+* 执行 create_final_image.bat
+
+== 生成镜像
+
+* 在PerformanceMCU 同一级目录下，会生成相对应 Release文件夹，里面存放编译生成的版本
+
+....
+以上是自己的一点总结
+....

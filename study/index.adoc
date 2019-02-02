@@ -11,3 +11,4 @@
 * link:open_uci.html[openWRT-uci机制学习总结]
 * link:aau_study.html[AAU学习记录]
 * link:qnx/qnx.html[QNX学习记录]
+* link:qnx/build_denverton.html[How to build denverton]
