@@ -5,7 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>学习目录</title>
+<meta name="author" content="David Hao">
+<title>How to building Denverton</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -429,42 +430,143 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Pygments CSS disabled. Pygments is not available. */
+</style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>学习目录</h1>
+<h1>How to building Denverton</h1>
+<div class="details">
+<span id="author" class="author">David Hao</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_下载performancemcu源码">1. 下载PerformanceMCU源码</a></li>
+<li><a href="#_编译环境准备windows环境">2. 编译环境准备（windows环境）</a>
+<ul class="sectlevel2">
+<li><a href="#_python环境准备">2.1. Python环境准备</a></li>
+<li><a href="#_tools准备">2.2. tools准备</a></li>
+</ul>
+</li>
+<li><a href="#_编译工程">3. 编译工程</a></li>
+<li><a href="#_生成镜像">4. 生成镜像</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="paragraph">
-<p>学习，每天积累</p>
-</div>
+<div class="sect1">
+<h2 id="_下载performancemcu源码">1. 下载PerformanceMCU源码</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="study.html">综合知识归类</a></p>
+<p>gitlab项目地址: <a href="https://gitlab-ro.corp.int/GEEA2.0/PerformanceMCU" class="bare">https://gitlab-ro.corp.int/GEEA2.0/PerformanceMCU</a></p>
 </li>
 <li>
-<p><a href="kernel.html">linux内核相关</a></p>
-</li>
-<li>
-<p><a href="dpdk.html">dpdk学习</a></p>
-</li>
-<li>
-<p><a href="linux_protocol.html">探寻linux协议栈</a></p>
-</li>
-<li>
-<p><a href="open_uci.html">openWRT-uci机制学习总结</a></p>
-</li>
-<li>
-<p><a href="aau_study.html">AAU学习记录</a></p>
-</li>
-<li>
-<p><a href="qnx/qnx.html">QNX学习记录</a></p>
-</li>
-<li>
-<p><a href="qnx/build_denverton.html">How to build denverton</a></p>
+<p>git 客户端，git clone <a href="mailto:git@gitlab-ro.corp.int">git@gitlab-ro.corp.int</a>:GEEA2.0/PerformanceMCU.git</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_编译环境准备windows环境">2. 编译环境准备（windows环境）</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_python环境准备">2.1. Python环境准备</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Python 版本准备，需要python2.7 和 python3.4</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Python2.7下载安装地址</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.python.org/downloads/release/python-2714/">Python2.7.14</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Python3.4.0下载地址</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.python.org/downloads/release/python-340/">Python3.4.0</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>打开windows cmd窗口，cd C:\Pthon34 ，执行 <mark>python -m pip  install --upgrade pip</mark></p>
+</li>
+<li>
+<p>cd C:\Python34\script  执行 <mark>pip install Cryptography</mark></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tools准备">2.2. tools准备</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>install Hexview ,放在 C:\tools下</p>
+</li>
+<li>
+<p>install VBF-Convert 5.2.0,放在 C:\tools下</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_编译工程">3. 编译工程</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>打开项目工程 PerformanceMCU</p>
+</li>
+<li>
+<p>进入  PerformanceMCU\Tools\Intel\ABL_CL1846 中，手动解压CL1846_ALV_CCM2_EXTERNAL.zip</p>
+</li>
+<li>
+<p>进入 PerformanceMCU\Source\Adapt\BSP 下</p>
+</li>
+<li>
+<p>执行 create_final_image.bat</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_生成镜像">4. 生成镜像</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>在PerformanceMCU 同一级目录下，会生成相对应 Release文件夹，里面存放编译生成的版本</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>以上是自己的一点总结</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
