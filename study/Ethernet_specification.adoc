@@ -199,6 +199,11 @@ Unique Identifier(16 bit),operationID name
 0x0005,ProfileControlMessage
 ,===
 
+=== implementation
+
+TIP: IPCP requires a script to emulate the IHU server and I think this could be done
+     by Sarvesh
+
 == IPLM
 
 === introduce
@@ -208,6 +213,11 @@ image:image/ipcp.JPG[image,600,600,role="center"]
 === Protocol Header Overview
 
 image:image/ipcp2.JPG[image,600,600,role="center"]
+
+=== implementation
+
+TIP: IPLM requires a script to emulate the IHU server and I think this could be done
+     by Sarvesh
 
 == example for test ARP/ICMP
 
