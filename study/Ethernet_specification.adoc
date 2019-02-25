@@ -32,6 +32,39 @@
 ** IPCP
 ** IPLM
 
+== MAC_HEADER
+
+=== introduce
+
+The header features destination and source MAC addresses (each six octets in length),
+the EtherType field and, optionally, an IEEE 802.1Q tag or IEEE 802.1ad tag
+
+image:image/ether.JPG[image,600,600,role="center"]
+
+=== format introduce
+
+* destination MAC Address
+
+** The destination MAC Address has 6 bytes .
+
+** This field contains the address of station for which the data is intended.
+The left most bit indicates whether the destination is an individual address or
+a group address. An individual address is denoted by a zero, while a one indicates a group address.
+The next bit into the DA indicates whether the address is globally administered, or local. If the address
+is globally administered the bit is a zero, and a one of it is locally administered. There are then 46 remaining bits.
+These are used for the destination address itself.
+
+* Source MAC Address
+** The source address consists of six bytes, and it is used to identify the sending station.
+As it is always an individual address the left most bit is always a zero.
+
+* Length/Type
+
+**  This field is two bytes in length. It provides MAC information and indicates
+the number of client data types that are contained in the data field of the frame.
+It may also indicate the frame ID type if the frame is assembled using an optional
+format.(IEEE 802.3 only).
+
 == ARP
 
 === introduce
@@ -51,12 +84,15 @@ This property places ARP into the link layer of the Internet protocol suite
 
 === Message
 
-* Arp request. The Ip address of ASDM is 192.18.36.1/255.255.0.0
+* Arp request. The Ip address of ASDM is 198.18.36.1/255.255.0.0
  The MAC address of ASDM is 02:00:00:00:14:01
 
 * Internet Protocol (IPv4) over Ethernet ARP packet
 
 image:image/arp.JPG[image,600,600,role="center"]
+
+=== format introduce
+
 
 == VLAN
 
@@ -85,8 +121,25 @@ vlan ID,node name,function
 
 image:image/vlan.JPG[image,600,600,role="center"]
 
-* Frame format
+* format introduce
 
+** Tag protocol identifier (TPID)
+*** A 16-bit field set to a value of 0x8100 in order to identify the frame as an IEEE 802.1Q-tagged frame.
+This field is located at the same position as the EtherType field in untagged frames, and is thus used
+to distinguish the frame from untagged frames.
+
+** Tag control information (TCI)
+A 16-bit field containing the following sub-fields:
+*** Priority code point (PCP)
+**** A 3-bit field which refers to the IEEE 802.1p class of service and maps to the frame priority level.
+ Different PCP values can be used to prioritize different classes of traffic
+*** Drop eligible indicator (DEI)
+**** A 1-bit field. (formerly CFI[b]) May be used separately or in conjunction with PCP to
+indicate frames eligible to be dropped in the presence of congestion
+*** VLAN identifier (VID)
+**** A 12-bit field specifying the VLAN to which the frame belongs. The hexadecimal values of 0x000 and 0xFFF are reserved.
+**** For our project,The VID will be config 2,5,6,12
+* Frame format
 
 image:image/vlan1.JPG[image,600,600,role="center"]
 
