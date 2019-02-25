@@ -51,7 +51,8 @@ This property places ARP into the link layer of the Internet protocol suite
 
 === Message
 
-* Arp request
+* Arp request. The Ip address of ASDM is 192.18.36.1/255.255.0.0
+ The MAC address of ASDM is 02:00:00:00:14:01
 
 * Internet Protocol (IPv4) over Ethernet ARP packet
 
@@ -66,6 +67,17 @@ computer network at the data link layer (OSI layer 2)
 
 The protocol most commonly used today to support VLANs is IEEE 802.1Q
 
+=== vlan distribution
+
+,===
+
+vlan ID,node name,function
+2,VGM-ASDM,ipcp
+5,VGM-ASDM,Traffic Jam Pilot
+6,VGM-ASDM,IPLM
+12,VGM-ASDM,ICMP
+
+,===
 === Frame format
 
 * 802.1Q tag format
@@ -81,12 +93,16 @@ image:image/vlan1.JPG[image,600,600,role="center"]
 
 === Double tagging
 
-* GEELY asked us to discard the Double tagging message.
+* GEELY asked us to discard the Double tagging messages.
 
-* Double tagging Frame format
+* All ECUs (including the switches) shall drop frames with more than one outer VLAN Tag with TPID
+0x8100.
+* All ECUs (including the switches) shall drop frames with an outer VLAN Tag with TPID 0x9100 or
+0x88a8.
 
 image:image/vlan3.JPG[image,600,600,role="center"]
 
+===
 == ICMP
 
 === introduce
@@ -182,8 +198,6 @@ Unique Identifier(16 bit),operationID name
 0x0003,PositionMessage
 0x0004,ProfileMessage
 0x0005,ProfileControlMessage
-0x0006,EHRStatusMessage
-0x0007,ProbeMessage
 ,===
 
 == IPLM
@@ -194,3 +208,42 @@ image:image/ipcp.JPG[image,600,600,role="center"]
 === Protocol Header Overview
 
 image:image/ipcp2.JPG[image,600,600,role="center"]
+
+
+
+== example for test ARP/ICMP
+
+=== Tools
+
+* Vector VN5610A
+* ASDM boards
+* PC
+* power supply
+
+=== Connection
+
+image:image/test0.JPG[image,600,600,role="center"]
+
+=== test step
+
+* Open the software for VN5610A,Power on the ASDM3
+
+image:image/test1.png[image,600,800,role="center"]
+
+* Config VN5610A and send A arp packet
+
+image:image/test2.png[image,600,800,role="center"]
+
+* config the VN5610A and send a icmp packet
+
+image:image/test3.png[image,600,800,role="center"]
+
+=== test result
+
+* The VN5610A receive the arp reply from ASDM
+
+image:image/test4.png[image,600,800,role="center"]
+
+* The VN5610A receive the icmp reply from ASDM
+
+image:image/test5.png[image,600,800,role="center"]
