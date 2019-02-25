@@ -102,7 +102,6 @@ image:image/vlan1.JPG[image,600,600,role="center"]
 
 image:image/vlan3.JPG[image,600,600,role="center"]
 
-===
 == ICMP
 
 === introduce
@@ -203,6 +202,7 @@ Unique Identifier(16 bit),operationID name
 == IPLM
 
 === introduce
+
 image:image/ipcp.JPG[image,600,600,role="center"]
 
 === Protocol Header Overview
