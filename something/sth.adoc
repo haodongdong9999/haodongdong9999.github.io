@@ -15,14 +15,28 @@ NOTE: 必须坚持到底
 * 俯卧撑30个
 * 小区跑20分钟
 * 读书
-
-== 执行情况
-
-- [*] 每天早上六点起完成，写一篇原创文章，已经获取微信原创认证
-- [ ] 有所怠慢
-- [*] 读书，一月至少一本书
+* 每天英语口语30分钟
 
 == 我家云情况
 
 * 交易网址: http://www.wkj.link/Finance/mywt.html
 * 钱包备份
+
+== 2-15英语口语
+
+* corner
+** The shop is on the street corner---建筑物的角落用on
+** Meet me at the corner--和人有关用at
+
+* if you don't mind me saying so   口语中常用
+** if you dont't mind me saying so,your smile is quite enchanting to me
+
+* Excuse me if I am being a bit nosy but,how old are you
+
+  口语中经常这样开始问点有些唐突的问话
+
+** nosy 爱管闲事
+
+* in that case  如果那样的话
+
+** you don't like the place,in that case,why don't you move

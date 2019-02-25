@@ -10,4 +10,4 @@
 * link:veoneer_work/index.html[VEONEER工作总结]
 * link:my_software/software.html[软件/资源]
 * link:travel/index.html[亲子游]
-* link:something/sth.html[生活计划]
+* link:something/sth.html[英语口语]

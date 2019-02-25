@@ -88,3 +88,25 @@
 <6> Geely requirement
 
 <7> issue from test
+
+
+== Denverton E3计划
+
+- [ ] STL根据intel-1846版本进行合入
+- [*] VBF file for denverton
+- [*] Denverton MAC地址修改为需求
+- [ ] Design docs
+- [ ] IPLM-IPCP integration
+- [ ] Boot time optimization
+- [ ] local configuration for IPCP and IPLM
+- [ ] Zenuity integration
+- [ ] Add root password
+- [ ] Denverton diagnostic Data
+- [ ] safety enhancement
+- [ ] remove unnecessary services
+- [ ] SW lockstep
+- [ ] core/kernel dump
+- [ ] APP restart when crashing
+- [ ] DAC
+- [ ] partnumber
+- [ ] Vx1000 integration

@@ -17,7 +17,7 @@
 
 * pidin 查看内存
 
-** pidin mem 查看内存信息
+** pidin mem 查看内存信息A
 
 ** pidin a 显示当前进程名字
 
@@ -105,6 +105,7 @@ image:../image/qnx_11.png[image,800,800,role="center"]
 ** pidin threads 显示所有线程
 ** pidin timers 显示线程占用时间
 ** pidin times 显示实际进程执行时间状态显示
+
 
 
 
