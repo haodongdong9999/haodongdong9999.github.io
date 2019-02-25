@@ -460,8 +460,9 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_icmp">5. ICMP</a>
 <ul class="sectlevel2">
 <li><a href="#_introduce_3">5.1. introduce</a></li>
-<li><a href="#_echo_or_echo_reply_message">5.2. Echo or Echo Reply Message</a></li>
-<li><a href="#_message_formats">5.3. Message formats</a></li>
+<li><a href="#_ip_address_of_asdm">5.2. Ip address of ASDM</a></li>
+<li><a href="#_echo_or_echo_reply_message">5.3. Echo or Echo Reply Message</a></li>
+<li><a href="#_message_formats">5.4. Message formats</a></li>
 </ul>
 </li>
 <li><a href="#_ipcp">6. IPCP</a>
@@ -740,7 +741,13 @@ can direct the host to send traffic on a shorter route.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_echo_or_echo_reply_message">5.2. Echo or Echo Reply Message</h3>
+<h3 id="_ip_address_of_asdm">5.2. Ip address of ASDM</h3>
+<div class="paragraph">
+<p>The Ip address of ASDM is 192.18.36.1/255.255.0.0</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_echo_or_echo_reply_message">5.3. Echo or Echo Reply Message</h3>
 <div class="literalblock">
 <div class="content">
 <pre>  0                   1                   2                   3
@@ -867,7 +874,7 @@ in the echo reply.</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_message_formats">5.3. Message formats</h3>
+<h3 id="_message_formats">5.4. Message formats</h3>
 <div class="paragraph">
 <p>ICMP messages are sent using the basic IP header.  The first octet of
 the data portion of the datagram is a ICMP type field; the value of
@@ -1069,7 +1076,7 @@ IPLM requires a script to emulate the IHU server and I think this could be done
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2019-02-25 18:03:06 CST
+Last updated 2019-02-25 18:17:30 CST
 </div>
 </div>
 </body>
