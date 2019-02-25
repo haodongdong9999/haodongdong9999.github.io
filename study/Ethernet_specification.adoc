@@ -115,6 +115,10 @@ datagram cannot reach its destination, when the gateway does not have
 the buffering capacity to forward a datagram, and when the gateway
 can direct the host to send traffic on a shorter route.
 
+=== Ip address of ASDM
+
+The Ip address of ASDM is 192.18.36.1/255.255.0.0
+
 === Echo or Echo Reply Message
 
     0                   1                   2                   3
