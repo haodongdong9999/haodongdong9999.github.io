@@ -34,6 +34,10 @@
 
 == MAC_HEADER
 
+Every Ethernet network interface card (NIC) is given a unique identifier called a MAC address. This is assigned by the manufacturer of
+the card and each manufacturer that complies with IEEE standards can apply to the IEEE Registration Authority for a range of numbers for
+use in its products.
+
 === introduce
 
 The header features destination and source MAC addresses (each six octets in length),
@@ -53,6 +57,8 @@ a group address. An individual address is denoted by a zero, while a one indicat
 The next bit into the DA indicates whether the address is globally administered, or local. If the address
 is globally administered the bit is a zero, and a one of it is locally administered. There are then 46 remaining bits.
 These are used for the destination address itself.
+
+** For our project,This DA is
 
 * Source MAC Address
 ** The source address consists of six bytes, and it is used to identify the sending station.
