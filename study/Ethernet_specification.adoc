@@ -27,7 +27,7 @@
 ** ICMP
 * Layer 4
 ** UDP
-** UDP socket
+** UDP socket<use for IPCp and IPLM>
 * Layer 5
 ** IPCP
 ** IPLM
@@ -208,8 +208,6 @@ image:image/ipcp.JPG[image,600,600,role="center"]
 === Protocol Header Overview
 
 image:image/ipcp2.JPG[image,600,600,role="center"]
-
-
 
 == example for test ARP/ICMP
 
