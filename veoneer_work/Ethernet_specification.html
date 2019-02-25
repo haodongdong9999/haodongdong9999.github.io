@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>学习目录</title>
+<title>Ethernet specification</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -429,45 +429,160 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+/* Pygments CSS disabled. Pygments is not available. */
+</style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>学习目录</h1>
+<h1>Ethernet specification</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_terminology">1. TERMINOLOGY</a></li>
+<li><a href="#_ethernet_protocol_list">2. Ethernet protocol list</a></li>
+<li><a href="#_arp">3. ARP</a>
+<ul class="sectlevel2">
+<li><a href="#_introduce">3.1. introduce</a></li>
+<li><a href="#_operating_scope">3.2. Operating scope</a></li>
+<li><a href="#_message">3.3. Message</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="paragraph">
-<p>学习，每天积累</p>
-</div>
+<div class="sect1">
+<h2 id="_terminology">1. TERMINOLOGY</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="study.html">综合知识归类</a></p>
+<p>MAC        Media Access Control</p>
 </li>
 <li>
-<p><a href="kernel.html">linux内核相关</a></p>
+<p>ARP        Address Resolution Protocol</p>
 </li>
 <li>
-<p><a href="dpdk.html">dpdk学习</a></p>
+<p>IP         Internet Protocol</p>
 </li>
 <li>
-<p><a href="linux_protocol.html">探寻linux协议栈</a></p>
+<p>ICMP       Media Access Control</p>
 </li>
 <li>
-<p><a href="open_uci.html">openWRT-uci机制学习总结</a></p>
+<p>VLAN       Virtual Local Area Network</p>
 </li>
 <li>
-<p><a href="aau_study.html">AAU学习记录</a></p>
+<p>UDP        User Datagram protocol</p>
 </li>
 <li>
-<p><a href="qnx/qnx.html">QNX学习记录</a></p>
+<p>TCP        Transmission Control Protocol</p>
 </li>
 <li>
-<p><a href="qnx/build_denverton.html">How to build denverton</a></p>
+<p>IPCP       Ip Command protocol</p>
 </li>
 <li>
-<p><a href="Ethernet_specification.html">Ethetnet specification</a></p>
+<p>IPLM       Ip link Mananger</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ethernet_protocol_list">2. Ethernet protocol list</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Layer 2</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ARP</p>
+</li>
+<li>
+<p>VLAN</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Layer 3</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ICMP</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Layer 4</p>
+<div class="ulist">
+<ul>
+<li>
+<p>UDP</p>
+</li>
+<li>
+<p>UDP socket</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Layer 5</p>
+<div class="ulist">
+<ul>
+<li>
+<p>IPCP</p>
+</li>
+<li>
+<p>IPLM</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_arp">3. ARP</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_introduce">3.1. introduce</h3>
+<div class="paragraph">
+<p>The Address Resolution Protocol (ARP) is a communication protocol used for
+discovering the link layer address, such as a MAC address, associated with a
+given internet layer address, typically an IPv4 address. This mapping is a
+critical function in the Internet protocol suite.
+ARP was defined in 1982 by RFC 826,which is Internet Standard STD 37.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_operating_scope">3.2. Operating scope</h3>
+<div class="paragraph">
+<p>The Address Resolution Protocol is a request-response protocol whose messages
+are encapsulated by a link layer protocol. It is communicated within the
+boundaries of a single network, never routed across internetworking nodes.
+This property places ARP into the link layer of the Internet protocol suite</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_message">3.3. Message</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Arp request</p>
+</li>
+<li>
+<p>Internet Protocol (IPv4) over Ethernet ARP packet</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
