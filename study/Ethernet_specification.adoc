@@ -8,15 +8,15 @@
 
 == TERMINOLOGY
 
-* __#MAC#__       Media Access Control
-* __#ARP#__       Address Resolution Protocol
-* __#IP#__         Internet Protocol
-* __#ICMP#__       Media Access Control
-* __#VLAN#__       Virtual Local Area Network
-* __#UDP#__        User Datagram protocol
-* __#TCP#__        Transmission Control Protocol
-* __#IPCP#__       Ip Command protocol
-* __#IPLM#__       Ip link Mananger
+*  **MAC**      : Media Access Control
+*  **ARP**       : Address Resolution Protocol
+*  **IP**         : Internet Protocol
+*  **ICMP**      :  Media Access Control
+*  **VLAN**      : Virtual Local Area Network
+*  **UDP**        : User Datagram protocol
+*  **TCP**       : Transmission Control Protocol
+*  **IPCP**       : Ip Command protocol
+*  **IPLM**       : Ip link Mananger
 
 == Ethernet protocol list
 
