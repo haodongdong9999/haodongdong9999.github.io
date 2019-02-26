@@ -43,7 +43,7 @@ use in its products.
 The header features destination and source MAC addresses (each six octets in length),
 the EtherType field and, optionally, an IEEE 802.1Q tag or IEEE 802.1ad tag
 
-image:image/ether.JPG[image,600,600,role="center"]
+image:image/Ether.JPG[image,600,600,role="center"]
 
 === format introduce
 
@@ -58,7 +58,7 @@ The next bit into the DA indicates whether the address is globally administered,
 is globally administered the bit is a zero, and a one of it is locally administered. There are then 46 remaining bits.
 These are used for the destination address itself.
 
-** For our project,This DA is
+** For our project,The destination MAC Address is 02:00:00:00:14:01
 
 * Source MAC Address
 ** The source address consists of six bytes, and it is used to identify the sending station.
@@ -70,6 +70,10 @@ As it is always an individual address the left most bit is always a zero.
 the number of client data types that are contained in the data field of the frame.
 It may also indicate the frame ID type if the frame is assembled using an optional
 format.(IEEE 802.3 only).
+
+** For our project, we use the ipv4 procotol and 8021q procotol
+*** if the procotol is IPV4,The value of this field should be 0x0800
+*** if the procotol is VLAN(8021q),The value of this field should be 0x8100
 
 == ARP
 
@@ -98,6 +102,7 @@ This property places ARP into the link layer of the Internet protocol suite
 image:image/arp.JPG[image,600,600,role="center"]
 
 === format introduce
+
 
 
 == VLAN
