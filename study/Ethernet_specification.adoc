@@ -103,7 +103,33 @@ image:image/arp.JPG[image,600,600,role="center"]
 
 === format introduce
 
+* Hardware type (HTYPE)
+** This field specifies the network link protocol type.
+   Example: Ethernet is 1.
+* Protocol type (PTYPE)
+** This field specifies the internetwork protocol for which the ARP request is intended.
+  For IPv4, this has the value 0x0800.
+* Hardware length (HLEN)
+** Length (in octets) of a hardware address. Ethernet addresses size is 6
+* Protocol length (PLEN)
+** Length (in octets) of addresses used in the upper layer protocol. (The upper layer protocol specified in PTYPE.) IPv4 address size is 4.
+* Operation
+** Specifies the operation that the sender is performing: 1 for request, 2 for reply.
+* Sender hardware address (SHA)
+** Media address of the sender. In an ARP request this field is used to indicate the address of the host sending the request. In an ARP reply this field is used to indicate the address of the host that the request was looking for. (Not necessarily address of the host replying as in the case of virtual media.) Switches do not
+ pay attention to this field, particularly in learning MAC addresses. The ARP PDU is encapsulated in Ethernet frame, and that is why Layer 2 devices examine it.
+* Sender protocol address (SPA)
+** Internetwork address of the sender.
+* Target hardware address (THA)
+** Media address of the intended receiver. In an ARP request this field is ignored.
+ In an ARP reply this field is used to indicate the address of the host that originated the ARP request.
 
+* Target protocol address (TPA)
+** Internetwork address of the intended receiver
+
+=== example of arp packet
+
+image:image/arp_ex.JPG[image,600,600,role="center"]
 
 == VLAN
 
