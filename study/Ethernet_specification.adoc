@@ -71,9 +71,9 @@ the number of client data types that are contained in the data field of the fram
 It may also indicate the frame ID type if the frame is assembled using an optional
 format.(IEEE 802.3 only).
 
-** For our project, we use the ipv4 procotol and 8021q procotol
-*** if the procotol is IPV4,The value of this field should be 0x0800
-*** if the procotol is VLAN(8021q),The value of this field should be 0x8100
+** For our project, we use the ipv4 protocol and 8021q protocol
+*** if the protocol is IPV4,The value of this field should be 0x0800
+*** if the protocol is VLAN(8021q),The value of this field should be 0x8100
 
 == ARP
 
