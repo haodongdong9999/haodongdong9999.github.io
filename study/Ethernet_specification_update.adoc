@@ -283,7 +283,7 @@ image:image/ipcp_test4.png[image,600,600,role="center"]
 [start=2]
 . power up the ASDM
 . Chadoc tool send an IPCP NOTIFICATION  meaasge to ASDM with vlan 5
-image:image/ipcp_test2.png[image,600,600,role="center"]
+image:image/end.png[image,600,600,role="center"]
 
 [start=3]
 . repeat step 2
