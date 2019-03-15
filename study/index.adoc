@@ -12,4 +12,4 @@
 * link:aau_study.html[AAU学习记录]
 * link:qnx/qnx.html[QNX学习记录]
 * link:qnx/build_denverton.html[How to build denverton]
-* link:Ethernet_specification.html[Ethetnet specification]
+* link:Ethernet_specification_update.html[Ethetnet specification]
