@@ -1,0 +1,47 @@
+= Vlan implement
+
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== vlan distribution in ASDM
+
+* According the requirement,Vlan tables on ASDM as below:
+
+,===
+
+vlan ID,node name,function
+
+5,VGM-ASDM,Traffic Jam Pilot
+6,VGM-ASDM,IPLM
+
+,===
+
+.Vlan message as below
+
+image:image/vlan0.png[image,600,600,role="center"]
+
+== vlan message forward information
+
+=== ASDM receive IPCP messages
+
+image:image/vlan2.png[image,600,600,role="center"]
+
+=== ASDM send IPCP messages
+
+image:image/vlan3.png[image,600,600,role="center"]
+
+=== ASDM receive IPLM messages
+
+image:image/vlan5.png[image,600,600,role="center"]
+
+=== ASDM send IPLM messages
+
+image:image/vlan6.png[image,600,600,role="center"]
+
+=== Regular communication
+
+image:image/vlan7.png[image,600,600,role="center"]
