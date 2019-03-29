@@ -45,3 +45,13 @@ image:image/vlan6.png[image,600,600,role="center"]
 === Regular communication
 
 image:image/vlan7.png[image,600,600,role="center"]
+
+== Denverton internal implement
+
+=== Denverton receive  messages
+
+image:image/vlan_den3.png[image,600,600,role="center"]
+
+=== denverton send messages
+
+image:image/vlan_den4.png[image,600,600,role="center"]
