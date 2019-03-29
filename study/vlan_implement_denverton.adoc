@@ -26,25 +26,13 @@ image:image/vlan0.png[image,600,600,role="center"]
 
 == vlan message forward information
 
-=== ASDM receive IPCP messages
+=== ASDM receive IPCP/IPLM messages
 
 image:image/vlan2.png[image,600,600,role="center"]
 
-=== ASDM send IPCP messages
-
-image:image/vlan3.png[image,600,600,role="center"]
-
-=== ASDM receive IPLM messages
-
-image:image/vlan5.png[image,600,600,role="center"]
-
-=== ASDM send IPLM messages
+=== ASDM send IPCP/IPLM messages
 
 image:image/vlan6.png[image,600,600,role="center"]
-
-=== Regular communication
-
-image:image/vlan7.png[image,600,600,role="center"]
 
 == Denverton internal implement
 
