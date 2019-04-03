@@ -54,6 +54,7 @@ interface "vlan0" for receive and send packet with vlan ID 5.
 interface "vlan1" for receive and send packet with vlan ID 6.
 
 like below:
+
 image:image/vlan_a.png[image,600,600,role="center"]
 
 === IPCP
@@ -61,6 +62,7 @@ image:image/vlan_a.png[image,600,600,role="center"]
 ==== implement
 
 Need the socket bind the interface "vlan0", Then the TJP messages which take the vlan tag 5 will be
+
 listen by IPCP directly.
 
 We can bind specific network interface use "setsockopt()" function.
