@@ -11,4 +11,4 @@
 * link:my_software/software.html[软件/资源]
 * link:travel/index.html[亲子游]
 * link:something/sth.html[英语口语]
-* link:plan/plan_2019.html[2019]
+* link:plan/index.html[2019]
