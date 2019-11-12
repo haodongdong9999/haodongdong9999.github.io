@@ -10,7 +10,7 @@
 * link:linux_protocol.html[探寻linux协议栈]
 * link:open_uci.html[openWRT-uci机制学习总结]
 * link:aau_study.html[AAU学习记录]
-* link:qnx/qnx.html[QNX学习记录]
+* link:qnx/index.html[QNX学习]
 * link:qnx/build_denverton.html[How to build denverton]
 * link:Ethernet_specification_update.html[Ethetnet specification]
 * link:vlan_implement_denverton.html[vlan_implement_design]

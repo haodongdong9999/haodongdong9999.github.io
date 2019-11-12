@@ -1,0 +1,31 @@
+= Qnx Firewall学习
+郝东东
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== Firewall介绍
+
+*  对于系统而言，暴露在公网中和所有节点进行以太网通信其实具有一定的风险。因为对于任何一台设备
+而言只要可以收发报文，就可以进行攻击以及欺骗。防火墙其实是协议栈实现的一种过滤策略，配置策略
+行为，从而对网口的所有流量进行过滤控制进而转发。
+
+== qnx防火墙
+
+* 官网针对其的描述: link:http://www.qnx.com/developers/docs/7.0.0/index.html#com.qnx.doc.neutrino.utilities/topic/l/lsm-pf.so.html[防火墙库]
+== 开启和使用qnx防火墙
+
+* 首先进入qnx系统，加载支持防火墙业务所需库: lsm-pf-v4.so/lsm-pf-v6.so
+** 如何加载: io-pkt-v4-hc -p pf-v4 或者  mount -Tio-pkt lsm-pf-v4.so 都可以
+** 如何确认成功：成功加载后，会默认在系统 #/etc/# 下生成 *pf.conf* 和 *pf.os*
+image:../image/pf_0.png[image,800,800,role="center"]
+
+* 启动服务： pfctl -e
+
+* 查看： pfctl -sr/-sa/-ss/-si
+....
+以上是自己的一点总结
+....
