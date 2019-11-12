@@ -5,7 +5,8 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.7.1">
-<title>学习目录</title>
+<meta name="author" content="郝东东">
+<title>Qnx Firewall学习</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -429,51 +430,145 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 #footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
 @media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
 </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.listingblock .pygments .hll { background-color: #ffffcc }
+.listingblock .pygments, .listingblock .pygments code { background: #f8f8f8; }
+.listingblock .pygments .tok-c { color: #408080; font-style: italic } /* Comment */
+.listingblock .pygments .tok-err { border: 1px solid #FF0000 } /* Error */
+.listingblock .pygments .tok-k { color: #008000; font-weight: bold } /* Keyword */
+.listingblock .pygments .tok-o { color: #666666 } /* Operator */
+.listingblock .pygments .tok-ch { color: #408080; font-style: italic } /* Comment.Hashbang */
+.listingblock .pygments .tok-cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.listingblock .pygments .tok-cp { color: #BC7A00 } /* Comment.Preproc */
+.listingblock .pygments .tok-cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
+.listingblock .pygments .tok-c1 { color: #408080; font-style: italic } /* Comment.Single */
+.listingblock .pygments .tok-cs { color: #408080; font-style: italic } /* Comment.Special */
+.listingblock .pygments .tok-gd { color: #A00000 } /* Generic.Deleted */
+.listingblock .pygments .tok-ge { font-style: italic } /* Generic.Emph */
+.listingblock .pygments .tok-gr { color: #FF0000 } /* Generic.Error */
+.listingblock .pygments .tok-gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.listingblock .pygments .tok-gi { color: #00A000 } /* Generic.Inserted */
+.listingblock .pygments .tok-go { color: #888888 } /* Generic.Output */
+.listingblock .pygments .tok-gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.listingblock .pygments .tok-gs { font-weight: bold } /* Generic.Strong */
+.listingblock .pygments .tok-gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.listingblock .pygments .tok-gt { color: #0044DD } /* Generic.Traceback */
+.listingblock .pygments .tok-kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.listingblock .pygments .tok-kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.listingblock .pygments .tok-kn { color: #008000; font-weight: bold } /* Keyword.Namespace */
+.listingblock .pygments .tok-kp { color: #008000 } /* Keyword.Pseudo */
+.listingblock .pygments .tok-kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.listingblock .pygments .tok-kt { color: #B00040 } /* Keyword.Type */
+.listingblock .pygments .tok-m { color: #666666 } /* Literal.Number */
+.listingblock .pygments .tok-s { color: #BA2121 } /* Literal.String */
+.listingblock .pygments .tok-na { color: #7D9029 } /* Name.Attribute */
+.listingblock .pygments .tok-nb { color: #008000 } /* Name.Builtin */
+.listingblock .pygments .tok-nc { color: #0000FF; font-weight: bold } /* Name.Class */
+.listingblock .pygments .tok-no { color: #880000 } /* Name.Constant */
+.listingblock .pygments .tok-nd { color: #AA22FF } /* Name.Decorator */
+.listingblock .pygments .tok-ni { color: #999999; font-weight: bold } /* Name.Entity */
+.listingblock .pygments .tok-ne { color: #D2413A; font-weight: bold } /* Name.Exception */
+.listingblock .pygments .tok-nf { color: #0000FF } /* Name.Function */
+.listingblock .pygments .tok-nl { color: #A0A000 } /* Name.Label */
+.listingblock .pygments .tok-nn { color: #0000FF; font-weight: bold } /* Name.Namespace */
+.listingblock .pygments .tok-nt { color: #008000; font-weight: bold } /* Name.Tag */
+.listingblock .pygments .tok-nv { color: #19177C } /* Name.Variable */
+.listingblock .pygments .tok-ow { color: #AA22FF; font-weight: bold } /* Operator.Word */
+.listingblock .pygments .tok-w { color: #bbbbbb } /* Text.Whitespace */
+.listingblock .pygments .tok-mb { color: #666666 } /* Literal.Number.Bin */
+.listingblock .pygments .tok-mf { color: #666666 } /* Literal.Number.Float */
+.listingblock .pygments .tok-mh { color: #666666 } /* Literal.Number.Hex */
+.listingblock .pygments .tok-mi { color: #666666 } /* Literal.Number.Integer */
+.listingblock .pygments .tok-mo { color: #666666 } /* Literal.Number.Oct */
+.listingblock .pygments .tok-sa { color: #BA2121 } /* Literal.String.Affix */
+.listingblock .pygments .tok-sb { color: #BA2121 } /* Literal.String.Backtick */
+.listingblock .pygments .tok-sc { color: #BA2121 } /* Literal.String.Char */
+.listingblock .pygments .tok-dl { color: #BA2121 } /* Literal.String.Delimiter */
+.listingblock .pygments .tok-sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
+.listingblock .pygments .tok-s2 { color: #BA2121 } /* Literal.String.Double */
+.listingblock .pygments .tok-se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
+.listingblock .pygments .tok-sh { color: #BA2121 } /* Literal.String.Heredoc */
+.listingblock .pygments .tok-si { color: #BB6688; font-weight: bold } /* Literal.String.Interpol */
+.listingblock .pygments .tok-sx { color: #008000 } /* Literal.String.Other */
+.listingblock .pygments .tok-sr { color: #BB6688 } /* Literal.String.Regex */
+.listingblock .pygments .tok-s1 { color: #BA2121 } /* Literal.String.Single */
+.listingblock .pygments .tok-ss { color: #19177C } /* Literal.String.Symbol */
+.listingblock .pygments .tok-bp { color: #008000 } /* Name.Builtin.Pseudo */
+.listingblock .pygments .tok-fm { color: #0000FF } /* Name.Function.Magic */
+.listingblock .pygments .tok-vc { color: #19177C } /* Name.Variable.Class */
+.listingblock .pygments .tok-vg { color: #19177C } /* Name.Variable.Global */
+.listingblock .pygments .tok-vi { color: #19177C } /* Name.Variable.Instance */
+.listingblock .pygments .tok-vm { color: #19177C } /* Name.Variable.Magic */
+.listingblock .pygments .tok-il { color: #666666 } /* Literal.Number.Integer.Long */
+</style>
 </head>
-<body class="article">
+<body class="article toc2 toc-left">
 <div id="header">
-<h1>学习目录</h1>
+<h1>Qnx Firewall学习</h1>
+<div class="details">
+<span id="author" class="author">郝东东</span><br>
+</div>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_firewall介绍">1. Firewall介绍</a></li>
+<li><a href="#_qnx防火墙">2. qnx防火墙</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
-<div class="paragraph">
-<p>学习，每天积累</p>
-</div>
+<div class="sect1">
+<h2 id="_firewall介绍">1. Firewall介绍</h2>
+<div class="sectionbody">
 <div class="ulist">
 <ul>
 <li>
-<p><a href="study.html">综合知识归类</a></p>
-</li>
-<li>
-<p><a href="kernel.html">linux内核相关</a></p>
-</li>
-<li>
-<p><a href="dpdk.html">dpdk学习</a></p>
-</li>
-<li>
-<p><a href="linux_protocol.html">探寻linux协议栈</a></p>
-</li>
-<li>
-<p><a href="open_uci.html">openWRT-uci机制学习总结</a></p>
-</li>
-<li>
-<p><a href="aau_study.html">AAU学习记录</a></p>
-</li>
-<li>
-<p><a href="qnx/index.html">QNX学习</a></p>
-</li>
-<li>
-<p><a href="qnx/build_denverton.html">How to build denverton</a></p>
-</li>
-<li>
-<p><a href="Ethernet_specification_update.html">Ethetnet specification</a></p>
-</li>
-<li>
-<p><a href="vlan_implement_denverton.html">vlan_implement_design</a></p>
-</li>
-<li>
-<p><a href="wsl_for_win10.html">WSL安装说明</a></p>
+<p>对于系统而言，暴露在公网中和所有节点进行以太网通信其实具有一定的风险。因为对于任何一台设备
+而言只要可以收发报文，就可以进行攻击以及欺骗。防火墙其实是协议栈实现的一种过滤策略，配置策略
+行为，从而对网口的所有流量进行过滤控制进而转发。</p>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_qnx防火墙">2. qnx防火墙</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>官网针对其的描述: <a href="http://www.qnx.com/developers/docs/7.0.0/index.html#com.qnx.doc.neutrino.utilities/topic/l/lsm-pf.so.html">防火墙库</a>
+== 开启和使用qnx防火墙</p>
+</li>
+<li>
+<p>首先进入qnx系统，加载支持防火墙业务所需库: lsm-pf-v4.so/lsm-pf-v6.so</p>
+<div class="ulist">
+<ul>
+<li>
+<p>如何加载: io-pkt-v4-hc -p pf-v4 或者  mount -Tio-pkt lsm-pf-v4.so 都可以</p>
+</li>
+<li>
+<p>如何确认成功：成功加载后，会默认在系统 <mark>/etc/</mark> 下生成 <strong>pf.conf</strong> 和 <strong>pf.os</strong>
+<span class="image center"><img src="data:image/png;base64,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" alt="image" width="800" height="800"></span></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>启动服务： pfctl -e</p>
+</li>
+<li>
+<p>查看： pfctl -sr/-sa/-ss/-si</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>以上是自己的一点总结</pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div id="footer">
