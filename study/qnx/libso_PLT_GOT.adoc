@@ -7,6 +7,21 @@
 :icons: font
 :sectnums:
 
+== 静态链接重定位
+
+* 什么是链接重定位？
+** 链接时候进行符号表地址重定位，因为编译器无法去全局照顾每一个符号，尤其是模块间的函数调用
+** 举例：函数调用
+image:../image/PLT0.png[image,800,800,role="center"]
+
+*** 对编译期间的 main.o进行反汇编(objdump),查看汇编代码可以发现：main里针对函数my_test的izhi解析
+填充的其实是一个错误值，是不对的。如下
+
+image:../image/plt4.png[image,800,800,role="center"]
+
+*** 链接完成之后呢？再次针对main进行反汇编(objdump)，就会发现，链接时候已经做了填充，如下:
+image:../image/plt5.png[image,800,800,role="center"]
+
 == 动态连接技术
 
 * 动态链接技术的出现，解决了静态库耦合依赖，以及浪费内存问题。使得多个进程共享一个动态库成为可能。
