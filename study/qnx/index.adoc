@@ -6,3 +6,4 @@
 
 * link:qnx.html[qnx入门介绍]
 * link:qnx_firewall.html[QNX防火墙实现]
+* link:libso_PLT_GOT.html[QNX动态链接之我见]
