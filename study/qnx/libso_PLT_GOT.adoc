@@ -15,7 +15,7 @@
 
 image:../image/PLT0.png[image,800,800,role="center"]
 
-*** 对编译期间的 main.o进行反汇编(objdump),查看汇编代码可以发现：main里针对函数my_test的izhi解析
+*** 对编译期间的 main.o进行反汇编(objdump),查看汇编代码可以发现：main里针对函数my_test的符号解析
 填充的其实是一个错误值，是不对的。如下
 
 image:../image/plt4.png[image,800,800,role="center"]
@@ -31,9 +31,11 @@ image:../image/plt5.png[image,800,800,role="center"]
 ** main.c 需要链接lib1.so执行。首先编译(.o),链接(ELF),反汇编(objdump),ELF查看(readelf)
 
 *** main.c如下
+
 image:../image/plt7.png[image,800,800,role="center"]
 
 *** 1.c如下
+
 image:../image/plt8.png[image,800,800,role="center"]
 
 * 动态加载流程
@@ -46,7 +48,7 @@ image:../image/plt6.png[image,800,800,role="center"]
 
 image:../image/plt9.png[image,800,800,role="center"]
 
-image:../image/plt10.png[image,800,800,role="center"]
+image:../image/plt10.png[image,900,900,role="center"]
 
 
 
