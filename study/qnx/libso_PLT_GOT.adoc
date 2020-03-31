@@ -47,9 +47,7 @@ image:../image/plt8.png[image,800,800,role="center"]
 *** 用objdump -S main.o > main.asm, 查看 main.asm可以看到main里调用
 #g_func# 的汇编处，如下图
 
-image:../image/plt10.png[image,1000,1000,role="center"]
-
-
+image:../image/plt11.png[image,1000,1000,role="center"]
 
 
 
