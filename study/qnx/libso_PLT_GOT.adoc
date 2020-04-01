@@ -74,7 +74,7 @@ image:../image/plt12.png[image,1100,1100,role="center"]
 
    把这个过程总结成一个图如下：
 
-   image:../image/plt13.png[image,1100,1100,role="center"]
+image:../image/plt13.png[image,1100,1100,role="center"]
 
 
 
