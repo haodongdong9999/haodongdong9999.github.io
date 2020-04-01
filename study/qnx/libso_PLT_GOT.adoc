@@ -71,12 +71,30 @@ image:../image/plt12.png[image,1100,1100,role="center"]
 *** 执行 #*objdump -R main*# 可以看到一些信息输出，其中就有 #g_func# ,注意前面的地址: #0x600ff8#,
    再结合man的汇编，可以发现在 g_func@plt中，有一个 jump指令： #jmpq   *0x200aaa(%rip) # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>#
    .可以发现这个地址 0x601020 后面有一个GLOBAL_OFFSET_TABLE，这个就是大名鼎鼎的 #GOT# 表。
+   见下图
 
-   把这个过程总结成一个图如下：
+image:../image/plt14.png[image,1100,1100,role="center"]
+
+*** 把整个过程总结如下：
 
 image:../image/plt13.png[image,1100,1100,role="center"]
 
+**** 其实不难看出，链接结束后，虽然链接器并不知道调用的g_func地址在哪里，但是汇编里写入的是指向PLT(Procedure Link Table)表中
+一个地址的指令，通过简单分析我们知道，PLT表中的这个地址，其实是指向了 GOT(Global Offset Table)表中的一个地址。这个可以简单总结
+如下
 
+***** main-->call g_func-->g_func@plt-->g_func@got
+
+*** 最后，再用 #readelf -l main#  查看下 .plt和.got分别属于编译后哪个section里，如下图：
+
+image:../image/plt15.png[image,1100,1100,role="center"]
+
+TIP: 问题来等Lib1.so加载完成之后如何去重新修正函数 g_func的真正地址呢？有两个方案：
+     1. 运行时候直接修改 .text段call g_func，修改成真正地址。显然不可行，Why?
+     2. 把g_func函数地址固定一个不变的地址，每次加载不用这么麻烦。可行，但是这样
+     一来，动态库的共享优势荡然无存。
+     所以，需要一个机制，去解决这个问题，如何解决？
+     PIC技术和LB(Lazy binding),当然离不开 PLT和GOT
 
 == 动态链接技术剖析
 
