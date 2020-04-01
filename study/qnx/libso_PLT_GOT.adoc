@@ -89,12 +89,14 @@ image:../image/plt13.png[image,1100,1100,role="center"]
 
 image:../image/plt15.png[image,1100,1100,role="center"]
 
-TIP: 问题来等Lib1.so加载完成之后如何去重新修正函数 g_func的真正地址呢？有两个方案：
-     1. 运行时候直接修改 .text段call g_func，修改成真正地址。显然不可行，Why?
-     2. 把g_func函数地址固定一个不变的地址，每次加载不用这么麻烦。可行，但是这样
-     一来，动态库的共享优势荡然无存。
-     所以，需要一个机制，去解决这个问题，如何解决？
-     PIC技术和LB(Lazy building),当然离不开 PLT和GOT
+TIP: 问题：Lib1.so加载完成之后如何去重新修正函数 g_func的真正地址呢？
+
+* 有两个方案：
+1. 运行时候直接修改 .text段call g_func，修改成真正地址。显然不可行，Why?
+2. 把g_func函数地址固定一个不变的地址，每次加载不用这么麻烦。可行，但是这样
+一来，动态库的共享优势荡然无存。
+所以，需要一个机制，去解决这个问题，如何解决？
+PIC技术和LB(Lazy building),当然离不开 PLT和GOT
 
 
 == 动态链接技术剖析
