@@ -66,7 +66,19 @@ image:../image/plt11.png[image,1000,1000,role="center"]
 image:../image/plt12.png[image,1100,1100,role="center"]
 
 *** 其实到这里我们知道，动态链接的过程肯定和.plt有关，但是这个plt究竟充当多大作用，是如何辅助动态链接的
-这里还看不出。继续看下边
+这里还看不出。
+
+*** 执行 #*objdump -R main*# 可以看到一些信息输出，其中就有 #g_func# ,注意前面的地址: #0x600ff8#,
+   再结合man的汇编，可以发现在 g_func@plt中，有一个 jump指令： #jmpq   *0x200aaa(%rip) # 601020 <_GLOBAL_OFFSET_TABLE_+0x20>#
+   .可以发现这个地址 0x601020 后面有一个GLOBAL_OFFSET_TABLE，这个就是大名鼎鼎的 #GOT# 表。
+
+   把这个过程总结成一个图如下：
+
+   image:../image/plt13.png[image,1100,1100,role="center"]
+
+
+
+== 动态链接技术剖析
 
 * 动态加载流程
 
