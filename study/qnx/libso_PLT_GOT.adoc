@@ -49,6 +49,12 @@ image:../image/plt8.png[image,800,800,role="center"]
 
 image:../image/plt11.png[image,1000,1000,role="center"]
 
+----
+这里最值得注意的是汇编的：call 400570<g_func@plt>
+我们知道g_func这个函数是在lib1.so中定义的，但是这个时候，动态库lib1.so还并未加载，所以lib1.so
+加载时候会被加载在内存的哪个地址都是未知的，但是链接器又必须生成call function的指令，这就是问题
+那么，call后面的这个地址: 0x400570到底是指向了哪里呢？
+----
 
 
 * 动态加载流程
