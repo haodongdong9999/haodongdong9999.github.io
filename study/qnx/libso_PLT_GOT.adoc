@@ -24,8 +24,12 @@ image:../image/plt4.png[image,800,800,role="center"]
 
 image:../image/plt5.png[image,800,800,role="center"]
 
+** 思考：静态链接的关键在于，编译器先预先“占位”，链接阶段由链接器根据相对地址引用计算出绝对地址修正"占位"
+   时候的空白值或者错误值。
 
-== 动态连接技术
+   那么，动态链接是否也可以这么做呢？
+
+== 引出动态连接技术
 
 * 举个例子先
 ** main.c 需要链接lib1.so执行。首先编译(.o),链接(ELF),反汇编(objdump),ELF查看(readelf)
@@ -59,7 +63,7 @@ image:../image/plt11.png[image,1000,1000,role="center"]
 *** 我们继续看main.asm汇编可以发现，这个call 0x******** 在链接器阶段，指向了一个叫做 .plt表的
 一个地址，该地址中存放了一份g_func()的影子函数，详细如下图
 
-image:../image/plt11.png[image,1100,1100,role="center"]
+image:../image/plt12.png[image,1100,1100,role="center"]
 
 *** 其实到这里我们知道，动态链接的过程肯定和.plt有关，但是这个plt究竟充当多大作用，是如何辅助动态链接的
 这里还看不出。继续看下边
