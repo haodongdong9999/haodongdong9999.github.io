@@ -13,16 +13,16 @@
 ** 链接时候进行符号表地址重定位，因为编译器无法去全局照顾每一个符号，尤其是模块间的函数调用
 ** 举例：函数调用
 
-image:../image/PLT0.png[image,800,800,role="center"]
+image:../image/PLT0.png[image,1100,1100,role="center"]
 
 *** 对编译期间的 main.o进行反汇编(objdump),查看汇编代码可以发现：main里针对函数my_test的符号解析
 填充的其实是一个错误值，是不对的。如下
 
-image:../image/plt4.png[image,800,800,role="center"]
+image:../image/plt4.png[image,1000,1000,role="center"]
 
 *** 链接完成之后呢？再次针对main进行反汇编(objdump)，就会发现，链接时候已经做了填充，如下:
 
-image:../image/plt5.png[image,800,800,role="center"]
+image:../image/plt5.png[image,1000,1000,role="center"]
 
 ** 思考：静态链接的关键在于，编译器先预先“占位”，链接阶段由链接器根据相对地址引用计算出绝对地址修正"占位"
    时候的空白值或者错误值。
@@ -36,11 +36,11 @@ image:../image/plt5.png[image,800,800,role="center"]
 
 *** main.c如下
 
-image:../image/plt7.png[image,800,800,role="center"]
+image:../image/plt7.png[image,1100,1100,role="center"]
 
 *** 1.c如下
 
-image:../image/plt8.png[image,800,800,role="center"]
+image:../image/plt8.png[image,1000,1000,role="center"]
 
 *** 编译
 **** 将1.c编译成动态库，将main编译成ELF并链接该动态库 #*lib1.so*#
@@ -94,7 +94,8 @@ TIP: 问题来等Lib1.so加载完成之后如何去重新修正函数 g_func的�
      2. 把g_func函数地址固定一个不变的地址，每次加载不用这么麻烦。可行，但是这样
      一来，动态库的共享优势荡然无存。
      所以，需要一个机制，去解决这个问题，如何解决？
-     PIC技术和LB(Lazy binding),当然离不开 PLT和GOT
+     PIC技术和LB(Lazy building),当然离不开 PLT和GOT
+
 
 == 动态链接技术剖析
 
@@ -102,13 +103,13 @@ TIP: 问题来等Lib1.so加载完成之后如何去重新修正函数 g_func的�
 
 ** 动态加载基本流程
 
-image:../image/plt6.png[image,800,800,role="center"]
+image:../image/plt6.png[image,1000,1000,role="center"]
 
 ** ELF Header内容(readelf -h main/readelf -l main)
 
-image:../image/plt9.png[image,800,800,role="center"]
+image:../image/plt9.png[image,1000,1000,role="center"]
 
-image:../image/plt10.png[image,900,900,role="center"]
+image:../image/plt10.png[image,1000,1000,role="center"]
 
 
 
