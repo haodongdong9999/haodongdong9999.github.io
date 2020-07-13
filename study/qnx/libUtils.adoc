@@ -1,0 +1,49 @@
+= libUtils User's Guide
+David Hao
+:toc:
+:toclevels: 4
+:toc-position: left
+:source-highlighter: pygments
+:icons: font
+:sectnums:
+
+== libUtils 介绍
+
+TIP: LibUtils 是想把qnx系统API做一个统一封装，实现模块标准化调用。目前，暂时只实现了共享内存的封装.
+libUtils以动态库形式加载系统中。
+
+* libUtils所在我们项目的目录
+** #*PerformanceMCU\Source\Adapt\Libs\libUtils*#
+
+== external API in libUtils.so
+
+=== API list
+
+[source,c]
+----
+* int32_t libUtils_MunmapShareMem(void* pvShareMemAddress,size_t size);
+
+* int32_t libUtils_DestroyShareMem(const char*pcShareMemName);
+
+* void * libUtils_ShareMemOpenReadWrite(const char* pcShareMemName,size_t size);
+
+* void * libUtils_ShareMemOpenReadOnly(const char* pcShareMemName,size_t size);
+
+* void * libUtils_ShareMemCreateForPrivate(const char* pcShareMemName, size_t size);
+
+* void * libUtils_ShareMemCreateReadWrite(const char* pcShareMemName,size_t size);
+
+* void * libUtils_ShareMemCreateReadWriteCheck(const char* pcShareMemName, size_t size);
+
+* int32_t libUtils_CheckShareMemExist(const char* pcShareMemName)
+
+* char * libutils_getSysErrstr(void);
+
+* int32_t libutils_getSysErrno(void);
+----
+
+
+
+....
+以上是自己的一点总结
+....
