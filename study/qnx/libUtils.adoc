@@ -42,6 +42,27 @@ libUtils以动态库形式加载系统中。
 * int32_t libutils_getSysErrno(void);
 ----
 
+=== Detail information
+
+==== Create a share memory
+
+* #void * libUtils_ShareMemCreateReadWrite(const char* pcShareMemName,size_t size);#
+** 创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。
+*** 入参
+**** const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要创建的sharememory大小，注意，大于0
+*** 返回值： void *
+**** NULL: 创建失败
+**** void *: 一个void类型指针，指向所创建sahre memroy地址
+
+* #void * libUtils_ShareMemCreateReadWriteCheck(const char* pcShareMemName, size_t size);#
+** 创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。
+*** 入参
+**** const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要创建的sharememory大小，注意，大于0
+*** 返回值： void *
+**** NULL: 创建失败
+**** void *: 一个void类型指针，指向所创建sahre memroy地址
 
 
 ....
