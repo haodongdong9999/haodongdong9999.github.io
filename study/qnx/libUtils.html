@@ -519,6 +519,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_detail_information">2.2. Detail information</a>
 <ul class="sectlevel3">
 <li><a href="#_create_a_share_memory">2.2.1. Create a share memory</a></li>
+<li><a href="#_open_a_share_memory">2.2.2. Open a share memory</a></li>
+<li><a href="#_release_shar_memory">2.2.3. release shar memory</a></li>
 </ul>
 </li>
 </ul>
@@ -580,9 +582,9 @@ libUtils以动态库形式加载系统中。
 
 <span class="tok-o">*</span> <span class="tok-kt">void</span> <span class="tok-o">*</span> <span class="tok-nf">libUtils_ShareMemCreateReadWriteCheck</span><span class="tok-p">(</span><span class="tok-k">const</span> <span class="tok-kt">char</span><span class="tok-o">*</span> <span class="tok-n">pcShareMemName</span><span class="tok-p">,</span> <span class="tok-kt">size_t</span> <span class="tok-n">size</span><span class="tok-p">);</span>
 
-<span class="tok-o">*</span> <span class="tok-kt">int32_t</span> <span class="tok-nf">libUtils_CheckShareMemExist</span><span class="tok-p">(</span><span class="tok-k">const</span> <span class="tok-kt">char</span><span class="tok-o">*</span> <span class="tok-n">pcShareMemName</span><span class="tok-p">)</span>
+<span class="tok-o">*</span> <span class="tok-kt">int32_t</span> <span class="tok-nf">libUtils_CheckShareMemExist</span><span class="tok-p">(</span><span class="tok-k">const</span> <span class="tok-kt">char</span><span class="tok-o">*</span> <span class="tok-n">pcShareMemName</span><span class="tok-p">);</span>
 
-<span class="tok-o">*</span> <span class="tok-kt">char</span> <span class="tok-o">*</span> <span class="tok-n">libutils_getSysErrstr</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">);</span>
+<span class="tok-o">*</span> <span class="tok-kt">char</span> <span class="tok-o">*</span> <span class="tok-nf">libutils_getSysErrstr</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">);</span>
 
 <span class="tok-o">*</span> <span class="tok-kt">int32_t</span> <span class="tok-nf">libutils_getSysErrno</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">);</span></code></pre>
 </div>
@@ -639,7 +641,47 @@ libUtils以动态库形式加载系统中。
 <div class="ulist">
 <ul>
 <li>
-<p>创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。</p>
+<p>创建一个share memroy，可读可写。创建过程会先检查share memory是否已经存在，如果已经存在，会先删除该share memory然后再创建</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要创建的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值： void *</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NULL: 创建失败</p>
+</li>
+<li>
+<p>void *: 一个void类型指针，指向所创建sahre memroy地址</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><mark>void * libUtils_ShareMemCreateForPrivate(const char* pcShareMemName, size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。创建的share memroy不可被其它进程共享。</p>
 <div class="ulist">
 <ul>
 <li>
@@ -676,10 +718,176 @@ libUtils以动态库形式加载系统中。
 </li>
 </ul>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>以上是自己的一点总结</pre>
 </div>
+<div class="sect3">
+<h4 id="_open_a_share_memory">2.2.2. Open a share memory</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><mark>void * libUtils_ShareMemOpenReadOnly(const char* pcShareMemName,size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>打开一个share memroy，只读方式打开。注意，如果该share memory不存在会打开失败。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要打开的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要打开的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值： void *</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NULL: 打开失败</p>
+</li>
+<li>
+<p>void *: 一个void类型指针，指向所打开sahre memroy地址</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><mark>void * libUtils_ShareMemOpenReadWrite(const char* pcShareMemName,size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>打开一个share memroy，可读写方式打开。注意，如果该share memory不存在会打开失败。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要打开的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要打开的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值： void *</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NULL: 打开失败</p>
+</li>
+<li>
+<p>void *: 一个void类型指针，指向所打开sahre memroy地址</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_release_shar_memory">2.2.3. release shar memory</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><mark>int32_t libUtils_MunmapShareMem(void* pvShareMemAddress,size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>释放所指向share memory的指针地址</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要释放的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要打开的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值：int32_t</p>
+<div class="ulist">
+<ul>
+<li>
+<p>0: 释放成功</p>
+</li>
+<li>
+<p>-1: 释放失败</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><mark>int32_t libUtils_DestroyShareMem(const char*pcShareMemName);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>删除一个shhare memory</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要释放的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值：int32_t</p>
+<div class="ulist">
+<ul>
+<li>
+<p>0: 删除成功</p>
+</li>
+<li>
+<p>-1: 删除失败</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -688,7 +896,7 @@ libUtils以动态库形式加载系统中。
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-13 12:51:53 CST
+Last updated 2020-07-13 13:14:47 CST
 </div>
 </div>
 </body>
