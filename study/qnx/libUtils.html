@@ -516,6 +516,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_external_api_in_libutils_so">2. external API in libUtils.so</a>
 <ul class="sectlevel2">
 <li><a href="#_api_list">2.1. API list</a></li>
+<li><a href="#_detail_information">2.2. Detail information</a>
+<ul class="sectlevel3">
+<li><a href="#_create_a_share_memory">2.2.1. Create a share memory</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -582,6 +587,95 @@ libUtils以动态库形式加载系统中。
 <span class="tok-o">*</span> <span class="tok-kt">int32_t</span> <span class="tok-nf">libutils_getSysErrno</span><span class="tok-p">(</span><span class="tok-kt">void</span><span class="tok-p">);</span></code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_detail_information">2.2. Detail information</h3>
+<div class="sect3">
+<h4 id="_create_a_share_memory">2.2.1. Create a share memory</h4>
+<div class="ulist">
+<ul>
+<li>
+<p><mark>void * libUtils_ShareMemCreateReadWrite(const char* pcShareMemName,size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要创建的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值： void *</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NULL: 创建失败</p>
+</li>
+<li>
+<p>void *: 一个void类型指针，指向所创建sahre memroy地址</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><mark>void * libUtils_ShareMemCreateReadWriteCheck(const char* pcShareMemName, size_t size);</mark></p>
+<div class="ulist">
+<ul>
+<li>
+<p>创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。</p>
+<div class="ulist">
+<ul>
+<li>
+<p>入参</p>
+<div class="ulist">
+<ul>
+<li>
+<p>const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 <mark>/name</mark> 形式</p>
+</li>
+<li>
+<p>size : 要创建的sharememory大小，注意，大于0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>返回值： void *</p>
+<div class="ulist">
+<ul>
+<li>
+<p>NULL: 创建失败</p>
+</li>
+<li>
+<p>void *: 一个void类型指针，指向所创建sahre memroy地址</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="literalblock">
 <div class="content">
 <pre>以上是自己的一点总结</pre>
@@ -591,9 +685,10 @@ libUtils以动态库形式加载系统中。
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-13 12:39:05 CST
+Last updated 2020-07-13 12:51:53 CST
 </div>
 </div>
 </body>
