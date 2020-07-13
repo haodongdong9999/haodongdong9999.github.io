@@ -35,7 +35,7 @@ libUtils以动态库形式加载系统中。
 
 * void * libUtils_ShareMemCreateReadWriteCheck(const char* pcShareMemName, size_t size);
 
-* int32_t libUtils_CheckShareMemExist(const char* pcShareMemName)
+* int32_t libUtils_CheckShareMemExist(const char* pcShareMemName);
 
 * char * libutils_getSysErrstr(void);
 
@@ -56,7 +56,7 @@ libUtils以动态库形式加载系统中。
 **** void *: 一个void类型指针，指向所创建sahre memroy地址
 
 * #void * libUtils_ShareMemCreateReadWriteCheck(const char* pcShareMemName, size_t size);#
-** 创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。
+** 创建一个share memroy，可读可写。创建过程会先检查share memory是否已经存在，如果已经存在，会先删除该share memory然后再创建
 *** 入参
 **** const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 #/name# 形式
 **** size : 要创建的sharememory大小，注意，大于0
@@ -64,7 +64,50 @@ libUtils以动态库形式加载系统中。
 **** NULL: 创建失败
 **** void *: 一个void类型指针，指向所创建sahre memroy地址
 
+* #void * libUtils_ShareMemCreateForPrivate(const char* pcShareMemName, size_t size);#
+** 创建一个share memroy，可读可写。创建过程不关心此share memory是否已经存在。创建的share memroy不可被其它进程共享。
+*** 入参
+**** const char* pcShareMemName：要创建的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要创建的sharememory大小，注意，大于0
+*** 返回值： void *
+**** NULL: 创建失败
+**** void *: 一个void类型指针，指向所创建sahre memroy地址
 
-....
-以上是自己的一点总结
-....
+==== Open a share memory
+
+* #void * libUtils_ShareMemOpenReadOnly(const char* pcShareMemName,size_t size);#
+** 打开一个share memroy，只读方式打开。注意，如果该share memory不存在会打开失败。
+*** 入参
+**** const char* pcShareMemName：要打开的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要打开的sharememory大小，注意，大于0
+*** 返回值： void *
+**** NULL: 打开失败
+**** void *: 一个void类型指针，指向所打开sahre memroy地址
+
+* #void * libUtils_ShareMemOpenReadWrite(const char* pcShareMemName,size_t size);#
+** 打开一个share memroy，可读写方式打开。注意，如果该share memory不存在会打开失败。
+*** 入参
+**** const char* pcShareMemName：要打开的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要打开的sharememory大小，注意，大于0
+*** 返回值： void *
+**** NULL: 打开失败
+**** void *: 一个void类型指针，指向所打开sahre memroy地址
+
+==== release shar memory
+
+* #int32_t libUtils_MunmapShareMem(void* pvShareMemAddress,size_t size);#
+** 释放所指向share memory的指针地址
+*** 入参
+**** const char* pcShareMemName：要释放的sharememory名字，在qnx上通常为 #/name# 形式
+**** size : 要打开的sharememory大小，注意，大于0
+*** 返回值：int32_t
+**** 0: 释放成功
+**** -1: 释放失败
+
+* #int32_t libUtils_DestroyShareMem(const char*pcShareMemName);#
+** 删除一个shhare memory
+*** 入参
+**** const char* pcShareMemName：要释放的sharememory名字，在qnx上通常为 #/name# 形式
+*** 返回值：int32_t
+**** 0: 删除成功
+**** -1: 删除失败
