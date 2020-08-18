@@ -8,3 +8,4 @@
 * link:qnx_firewall.html[QNX防火墙实现]
 * link:libso_PLT_GOT.html[QNX动态链接之我见]
 * link:libUtils.html[libUtils库说明文档]
+* link:build_zenuity_objectcode.html[Zenuity库编译手册]
