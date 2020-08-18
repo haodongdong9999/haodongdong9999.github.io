@@ -38,6 +38,7 @@ image:../image/zen0.png[image,1000,1000,role="center"]
 
 image:../image/zen1.png[image,1000,1000,role="center"]
 
+
 == 修改配置脚本
 
 ===  修改create_so-dnv.sh
@@ -83,6 +84,8 @@ image:../image/zen2.png[image,1000,1000,role="center"]
 * 静静等待即可，编译完成后，会生成在 #geely_asdm3/pre_build# 下看到编译的so文件
 
 image:../image/zen3.png[image,1000,1000,role="center"]
+
+image:../image/zen4.png[image,1000,1000,role="center"]
 
 NOTE: 以上仅仅是粗略的步骤，执行过程中难免会有什么问题，具体问题再具体解决吧，但是总可以解决。
 
